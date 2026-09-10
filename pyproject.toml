@@ -1,0 +1,19 @@
+[project]
+name = "rusexperiment"
+version = "0.1.0"
+description = "CTI/RAG 결합 하이브리드 IDS 프레임워크 실험 저장소"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2",
+    "pyarrow>=17.0",
+    "pyyaml>=6.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
