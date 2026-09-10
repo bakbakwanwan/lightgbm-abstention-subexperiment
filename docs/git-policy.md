@@ -74,6 +74,8 @@ Makefile의 `guard-clean` 타겟이 1번을 강제한다. 이 타겟을 우회�
 - `src/`, `configs/`, `tests/`, `scripts/`, `Makefile`, `pyproject.toml`
 - `docs/` 전체 (결정 이력, 용어표, 원고)
 - `experiments/` 전체 (실험 스펙, 대기열)
+- `tasks/` 전체 (진행 중·예정 업무 지시서·요청서 — `experiments/`의 확정 스펙이
+  되기 전 단계의 작업 문서)
 - `results/<EXP-ID>/metrics.json`, `results/<EXP-ID>/config.snapshot.yaml`
 - 데이터셋 다운로드 스크립트와 SHA256 체크섬 파일
 
@@ -129,7 +131,7 @@ git diff exp-002 exp-003 -- src/           # 두 실험 사이 코드 변경
 
 ## 9. Cowork와의 경계
 
-- Cowork는 `experiments/`, `docs/` 만 수정한다. Claude Code는 이 두 경로를
+- Cowork는 `experiments/`, `docs/`, `tasks/` 만 수정한다. Claude Code는 이 세 경로를
   사용자 지시 없이 수정하지 않는다.
 - 두 도구가 같은 파일을 건드려 충돌이 나면, 자동으로 해결하지 말고
   충돌 내용을 사용자에게 보고한다.

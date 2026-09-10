@@ -53,6 +53,11 @@ LightGBM이 전량 트래픽을 처리하되, 확률 보정을 거친 신뢰도�
 - **어떤 설계가 왜 기각됐는지 확인이 필요할 때** → `docs/decisions/`
 - **실험을 시작하기 전** → `experiments/QUEUE.md` 와 해당 실험의 스펙 문서
 - **환경·의존성 문제** → `docs/environment.md`
+- **지금 또는 다음에 처리해야 할 작업이 무엇인지 확인할 때** → `tasks/`
+  `tasks/`는 아직 `experiments/EXP-XXX-*.md` 형태의 확정 스펙으로 정리되기 전 단계의
+  업무 지시서·요청서를 모아두는 곳이다. `experiments/`는 성공·실패 기준까지 갖춘
+  확정 실험 스펙만 들어가고, `tasks/`는 그 전 단계의 작업 요청 — 무엇을 구현해야
+  하는지, 왜 그렇게 설계해야 하는지 — 를 담는다. 둘을 혼동해 넣지 않는다.
 
 ## 읽지 않을 것
 
@@ -65,10 +70,10 @@ LightGBM이 전량 트래픽을 처리하되, 확률 보정을 거친 신뢰도�
 ## 쓰기 권한
 
 - **쓴다**: `src/`, `configs/`, `tests/`, `scripts/`, `results/`, `Makefile`, `pyproject.toml`
-- **읽기만 한다**: `docs/`, `experiments/`, `manuscript/`
+- **읽기만 한다**: `docs/`, `experiments/`, `tasks/`, `manuscript/`
 
-`docs/`와 `experiments/`는 Cowork와 사용자가 관리한다. 수정이 필요하다고 판단되면
-직접 고치지 말고 무엇을 왜 고쳐야 하는지 보고한다.
+`docs/`, `experiments/`, `tasks/`는 Cowork와 사용자가 관리한다. 수정이 필요하다고
+판단되면 직접 고치지 말고 무엇을 왜 고쳐야 하는지 보고한다.
 
 ### 삭제 금지
 
