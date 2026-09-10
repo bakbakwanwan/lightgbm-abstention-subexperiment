@@ -1,0 +1,27 @@
+# CICIDS2017 데이터 준비 파이프라인 파라미터
+# (tasks/split_protocol_proposal.md 5장 + docs/stage1_briefing.md 통합)
+# 코드에 하드코딩하지 않고 전부 여기서 노출한다.
+
+input_dir: data/CICIDS2017_improved_2022ver
+output_dir: data/processed/cicids_prep
+
+# 2단계: 그룹 키 시간 버킷(초)
+bucket_seconds: 300
+
+# 2단계: train/calib/test 비율 (그룹 개수 기준)
+split_ratios:
+  train: 0.6
+  calib: 0.2
+  test: 0.2
+
+# 2단계: 이 개수 미만인 (day, attack_label) 조합은 3분할하지 않고 전량 test
+min_group_count_for_split: 10
+
+# 2단계: LOAO 배제 대상 레이블 (Label 원문 값, 기본 빈 리스트 = 미적용)
+loao_target_labels: []
+
+random_seed: 42
+
+# 1단계: Infinity 클리핑 (stage1_briefing.md 1-8)
+clip_percentile: 99.9
+clip_multiplier: 3.0
