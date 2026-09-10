@@ -22,3 +22,6 @@ _sync/
 # OS 잡파일
 Thumbs.db
 .DS_Store
+
+# 로컬 에디터 설정 (Obsidian vault)
+.obsidian/
