@@ -11,6 +11,19 @@
 - 저장소 경로: `C:\Users\user1\RUSExperiment` — NTFS, WSL 마운트가 아니다.
 - 셸: Git Bash (POSIX 문법을 지원하는 Windows 네이티브 셸이며 WSL이 아니다).
 - git: `git version 2.55.0.windows.5`
+- Python 3.14.7(`C:\Python314`) + `uv 0.12.12`(pip로 설치) + `pyproject.toml`/
+  `uv.lock` 조합이 Windows 네이티브에서 실제로 동작함을 확인했다. pandas 3.0.5 +
+  pyarrow 25.0.1 + pyyaml + pytest 9.1.1로 `cicids_prep` 파이프라인을 실제
+  CICIDS2017 데이터(약 210만 행)에 전체 실행(2분 20초)·`--loao-only` 재실행
+  (1분) 모두 성공시켰다.
+- `make`는 이 환경에 **미설치 상태로 확정**됐다 — `choco install make -y`가
+  `UnauthorizedAccessException`(관리자 권한 필요)으로 실패했다. 설치 재시도
+  여부는 사용자 판단으로 보류 중이다. `Makefile`은 작성해뒀지만 `make` 명령
+  자체로 실행 검증은 하지 못했고, 지금은 `uv run python scripts/build_dataset.py
+  ...`로 직접 실행해 확인했다.
+- `uv run pytest`(콘솔 스크립트 실행)는 numpy import 오류가 났지만
+  `uv run python -m pytest`(모듈 실행)는 문제없이 동작했다 — 원인 불명, 후자를
+  표준 실행 방식으로 채택.
 
 ## 이전 CLAUDE.md와의 불일치
 
@@ -24,14 +37,17 @@ WSL2를 기정사실로 적지 않는다.**
 
 ## 미정 사항
 
-1. 최종 실행 환경을 WSL2 Ubuntu로 할지, Windows 네이티브로 유지할지.
-2. 의존성 관리(`uv`, `pyproject.toml`)가 두 환경에서 동일하게 동작하는지 검증 필요.
-3. `Makefile` 진입점(`make exp ID=EXP-XXX` 등)이 Windows에서 `make` 명령 자체의
-   가용성을 포함해 그대로 동작하는지.
+1. 최종 실행 환경을 WSL2 Ubuntu로 할지, Windows 네이티브로 유지할지. (여전히 미정 —
+   Windows 네이티브가 "동작한다"는 것만 확인됐을 뿐, WSL2와 비교해 선택한 것은 아니다.)
+2. `uv`/`pyproject.toml` 조합이 **WSL2 쪽에서도** 동일하게 동작하는지는 아직
+   검증 전이다(Windows 네이티브 쪽만 확인됨, 위 "확인된 사실" 참고).
+3. `make`를 이 환경에 설치할지 말지 — **보류 중** (사용자 지시, choco 권한 문제로
+   재시도하지 않음). `Makefile` 자체는 있으니 설치되면 바로 검증 가능하다.
 4. 줄바꿈(LF/CRLF) 정책 — 현재 저장소는 Windows git 기본값(autocrlf)을 그대로 쓰고 있고
    `.gitattributes`는 아직 없다.
-5. 대용량 CSV(`data/` 하위, 요일별 약 200~290MB)를 다루는 I/O 경로가 두 환경에서
-   성능 차이가 있는지.
+5. 대용량 CSV(`data/` 하위, 요일별 약 200~290MB)를 다루는 I/O 경로의 WSL2 대비
+   성능 차이는 비교 대상이 없어 여전히 미정이다 (Windows 네이티브 단독 수치는
+   위 "확인된 사실"의 실행 시간 참고).
 
 ## 결정되면 이 문서에 반영할 것
 
