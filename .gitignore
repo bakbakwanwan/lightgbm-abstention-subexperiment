@@ -1,0 +1,24 @@
+# git-policy.md 5절 기준
+
+# 데이터 (raw/interim/processed 전체)
+/data/
+
+# 파이썬 환경/캐시
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Windows 동기화용 임시 경로
+_sync/
+
+# 모델 바이너리 / 대용량 파일
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+
+# OS 잡파일
+Thumbs.db
+.DS_Store
