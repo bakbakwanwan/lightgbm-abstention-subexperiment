@@ -1,0 +1,46 @@
+Label,split,n_rows
+BENIGN,calib,346958
+BENIGN,test,317925
+BENIGN,train,917683
+Botnet,calib,192
+Botnet,test,48
+Botnet,train,496
+Botnet - Attempted,calib,927
+Botnet - Attempted,test,440
+Botnet - Attempted,train,2700
+DDoS,test,95144
+DoS GoldenEye,test,7567
+DoS GoldenEye - Attempted,test,80
+DoS Hulk,test,158468
+DoS Hulk - Attempted,test,581
+DoS Slowhttptest,test,1740
+DoS Slowhttptest - Attempted,test,3368
+DoS Slowloris,test,3859
+DoS Slowloris - Attempted,test,1847
+FTP-Patator,calib,640
+FTP-Patator,test,1008
+FTP-Patator,train,2324
+FTP-Patator - Attempted,test,12
+Heartbleed,test,11
+Infiltration,calib,6
+Infiltration,test,8
+Infiltration,train,22
+Infiltration - Attempted,test,45
+Infiltration - Portscan,calib,13484
+Infiltration - Portscan,test,12912
+Infiltration - Portscan,train,45371
+Portscan,calib,9024
+Portscan,test,11047
+Portscan,train,138995
+SSH-Patator,calib,731
+SSH-Patator,test,263
+SSH-Patator,train,1967
+SSH-Patator - Attempted,test,27
+Web Attack - Brute Force,test,73
+Web Attack - Brute Force - Attempted,calib,337
+Web Attack - Brute Force - Attempted,test,174
+Web Attack - Brute Force - Attempted,train,781
+Web Attack - SQL Injection,test,13
+Web Attack - SQL Injection - Attempted,test,5
+Web Attack - XSS,test,18
+Web Attack - XSS - Attempted,test,655

@@ -1,0 +1,692 @@
+{
+  "raw_predup:S0": [
+    {
+      "day": "friday",
+      "attack_label": "DDoS",
+      "n_groups": 5
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Infiltration - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - Brute Force",
+      "n_groups": 9
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection",
+      "n_groups": 2
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS",
+      "n_groups": 4
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "FTP-Patator - Attempted",
+      "n_groups": 2
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "SSH-Patator - Attempted",
+      "n_groups": 3
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye",
+      "n_groups": 2
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Hulk",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Hulk - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "Heartbleed",
+      "n_groups": 5
+    }
+  ],
+  "raw_predup:S1": [
+    {
+      "day": "friday",
+      "attack_label": "DDoS",
+      "n_groups": 5
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Infiltration - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - Brute Force",
+      "n_groups": 9
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection",
+      "n_groups": 2
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS",
+      "n_groups": 4
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "FTP-Patator - Attempted",
+      "n_groups": 2
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "SSH-Patator - Attempted",
+      "n_groups": 3
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye",
+      "n_groups": 2
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "Heartbleed",
+      "n_groups": 5
+    }
+  ],
+  "raw_predup:S3": [
+    {
+      "day": "friday",
+      "attack_label": "DDoS",
+      "n_groups": 5
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - Brute Force",
+      "n_groups": 9
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection",
+      "n_groups": 2
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS",
+      "n_groups": 4
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye",
+      "n_groups": 2
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "Heartbleed",
+      "n_groups": 5
+    }
+  ],
+  "raw_predup:S4": [
+    {
+      "day": "friday",
+      "attack_label": "DDoS",
+      "n_groups": 5
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Infiltration - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - Brute Force",
+      "n_groups": 9
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection",
+      "n_groups": 2
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS",
+      "n_groups": 4
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "FTP-Patator - Attempted",
+      "n_groups": 2
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "SSH-Patator - Attempted",
+      "n_groups": 3
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye",
+      "n_groups": 2
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "Heartbleed",
+      "n_groups": 5
+    }
+  ],
+  "raw_predup:S2": [
+    {
+      "day": "friday",
+      "attack_label": "DDoS",
+      "n_groups": 5
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - Brute Force",
+      "n_groups": 9
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection",
+      "n_groups": 2
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS",
+      "n_groups": 4
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye",
+      "n_groups": 2
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest - Attempted",
+      "n_groups": 4
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "Heartbleed",
+      "n_groups": 5
+    }
+  ],
+  "pipeline_postdedup:S0": [
+    {
+      "day": "friday",
+      "attack_label": "DDoS",
+      "n_groups": 5
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Infiltration - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - Brute Force",
+      "n_groups": 9
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection",
+      "n_groups": 2
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS",
+      "n_groups": 4
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "FTP-Patator - Attempted",
+      "n_groups": 2
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "SSH-Patator - Attempted",
+      "n_groups": 3
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye",
+      "n_groups": 2
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Hulk",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Hulk - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "Heartbleed",
+      "n_groups": 5
+    }
+  ],
+  "pipeline_postdedup:S1": [
+    {
+      "day": "friday",
+      "attack_label": "DDoS",
+      "n_groups": 5
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Infiltration - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - Brute Force",
+      "n_groups": 9
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection",
+      "n_groups": 2
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS",
+      "n_groups": 4
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "FTP-Patator - Attempted",
+      "n_groups": 2
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "SSH-Patator - Attempted",
+      "n_groups": 3
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye",
+      "n_groups": 2
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "Heartbleed",
+      "n_groups": 5
+    }
+  ],
+  "pipeline_postdedup:S3": [
+    {
+      "day": "friday",
+      "attack_label": "DDoS",
+      "n_groups": 5
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - Brute Force",
+      "n_groups": 9
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection",
+      "n_groups": 2
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS",
+      "n_groups": 4
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye",
+      "n_groups": 2
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "Heartbleed",
+      "n_groups": 5
+    }
+  ],
+  "pipeline_postdedup:S4": [
+    {
+      "day": "friday",
+      "attack_label": "DDoS",
+      "n_groups": 5
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Infiltration - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - Brute Force",
+      "n_groups": 9
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection",
+      "n_groups": 2
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS",
+      "n_groups": 4
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "FTP-Patator - Attempted",
+      "n_groups": 2
+    },
+    {
+      "day": "tuesday",
+      "attack_label": "SSH-Patator - Attempted",
+      "n_groups": 3
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye",
+      "n_groups": 2
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye - Attempted",
+      "n_groups": 1
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest - Attempted",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris - Attempted",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "Heartbleed",
+      "n_groups": 5
+    }
+  ],
+  "pipeline_postdedup:S2": [
+    {
+      "day": "friday",
+      "attack_label": "DDoS",
+      "n_groups": 5
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - Brute Force",
+      "n_groups": 9
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - SQL Injection",
+      "n_groups": 2
+    },
+    {
+      "day": "thursday",
+      "attack_label": "Web Attack - XSS",
+      "n_groups": 4
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS GoldenEye",
+      "n_groups": 2
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest",
+      "n_groups": 5
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowhttptest - Attempted",
+      "n_groups": 4
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "DoS Slowloris",
+      "n_groups": 6
+    },
+    {
+      "day": "wednesday",
+      "attack_label": "Heartbleed",
+      "n_groups": 5
+    }
+  ]
+}

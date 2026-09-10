@@ -1,0 +1,11 @@
+basis,scenario,total_rows,benign_rows,attack_rows,n_attack_labels_remaining,n_labels_dropped_to_zero,labels_dropped_to_zero,n_below_min_group_count_labels
+raw_predup,S0,2099976,1582566,517410,26,0,,18
+raw_predup,S1,1940927,1582566,358361,24,2,DoS Hulk;DoS Hulk - Attempted,16
+raw_predup,S3,1929529,1582566,346963,14,12,Botnet - Attempted;DoS GoldenEye - Attempted;DoS Hulk;DoS Hulk - Attempted;DoS Slowhttptest - Attempted;DoS Slowloris - Attempted;FTP-Patator - Attempted;Infiltration - Attempted;SSH-Patator - Attempted;Web Attack - Brute Force - Attempted;Web Attack - SQL Injection - Attempted;Web Attack - XSS - Attempted,8
+raw_predup,S4,1940927,1582566,358361,24,2,DoS Hulk;DoS Hulk - Attempted,16
+raw_predup,S2,1936400,1582566,353834,16,10,DoS GoldenEye - Attempted;DoS Hulk;DoS Hulk - Attempted;DoS Slowloris - Attempted;FTP-Patator - Attempted;Infiltration - Attempted;SSH-Patator - Attempted;Web Attack - Brute Force - Attempted;Web Attack - SQL Injection - Attempted;Web Attack - XSS - Attempted,9
+pipeline_postdedup,S0,2099976,1582566,517410,26,0,,18
+pipeline_postdedup,S1,1940927,1582566,358361,24,2,DoS Hulk;DoS Hulk - Attempted,16
+pipeline_postdedup,S3,1929529,1582566,346963,14,12,Botnet - Attempted;DoS GoldenEye - Attempted;DoS Hulk;DoS Hulk - Attempted;DoS Slowhttptest - Attempted;DoS Slowloris - Attempted;FTP-Patator - Attempted;Infiltration - Attempted;SSH-Patator - Attempted;Web Attack - Brute Force - Attempted;Web Attack - SQL Injection - Attempted;Web Attack - XSS - Attempted,8
+pipeline_postdedup,S4,1940927,1582566,358361,24,2,DoS Hulk;DoS Hulk - Attempted,16
+pipeline_postdedup,S2,1936400,1582566,353834,16,10,DoS GoldenEye - Attempted;DoS Hulk;DoS Hulk - Attempted;DoS Slowloris - Attempted;FTP-Patator - Attempted;Infiltration - Attempted;SSH-Patator - Attempted;Web Attack - Brute Force - Attempted;Web Attack - SQL Injection - Attempted;Web Attack - XSS - Attempted,9

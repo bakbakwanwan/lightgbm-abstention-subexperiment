@@ -1,0 +1,14 @@
+{
+  "resolved": true,
+  "consistency": {
+    "n_rows": 2099976,
+    "n_attempted_rows": 11979,
+    "non_attempted_category_values": [
+      -1
+    ],
+    "sentinel_ambiguous": false,
+    "sentinel_value": -1,
+    "n_mismatch": 0,
+    "mismatch_examples": []
+  }
+}

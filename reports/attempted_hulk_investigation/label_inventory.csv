@@ -1,0 +1,32 @@
+Label,day,n_rows
+BENIGN,friday,288544
+BENIGN,monday,371624
+BENIGN,thursday,288172
+BENIGN,tuesday,315106
+BENIGN,wednesday,319120
+Botnet,friday,736
+Botnet - Attempted,friday,4067
+DDoS,friday,95144
+DoS GoldenEye,wednesday,7567
+DoS GoldenEye - Attempted,wednesday,80
+DoS Hulk,wednesday,158468
+DoS Hulk - Attempted,wednesday,581
+DoS Slowhttptest,wednesday,1740
+DoS Slowhttptest - Attempted,wednesday,3368
+DoS Slowloris,wednesday,3859
+DoS Slowloris - Attempted,wednesday,1847
+FTP-Patator,tuesday,3972
+FTP-Patator - Attempted,tuesday,12
+Heartbleed,wednesday,11
+Infiltration,thursday,36
+Infiltration - Attempted,thursday,45
+Infiltration - Portscan,thursday,71767
+Portscan,friday,159066
+SSH-Patator,tuesday,2961
+SSH-Patator - Attempted,tuesday,27
+Web Attack - Brute Force,thursday,73
+Web Attack - Brute Force - Attempted,thursday,1292
+Web Attack - SQL Injection,thursday,13
+Web Attack - SQL Injection - Attempted,thursday,5
+Web Attack - XSS,thursday,18
+Web Attack - XSS - Attempted,thursday,655

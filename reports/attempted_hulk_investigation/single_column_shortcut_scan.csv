@@ -1,0 +1,1669 @@
+label,column,n_rows_label,n_unique_values,top10_coverage
+BENIGN,Dst Port,1582566,4027,0.988505376710987
+BENIGN,Protocol,1582566,4,1.0
+BENIGN,Fwd PSH Flags,1582566,257,0.9752174632843117
+BENIGN,Bwd PSH Flags,1582566,530,0.9576042958082001
+BENIGN,Fwd URG Flags,1582566,1,1.0
+BENIGN,Bwd URG Flags,1582566,2,1.0
+BENIGN,Fwd RST Flags,1582566,65,0.9996177094667774
+BENIGN,Bwd RST Flags,1582566,11,0.9999993681148212
+BENIGN,FIN Flag Count,1582566,22,0.9999406027931852
+BENIGN,SYN Flag Count,1582566,18,0.9999829391001702
+BENIGN,RST Flag Count,1582566,66,0.999609494959452
+BENIGN,PSH Flag Count,1582566,636,0.9210269903435307
+BENIGN,URG Flag Count,1582566,2,1.0
+BENIGN,CWR Flag Count,1582566,9,1.0
+BENIGN,ECE Flag Count,1582566,3,1.0
+BENIGN,Fwd Bytes/Bulk Avg,1582566,4427,0.9660178469649923
+BENIGN,Fwd Packet/Bulk Avg,1582566,88,0.998621858424862
+BENIGN,Fwd Bulk Rate Avg,1582566,27558,0.9505821558153025
+BENIGN,Bwd Bytes/Bulk Avg,1582566,45443,0.9055900354234832
+BENIGN,Bwd Packet/Bulk Avg,1582566,822,0.9682319726317892
+BENIGN,Subflow Fwd Packets,1582566,2,1.0
+BENIGN,Subflow Bwd Packets,1582566,2,1.0
+BENIGN,FWD Init Win Bytes,1582566,4087,0.9789139915807619
+BENIGN,Fwd Act Data Pkts,1582566,315,0.944430753598902
+BENIGN,Fwd Seg Size Min,1582566,8,1.0
+BENIGN,ICMP Code,1582566,5,1.0
+BENIGN,ICMP Type,1582566,5,1.0
+BENIGN,Attempted Category,1582566,1,1.0
+Botnet,Dst Port,736,1,1.0
+Botnet,Protocol,736,1,1.0
+Botnet,Total Fwd Packet,736,22,0.9809782608695652
+Botnet,Total Bwd packets,736,35,0.9660326086956522
+Botnet,Total Length of Fwd Packet,736,54,0.936141304347826
+Botnet,Total Length of Bwd Packet,736,4,1.0
+Botnet,Fwd Packet Length Max,736,27,0.9510869565217391
+Botnet,Fwd Packet Length Min,736,1,1.0
+Botnet,Fwd Packet Length Mean,736,61,0.9184782608695652
+Botnet,Fwd Packet Length Std,736,62,0.9184782608695652
+Botnet,Bwd Packet Length Max,736,2,1.0
+Botnet,Bwd Packet Length Min,736,1,1.0
+Botnet,Bwd Packet Length Mean,736,38,0.9605978260869565
+Botnet,Bwd Packet Length Std,736,38,0.9605978260869565
+Botnet,Fwd PSH Flags,736,1,1.0
+Botnet,Bwd PSH Flags,736,2,1.0
+Botnet,Fwd URG Flags,736,1,1.0
+Botnet,Bwd URG Flags,736,1,1.0
+Botnet,Fwd RST Flags,736,1,1.0
+Botnet,Bwd RST Flags,736,1,1.0
+Botnet,Fwd Header Length,736,22,0.9809782608695652
+Botnet,Bwd Header Length,736,35,0.9660326086956522
+Botnet,Packet Length Min,736,1,1.0
+Botnet,Packet Length Max,736,27,0.9510869565217391
+Botnet,FIN Flag Count,736,1,1.0
+Botnet,SYN Flag Count,736,1,1.0
+Botnet,RST Flag Count,736,1,1.0
+Botnet,PSH Flag Count,736,2,1.0
+Botnet,ACK Flag Count,736,38,0.9619565217391305
+Botnet,URG Flag Count,736,1,1.0
+Botnet,CWR Flag Count,736,1,1.0
+Botnet,ECE Flag Count,736,1,1.0
+Botnet,Down/Up Ratio,736,42,0.9565217391304348
+Botnet,Fwd Segment Size Avg,736,60,0.9184782608695652
+Botnet,Bwd Segment Size Avg,736,38,0.9605978260869565
+Botnet,Fwd Bytes/Bulk Avg,736,41,0.9578804347826086
+Botnet,Fwd Packet/Bulk Avg,736,20,0.9850543478260869
+Botnet,Fwd Bulk Rate Avg,736,45,0.9524456521739131
+Botnet,Bwd Bytes/Bulk Avg,736,1,1.0
+Botnet,Bwd Packet/Bulk Avg,736,1,1.0
+Botnet,Bwd Bulk Rate Avg,736,1,1.0
+Botnet,Subflow Fwd Packets,736,1,1.0
+Botnet,Subflow Fwd Bytes,736,55,0.936141304347826
+Botnet,Subflow Bwd Packets,736,1,1.0
+Botnet,Subflow Bwd Bytes,736,7,1.0
+Botnet,FWD Init Win Bytes,736,1,1.0
+Botnet,Bwd Init Win Bytes,736,24,0.9796195652173914
+Botnet,Fwd Act Data Pkts,736,22,0.9823369565217391
+Botnet,Fwd Seg Size Min,736,1,1.0
+Botnet,Active Mean,736,1,1.0
+Botnet,Active Std,736,1,1.0
+Botnet,Active Max,736,1,1.0
+Botnet,Active Min,736,1,1.0
+Botnet,Idle Mean,736,1,1.0
+Botnet,Idle Std,736,1,1.0
+Botnet,Idle Max,736,1,1.0
+Botnet,Idle Min,736,1,1.0
+Botnet,ICMP Code,736,1,1.0
+Botnet,ICMP Type,736,1,1.0
+Botnet,Attempted Category,736,1,1.0
+Botnet - Attempted,Dst Port,4067,1,1.0
+Botnet - Attempted,Protocol,4067,1,1.0
+Botnet - Attempted,Total Fwd Packet,4067,2,1.0
+Botnet - Attempted,Total Bwd packets,4067,2,1.0
+Botnet - Attempted,Total Length of Fwd Packet,4067,1,1.0
+Botnet - Attempted,Total Length of Bwd Packet,4067,1,1.0
+Botnet - Attempted,Fwd Packet Length Max,4067,1,1.0
+Botnet - Attempted,Fwd Packet Length Min,4067,1,1.0
+Botnet - Attempted,Fwd Packet Length Mean,4067,1,1.0
+Botnet - Attempted,Fwd Packet Length Std,4067,1,1.0
+Botnet - Attempted,Bwd Packet Length Max,4067,1,1.0
+Botnet - Attempted,Bwd Packet Length Min,4067,1,1.0
+Botnet - Attempted,Bwd Packet Length Mean,4067,1,1.0
+Botnet - Attempted,Bwd Packet Length Std,4067,1,1.0
+Botnet - Attempted,Flow Bytes/s,4067,1,1.0
+Botnet - Attempted,Flow IAT Std,4067,161,0.9628718957462503
+Botnet - Attempted,Fwd IAT Total,4067,158,0.9636095402016228
+Botnet - Attempted,Fwd IAT Mean,4067,158,0.9636095402016228
+Botnet - Attempted,Fwd IAT Std,4067,161,0.9628718957462503
+Botnet - Attempted,Fwd IAT Max,4067,148,0.9650848291123678
+Botnet - Attempted,Fwd IAT Min,4067,158,0.9636095402016228
+Botnet - Attempted,Bwd IAT Total,4067,1,1.0
+Botnet - Attempted,Bwd IAT Mean,4067,1,1.0
+Botnet - Attempted,Bwd IAT Std,4067,1,1.0
+Botnet - Attempted,Bwd IAT Max,4067,1,1.0
+Botnet - Attempted,Bwd IAT Min,4067,1,1.0
+Botnet - Attempted,Fwd PSH Flags,4067,1,1.0
+Botnet - Attempted,Bwd PSH Flags,4067,1,1.0
+Botnet - Attempted,Fwd URG Flags,4067,1,1.0
+Botnet - Attempted,Bwd URG Flags,4067,1,1.0
+Botnet - Attempted,Fwd RST Flags,4067,1,1.0
+Botnet - Attempted,Bwd RST Flags,4067,2,1.0
+Botnet - Attempted,Fwd Header Length,4067,3,1.0
+Botnet - Attempted,Bwd Header Length,4067,2,1.0
+Botnet - Attempted,Packet Length Min,4067,1,1.0
+Botnet - Attempted,Packet Length Max,4067,1,1.0
+Botnet - Attempted,Packet Length Mean,4067,1,1.0
+Botnet - Attempted,Packet Length Std,4067,1,1.0
+Botnet - Attempted,Packet Length Variance,4067,1,1.0
+Botnet - Attempted,FIN Flag Count,4067,1,1.0
+Botnet - Attempted,SYN Flag Count,4067,2,1.0
+Botnet - Attempted,RST Flag Count,4067,2,1.0
+Botnet - Attempted,PSH Flag Count,4067,1,1.0
+Botnet - Attempted,ACK Flag Count,4067,2,1.0
+Botnet - Attempted,URG Flag Count,4067,1,1.0
+Botnet - Attempted,CWR Flag Count,4067,1,1.0
+Botnet - Attempted,ECE Flag Count,4067,1,1.0
+Botnet - Attempted,Down/Up Ratio,4067,3,1.0
+Botnet - Attempted,Average Packet Size,4067,1,1.0
+Botnet - Attempted,Fwd Segment Size Avg,4067,1,1.0
+Botnet - Attempted,Bwd Segment Size Avg,4067,1,1.0
+Botnet - Attempted,Fwd Bytes/Bulk Avg,4067,1,1.0
+Botnet - Attempted,Fwd Packet/Bulk Avg,4067,1,1.0
+Botnet - Attempted,Fwd Bulk Rate Avg,4067,1,1.0
+Botnet - Attempted,Bwd Bytes/Bulk Avg,4067,1,1.0
+Botnet - Attempted,Bwd Packet/Bulk Avg,4067,1,1.0
+Botnet - Attempted,Bwd Bulk Rate Avg,4067,1,1.0
+Botnet - Attempted,Subflow Fwd Packets,4067,2,1.0
+Botnet - Attempted,Subflow Fwd Bytes,4067,1,1.0
+Botnet - Attempted,Subflow Bwd Packets,4067,1,1.0
+Botnet - Attempted,Subflow Bwd Bytes,4067,1,1.0
+Botnet - Attempted,FWD Init Win Bytes,4067,1,1.0
+Botnet - Attempted,Bwd Init Win Bytes,4067,1,1.0
+Botnet - Attempted,Fwd Act Data Pkts,4067,1,1.0
+Botnet - Attempted,Fwd Seg Size Min,4067,2,1.0
+Botnet - Attempted,Active Mean,4067,158,0.9636095402016228
+Botnet - Attempted,Active Std,4067,1,1.0
+Botnet - Attempted,Active Max,4067,158,0.9636095402016228
+Botnet - Attempted,Active Min,4067,158,0.9636095402016228
+Botnet - Attempted,Idle Mean,4067,148,0.9650848291123678
+Botnet - Attempted,Idle Std,4067,1,1.0
+Botnet - Attempted,Idle Max,4067,148,0.9650848291123678
+Botnet - Attempted,Idle Min,4067,148,0.9650848291123678
+Botnet - Attempted,ICMP Code,4067,1,1.0
+Botnet - Attempted,ICMP Type,4067,1,1.0
+Botnet - Attempted,Attempted Category,4067,1,1.0
+DDoS,Dst Port,95144,1,1.0
+DDoS,Protocol,95144,1,1.0
+DDoS,Total Fwd Packet,95144,10,1.0
+DDoS,Total Bwd packets,95144,12,0.9998843857731439
+DDoS,Total Length of Fwd Packet,95144,2,1.0
+DDoS,Total Length of Bwd Packet,95144,15,0.9999264273101824
+DDoS,Fwd Packet Length Max,95144,1,1.0
+DDoS,Fwd Packet Length Min,95144,1,1.0
+DDoS,Fwd Packet Length Mean,95144,11,0.9999894896157403
+DDoS,Fwd Packet Length Std,95144,11,0.9999894896157403
+DDoS,Bwd Packet Length Max,95144,13,0.9854746489531657
+DDoS,Bwd Packet Length Min,95144,1,1.0
+DDoS,Bwd Packet Length Mean,95144,40,0.9972042377869335
+DDoS,Flow IAT Min,95144,174,0.9050491885983352
+DDoS,Fwd PSH Flags,95144,2,1.0
+DDoS,Bwd PSH Flags,95144,4,1.0
+DDoS,Fwd URG Flags,95144,1,1.0
+DDoS,Bwd URG Flags,95144,1,1.0
+DDoS,Fwd RST Flags,95144,3,1.0
+DDoS,Bwd RST Flags,95144,1,1.0
+DDoS,Fwd Header Length,95144,19,0.9994955015555369
+DDoS,Bwd Header Length,95144,14,0.9998318338518456
+DDoS,Packet Length Min,95144,1,1.0
+DDoS,Packet Length Max,95144,13,0.9854746489531657
+DDoS,Packet Length Mean,95144,66,0.985285462036492
+DDoS,FIN Flag Count,95144,4,1.0
+DDoS,SYN Flag Count,95144,2,1.0
+DDoS,RST Flag Count,95144,3,1.0
+DDoS,PSH Flag Count,95144,4,1.0
+DDoS,ACK Flag Count,95144,19,0.9991801900277474
+DDoS,URG Flag Count,95144,1,1.0
+DDoS,CWR Flag Count,95144,1,1.0
+DDoS,ECE Flag Count,95144,1,1.0
+DDoS,Down/Up Ratio,95144,39,0.9458294795257715
+DDoS,Average Packet Size,95144,53,0.9871773312032288
+DDoS,Fwd Segment Size Avg,95144,11,0.9999894896157403
+DDoS,Bwd Segment Size Avg,95144,37,0.9983393592869755
+DDoS,Fwd Bytes/Bulk Avg,95144,1,1.0
+DDoS,Fwd Packet/Bulk Avg,95144,1,1.0
+DDoS,Fwd Bulk Rate Avg,95144,1,1.0
+DDoS,Bwd Bytes/Bulk Avg,95144,14,0.9999474480787017
+DDoS,Bwd Packet/Bulk Avg,95144,6,1.0
+DDoS,Subflow Fwd Packets,95144,1,1.0
+DDoS,Subflow Fwd Bytes,95144,4,1.0
+DDoS,Subflow Bwd Packets,95144,1,1.0
+DDoS,Subflow Bwd Bytes,95144,50,0.9872403935087867
+DDoS,FWD Init Win Bytes,95144,2,1.0
+DDoS,Bwd Init Win Bytes,95144,1,1.0
+DDoS,Fwd Act Data Pkts,95144,2,1.0
+DDoS,Fwd Seg Size Min,95144,2,1.0
+DDoS,Active Std,95144,1,1.0
+DDoS,Idle Std,95144,1,1.0
+DDoS,ICMP Code,95144,1,1.0
+DDoS,ICMP Type,95144,1,1.0
+DDoS,Attempted Category,95144,1,1.0
+DoS GoldenEye,Dst Port,7567,1,1.0
+DoS GoldenEye,Protocol,7567,1,1.0
+DoS GoldenEye,Total Fwd Packet,7567,18,0.9824236817761333
+DoS GoldenEye,Total Bwd packets,7567,7,1.0
+DoS GoldenEye,Total Length of Bwd Packet,7567,5,1.0
+DoS GoldenEye,Fwd Packet Length Min,7567,1,1.0
+DoS GoldenEye,Bwd Packet Length Max,7567,18,0.9413241707413771
+DoS GoldenEye,Bwd Packet Length Min,7567,1,1.0
+DoS GoldenEye,Bwd Packet Length Mean,7567,24,0.9805735430157262
+DoS GoldenEye,Fwd PSH Flags,7567,11,0.998942777851196
+DoS GoldenEye,Bwd PSH Flags,7567,3,1.0
+DoS GoldenEye,Fwd URG Flags,7567,1,1.0
+DoS GoldenEye,Bwd URG Flags,7567,1,1.0
+DoS GoldenEye,Fwd RST Flags,7567,2,1.0
+DoS GoldenEye,Bwd RST Flags,7567,2,1.0
+DoS GoldenEye,Bwd Header Length,7567,20,0.9948460420245804
+DoS GoldenEye,Packet Length Min,7567,1,1.0
+DoS GoldenEye,Packet Length Max,7567,24,0.9413241707413771
+DoS GoldenEye,FIN Flag Count,7567,2,1.0
+DoS GoldenEye,SYN Flag Count,7567,6,1.0
+DoS GoldenEye,RST Flag Count,7567,2,1.0
+DoS GoldenEye,PSH Flag Count,7567,11,0.9998678472313995
+DoS GoldenEye,ACK Flag Count,7567,23,0.9573146557420378
+DoS GoldenEye,URG Flag Count,7567,1,1.0
+DoS GoldenEye,CWR Flag Count,7567,1,1.0
+DoS GoldenEye,ECE Flag Count,7567,1,1.0
+DoS GoldenEye,Bwd Segment Size Avg,7567,19,0.9892956257433593
+DoS GoldenEye,Fwd Bytes/Bulk Avg,7567,329,0.9427778511959826
+DoS GoldenEye,Fwd Packet/Bulk Avg,7567,3,1.0
+DoS GoldenEye,Fwd Bulk Rate Avg,7567,423,0.940531254129774
+DoS GoldenEye,Bwd Bytes/Bulk Avg,7567,3,1.0
+DoS GoldenEye,Bwd Packet/Bulk Avg,7567,4,1.0
+DoS GoldenEye,Bwd Bulk Rate Avg,7567,177,0.9522928505352187
+DoS GoldenEye,Subflow Fwd Packets,7567,1,1.0
+DoS GoldenEye,Subflow Bwd Packets,7567,1,1.0
+DoS GoldenEye,FWD Init Win Bytes,7567,2,1.0
+DoS GoldenEye,Bwd Init Win Bytes,7567,6,1.0
+DoS GoldenEye,Fwd Act Data Pkts,7567,11,0.998942777851196
+DoS GoldenEye,Fwd Seg Size Min,7567,2,1.0
+DoS GoldenEye,ICMP Code,7567,1,1.0
+DoS GoldenEye,ICMP Type,7567,1,1.0
+DoS GoldenEye,Attempted Category,7567,1,1.0
+DoS GoldenEye - Attempted,Dst Port,80,1,1.0
+DoS GoldenEye - Attempted,Protocol,80,1,1.0
+DoS GoldenEye - Attempted,Total Fwd Packet,80,2,1.0
+DoS GoldenEye - Attempted,Total Bwd packets,80,2,1.0
+DoS GoldenEye - Attempted,Total Length of Fwd Packet,80,1,1.0
+DoS GoldenEye - Attempted,Total Length of Bwd Packet,80,1,1.0
+DoS GoldenEye - Attempted,Fwd Packet Length Max,80,1,1.0
+DoS GoldenEye - Attempted,Fwd Packet Length Min,80,1,1.0
+DoS GoldenEye - Attempted,Fwd Packet Length Mean,80,1,1.0
+DoS GoldenEye - Attempted,Fwd Packet Length Std,80,1,1.0
+DoS GoldenEye - Attempted,Bwd Packet Length Max,80,1,1.0
+DoS GoldenEye - Attempted,Bwd Packet Length Min,80,1,1.0
+DoS GoldenEye - Attempted,Bwd Packet Length Mean,80,1,1.0
+DoS GoldenEye - Attempted,Bwd Packet Length Std,80,1,1.0
+DoS GoldenEye - Attempted,Flow Bytes/s,80,1,1.0
+DoS GoldenEye - Attempted,Flow IAT Std,80,3,1.0
+DoS GoldenEye - Attempted,Fwd IAT Total,80,3,1.0
+DoS GoldenEye - Attempted,Fwd IAT Mean,80,3,1.0
+DoS GoldenEye - Attempted,Fwd IAT Std,80,3,1.0
+DoS GoldenEye - Attempted,Fwd IAT Max,80,3,1.0
+DoS GoldenEye - Attempted,Fwd IAT Min,80,3,1.0
+DoS GoldenEye - Attempted,Bwd IAT Total,80,1,1.0
+DoS GoldenEye - Attempted,Bwd IAT Mean,80,1,1.0
+DoS GoldenEye - Attempted,Bwd IAT Std,80,1,1.0
+DoS GoldenEye - Attempted,Bwd IAT Max,80,1,1.0
+DoS GoldenEye - Attempted,Bwd IAT Min,80,1,1.0
+DoS GoldenEye - Attempted,Fwd PSH Flags,80,1,1.0
+DoS GoldenEye - Attempted,Bwd PSH Flags,80,1,1.0
+DoS GoldenEye - Attempted,Fwd URG Flags,80,1,1.0
+DoS GoldenEye - Attempted,Bwd URG Flags,80,1,1.0
+DoS GoldenEye - Attempted,Fwd RST Flags,80,1,1.0
+DoS GoldenEye - Attempted,Bwd RST Flags,80,1,1.0
+DoS GoldenEye - Attempted,Fwd Header Length,80,2,1.0
+DoS GoldenEye - Attempted,Bwd Header Length,80,2,1.0
+DoS GoldenEye - Attempted,Packet Length Min,80,1,1.0
+DoS GoldenEye - Attempted,Packet Length Max,80,1,1.0
+DoS GoldenEye - Attempted,Packet Length Mean,80,1,1.0
+DoS GoldenEye - Attempted,Packet Length Std,80,1,1.0
+DoS GoldenEye - Attempted,Packet Length Variance,80,1,1.0
+DoS GoldenEye - Attempted,FIN Flag Count,80,2,1.0
+DoS GoldenEye - Attempted,SYN Flag Count,80,2,1.0
+DoS GoldenEye - Attempted,RST Flag Count,80,1,1.0
+DoS GoldenEye - Attempted,PSH Flag Count,80,1,1.0
+DoS GoldenEye - Attempted,ACK Flag Count,80,2,1.0
+DoS GoldenEye - Attempted,URG Flag Count,80,1,1.0
+DoS GoldenEye - Attempted,CWR Flag Count,80,1,1.0
+DoS GoldenEye - Attempted,ECE Flag Count,80,1,1.0
+DoS GoldenEye - Attempted,Down/Up Ratio,80,2,1.0
+DoS GoldenEye - Attempted,Average Packet Size,80,1,1.0
+DoS GoldenEye - Attempted,Fwd Segment Size Avg,80,1,1.0
+DoS GoldenEye - Attempted,Bwd Segment Size Avg,80,1,1.0
+DoS GoldenEye - Attempted,Fwd Bytes/Bulk Avg,80,1,1.0
+DoS GoldenEye - Attempted,Fwd Packet/Bulk Avg,80,1,1.0
+DoS GoldenEye - Attempted,Fwd Bulk Rate Avg,80,1,1.0
+DoS GoldenEye - Attempted,Bwd Bytes/Bulk Avg,80,1,1.0
+DoS GoldenEye - Attempted,Bwd Packet/Bulk Avg,80,1,1.0
+DoS GoldenEye - Attempted,Bwd Bulk Rate Avg,80,1,1.0
+DoS GoldenEye - Attempted,Subflow Fwd Packets,80,2,1.0
+DoS GoldenEye - Attempted,Subflow Fwd Bytes,80,1,1.0
+DoS GoldenEye - Attempted,Subflow Bwd Packets,80,1,1.0
+DoS GoldenEye - Attempted,Subflow Bwd Bytes,80,1,1.0
+DoS GoldenEye - Attempted,FWD Init Win Bytes,80,2,1.0
+DoS GoldenEye - Attempted,Bwd Init Win Bytes,80,2,1.0
+DoS GoldenEye - Attempted,Fwd Act Data Pkts,80,1,1.0
+DoS GoldenEye - Attempted,Fwd Seg Size Min,80,2,1.0
+DoS GoldenEye - Attempted,Active Mean,80,3,1.0
+DoS GoldenEye - Attempted,Active Std,80,1,1.0
+DoS GoldenEye - Attempted,Active Max,80,3,1.0
+DoS GoldenEye - Attempted,Active Min,80,3,1.0
+DoS GoldenEye - Attempted,Idle Mean,80,3,1.0
+DoS GoldenEye - Attempted,Idle Std,80,3,1.0
+DoS GoldenEye - Attempted,Idle Max,80,3,1.0
+DoS GoldenEye - Attempted,Idle Min,80,3,1.0
+DoS GoldenEye - Attempted,ICMP Code,80,1,1.0
+DoS GoldenEye - Attempted,ICMP Type,80,1,1.0
+DoS GoldenEye - Attempted,Attempted Category,80,1,1.0
+DoS Hulk,Dst Port,158468,1,1.0
+DoS Hulk,Protocol,158468,1,1.0
+DoS Hulk,Total Fwd Packet,158468,16,0.9998169977534896
+DoS Hulk,Total Bwd packets,158468,11,0.9999684478885327
+DoS Hulk,Total Length of Bwd Packet,158468,7,1.0
+DoS Hulk,Fwd Packet Length Min,158468,13,0.9999810687331196
+DoS Hulk,Bwd Packet Length Max,158468,15,0.9847161572052402
+DoS Hulk,Bwd Packet Length Min,158468,1,1.0
+DoS Hulk,Bwd Packet Length Mean,158468,33,0.9970088598329
+DoS Hulk,Flow IAT Min,158468,123,0.9786581518035187
+DoS Hulk,Fwd IAT Min,158468,307,0.9560794608375193
+DoS Hulk,Fwd PSH Flags,158468,7,1.0
+DoS Hulk,Bwd PSH Flags,158468,3,1.0
+DoS Hulk,Fwd URG Flags,158468,1,1.0
+DoS Hulk,Bwd URG Flags,158468,1,1.0
+DoS Hulk,Fwd RST Flags,158468,8,1.0
+DoS Hulk,Bwd RST Flags,158468,2,1.0
+DoS Hulk,Bwd Header Length,158468,12,0.9998864123987177
+DoS Hulk,Packet Length Min,158468,1,1.0
+DoS Hulk,Packet Length Max,158468,26,0.9847161572052402
+DoS Hulk,FIN Flag Count,158468,4,1.0
+DoS Hulk,SYN Flag Count,158468,6,1.0
+DoS Hulk,RST Flag Count,158468,8,1.0
+DoS Hulk,PSH Flag Count,158468,9,1.0
+DoS Hulk,ACK Flag Count,158468,16,0.9990912991897418
+DoS Hulk,URG Flag Count,158468,1,1.0
+DoS Hulk,CWR Flag Count,158468,1,1.0
+DoS Hulk,ECE Flag Count,158468,1,1.0
+DoS Hulk,Bwd Segment Size Avg,158468,28,0.9983782214705809
+DoS Hulk,Fwd Bytes/Bulk Avg,158468,259,0.9815420147916298
+DoS Hulk,Fwd Packet/Bulk Avg,158468,3,1.0
+DoS Hulk,Fwd Bulk Rate Avg,158468,892,0.9803114824444051
+DoS Hulk,Bwd Bytes/Bulk Avg,158468,6,1.0
+DoS Hulk,Bwd Packet/Bulk Avg,158468,5,1.0
+DoS Hulk,Subflow Fwd Packets,158468,1,1.0
+DoS Hulk,Subflow Bwd Packets,158468,1,1.0
+DoS Hulk,Subflow Bwd Bytes,158468,35,0.9919920741095994
+DoS Hulk,FWD Init Win Bytes,158468,3,1.0
+DoS Hulk,Bwd Init Win Bytes,158468,3,1.0
+DoS Hulk,Fwd Act Data Pkts,158468,8,1.0
+DoS Hulk,Fwd Seg Size Min,158468,3,1.0
+DoS Hulk,Active Mean,158468,59,0.9996907893076205
+DoS Hulk,Active Std,158468,14,0.9999747583108262
+DoS Hulk,Active Max,158468,59,0.9996907893076205
+DoS Hulk,Active Min,158468,59,0.9996907893076205
+DoS Hulk,Idle Mean,158468,1708,0.978828533205442
+DoS Hulk,Idle Std,158468,237,0.9985675341393846
+DoS Hulk,Idle Max,158468,1679,0.978828533205442
+DoS Hulk,Idle Min,158468,1544,0.9789168791175505
+DoS Hulk,ICMP Code,158468,1,1.0
+DoS Hulk,ICMP Type,158468,1,1.0
+DoS Hulk,Attempted Category,158468,1,1.0
+DoS Hulk - Attempted,Dst Port,581,1,1.0
+DoS Hulk - Attempted,Protocol,581,1,1.0
+DoS Hulk - Attempted,Total Fwd Packet,581,8,1.0
+DoS Hulk - Attempted,Total Bwd packets,581,8,1.0
+DoS Hulk - Attempted,Total Length of Fwd Packet,581,3,1.0
+DoS Hulk - Attempted,Total Length of Bwd Packet,581,4,1.0
+DoS Hulk - Attempted,Fwd Packet Length Max,581,3,1.0
+DoS Hulk - Attempted,Fwd Packet Length Min,581,1,1.0
+DoS Hulk - Attempted,Fwd Packet Length Mean,581,3,1.0
+DoS Hulk - Attempted,Fwd Packet Length Std,581,3,1.0
+DoS Hulk - Attempted,Bwd Packet Length Max,581,4,1.0
+DoS Hulk - Attempted,Bwd Packet Length Min,581,1,1.0
+DoS Hulk - Attempted,Bwd Packet Length Mean,581,4,1.0
+DoS Hulk - Attempted,Bwd Packet Length Std,581,4,1.0
+DoS Hulk - Attempted,Flow Bytes/s,581,5,1.0
+DoS Hulk - Attempted,Bwd IAT Std,581,28,0.9690189328743546
+DoS Hulk - Attempted,Fwd PSH Flags,581,3,1.0
+DoS Hulk - Attempted,Bwd PSH Flags,581,3,1.0
+DoS Hulk - Attempted,Fwd URG Flags,581,1,1.0
+DoS Hulk - Attempted,Bwd URG Flags,581,1,1.0
+DoS Hulk - Attempted,Fwd RST Flags,581,1,1.0
+DoS Hulk - Attempted,Bwd RST Flags,581,1,1.0
+DoS Hulk - Attempted,Fwd Header Length,581,11,0.9982788296041308
+DoS Hulk - Attempted,Bwd Header Length,581,9,1.0
+DoS Hulk - Attempted,Packet Length Min,581,1,1.0
+DoS Hulk - Attempted,Packet Length Max,581,4,1.0
+DoS Hulk - Attempted,Packet Length Mean,581,4,1.0
+DoS Hulk - Attempted,Packet Length Std,581,4,1.0
+DoS Hulk - Attempted,Packet Length Variance,581,4,1.0
+DoS Hulk - Attempted,FIN Flag Count,581,3,1.0
+DoS Hulk - Attempted,SYN Flag Count,581,6,1.0
+DoS Hulk - Attempted,RST Flag Count,581,1,1.0
+DoS Hulk - Attempted,PSH Flag Count,581,3,1.0
+DoS Hulk - Attempted,ACK Flag Count,581,10,1.0
+DoS Hulk - Attempted,URG Flag Count,581,1,1.0
+DoS Hulk - Attempted,CWR Flag Count,581,1,1.0
+DoS Hulk - Attempted,ECE Flag Count,581,1,1.0
+DoS Hulk - Attempted,Down/Up Ratio,581,8,1.0
+DoS Hulk - Attempted,Average Packet Size,581,4,1.0
+DoS Hulk - Attempted,Fwd Segment Size Avg,581,3,1.0
+DoS Hulk - Attempted,Bwd Segment Size Avg,581,4,1.0
+DoS Hulk - Attempted,Fwd Bytes/Bulk Avg,581,1,1.0
+DoS Hulk - Attempted,Fwd Packet/Bulk Avg,581,1,1.0
+DoS Hulk - Attempted,Fwd Bulk Rate Avg,581,1,1.0
+DoS Hulk - Attempted,Bwd Bytes/Bulk Avg,581,1,1.0
+DoS Hulk - Attempted,Bwd Packet/Bulk Avg,581,1,1.0
+DoS Hulk - Attempted,Bwd Bulk Rate Avg,581,1,1.0
+DoS Hulk - Attempted,Subflow Fwd Packets,581,2,1.0
+DoS Hulk - Attempted,Subflow Fwd Bytes,581,3,1.0
+DoS Hulk - Attempted,Subflow Bwd Packets,581,1,1.0
+DoS Hulk - Attempted,Subflow Bwd Bytes,581,4,1.0
+DoS Hulk - Attempted,FWD Init Win Bytes,581,2,1.0
+DoS Hulk - Attempted,Bwd Init Win Bytes,581,6,1.0
+DoS Hulk - Attempted,Fwd Act Data Pkts,581,3,1.0
+DoS Hulk - Attempted,Fwd Seg Size Min,581,3,1.0
+DoS Hulk - Attempted,Active Std,581,25,0.9741824440619621
+DoS Hulk - Attempted,ICMP Code,581,1,1.0
+DoS Hulk - Attempted,ICMP Type,581,1,1.0
+DoS Hulk - Attempted,Attempted Category,581,2,1.0
+DoS Slowhttptest,Dst Port,1740,1,1.0
+DoS Slowhttptest,Protocol,1740,1,1.0
+DoS Slowhttptest,Total Fwd Packet,1740,20,0.9287356321839081
+DoS Slowhttptest,Total Bwd packets,1740,8,1.0
+DoS Slowhttptest,Total Length of Bwd Packet,1740,6,1.0
+DoS Slowhttptest,Fwd Packet Length Max,1740,30,0.914367816091954
+DoS Slowhttptest,Fwd Packet Length Min,1740,3,1.0
+DoS Slowhttptest,Bwd Packet Length Max,1740,7,1.0
+DoS Slowhttptest,Bwd Packet Length Min,1740,1,1.0
+DoS Slowhttptest,Bwd Packet Length Mean,1740,12,0.9988505747126437
+DoS Slowhttptest,Bwd Packet Length Std,1740,16,0.993103448275862
+DoS Slowhttptest,Fwd PSH Flags,1740,12,0.9988505747126437
+DoS Slowhttptest,Bwd PSH Flags,1740,4,1.0
+DoS Slowhttptest,Fwd URG Flags,1740,1,1.0
+DoS Slowhttptest,Bwd URG Flags,1740,1,1.0
+DoS Slowhttptest,Fwd RST Flags,1740,2,1.0
+DoS Slowhttptest,Bwd RST Flags,1740,2,1.0
+DoS Slowhttptest,Bwd Header Length,1740,18,0.9844827586206897
+DoS Slowhttptest,Packet Length Min,1740,1,1.0
+DoS Slowhttptest,Packet Length Max,1740,12,0.9988505747126437
+DoS Slowhttptest,FIN Flag Count,1740,9,1.0
+DoS Slowhttptest,SYN Flag Count,1740,9,1.0
+DoS Slowhttptest,RST Flag Count,1740,2,1.0
+DoS Slowhttptest,PSH Flag Count,1740,13,0.9977011494252873
+DoS Slowhttptest,ACK Flag Count,1740,18,0.9793103448275862
+DoS Slowhttptest,URG Flag Count,1740,1,1.0
+DoS Slowhttptest,CWR Flag Count,1740,1,1.0
+DoS Slowhttptest,ECE Flag Count,1740,1,1.0
+DoS Slowhttptest,Bwd Segment Size Avg,1740,12,0.9988505747126437
+DoS Slowhttptest,Fwd Bytes/Bulk Avg,1740,10,1.0
+DoS Slowhttptest,Fwd Packet/Bulk Avg,1740,3,1.0
+DoS Slowhttptest,Fwd Bulk Rate Avg,1740,35,0.9586206896551724
+DoS Slowhttptest,Bwd Bytes/Bulk Avg,1740,1,1.0
+DoS Slowhttptest,Bwd Packet/Bulk Avg,1740,1,1.0
+DoS Slowhttptest,Bwd Bulk Rate Avg,1740,1,1.0
+DoS Slowhttptest,Subflow Fwd Packets,1740,1,1.0
+DoS Slowhttptest,Subflow Bwd Packets,1740,1,1.0
+DoS Slowhttptest,Subflow Bwd Bytes,1740,25,0.982183908045977
+DoS Slowhttptest,FWD Init Win Bytes,1740,2,1.0
+DoS Slowhttptest,Bwd Init Win Bytes,1740,5,1.0
+DoS Slowhttptest,Fwd Act Data Pkts,1740,13,0.9977011494252873
+DoS Slowhttptest,Fwd Seg Size Min,1740,2,1.0
+DoS Slowhttptest,ICMP Code,1740,1,1.0
+DoS Slowhttptest,ICMP Type,1740,1,1.0
+DoS Slowhttptest,Attempted Category,1740,1,1.0
+DoS Slowhttptest - Attempted,Dst Port,3368,1,1.0
+DoS Slowhttptest - Attempted,Protocol,3368,1,1.0
+DoS Slowhttptest - Attempted,Total Fwd Packet,3368,10,1.0
+DoS Slowhttptest - Attempted,Total Bwd packets,3368,8,1.0
+DoS Slowhttptest - Attempted,Total Length of Fwd Packet,3368,2,1.0
+DoS Slowhttptest - Attempted,Total Length of Bwd Packet,3368,6,1.0
+DoS Slowhttptest - Attempted,Fwd Packet Length Max,3368,2,1.0
+DoS Slowhttptest - Attempted,Fwd Packet Length Min,3368,1,1.0
+DoS Slowhttptest - Attempted,Fwd Packet Length Mean,3368,2,1.0
+DoS Slowhttptest - Attempted,Fwd Packet Length Std,3368,2,1.0
+DoS Slowhttptest - Attempted,Bwd Packet Length Max,3368,5,1.0
+DoS Slowhttptest - Attempted,Bwd Packet Length Min,3368,3,1.0
+DoS Slowhttptest - Attempted,Bwd Packet Length Mean,3368,10,1.0
+DoS Slowhttptest - Attempted,Bwd Packet Length Std,3368,11,0.9997030878859857
+DoS Slowhttptest - Attempted,Bwd IAT Total,3368,227,0.9242874109263658
+DoS Slowhttptest - Attempted,Bwd IAT Mean,3368,230,0.9242874109263658
+DoS Slowhttptest - Attempted,Bwd IAT Std,3368,201,0.9421021377672208
+DoS Slowhttptest - Attempted,Bwd IAT Max,3368,223,0.9251781472684085
+DoS Slowhttptest - Attempted,Bwd IAT Min,3368,41,0.9884204275534442
+DoS Slowhttptest - Attempted,Fwd PSH Flags,3368,2,1.0
+DoS Slowhttptest - Attempted,Bwd PSH Flags,3368,2,1.0
+DoS Slowhttptest - Attempted,Fwd URG Flags,3368,1,1.0
+DoS Slowhttptest - Attempted,Bwd URG Flags,3368,1,1.0
+DoS Slowhttptest - Attempted,Fwd RST Flags,3368,2,1.0
+DoS Slowhttptest - Attempted,Bwd RST Flags,3368,1,1.0
+DoS Slowhttptest - Attempted,Fwd Header Length,3368,11,0.9997030878859857
+DoS Slowhttptest - Attempted,Bwd Header Length,3368,11,0.9997030878859857
+DoS Slowhttptest - Attempted,Packet Length Min,3368,1,1.0
+DoS Slowhttptest - Attempted,Packet Length Max,3368,5,1.0
+DoS Slowhttptest - Attempted,Packet Length Mean,3368,11,0.9997030878859857
+DoS Slowhttptest - Attempted,Packet Length Std,3368,14,0.998812351543943
+DoS Slowhttptest - Attempted,Packet Length Variance,3368,14,0.998812351543943
+DoS Slowhttptest - Attempted,FIN Flag Count,3368,4,1.0
+DoS Slowhttptest - Attempted,SYN Flag Count,3368,6,1.0
+DoS Slowhttptest - Attempted,RST Flag Count,3368,2,1.0
+DoS Slowhttptest - Attempted,PSH Flag Count,3368,3,1.0
+DoS Slowhttptest - Attempted,ACK Flag Count,3368,10,1.0
+DoS Slowhttptest - Attempted,URG Flag Count,3368,1,1.0
+DoS Slowhttptest - Attempted,CWR Flag Count,3368,1,1.0
+DoS Slowhttptest - Attempted,ECE Flag Count,3368,1,1.0
+DoS Slowhttptest - Attempted,Down/Up Ratio,3368,10,1.0
+DoS Slowhttptest - Attempted,Average Packet Size,3368,11,0.9997030878859857
+DoS Slowhttptest - Attempted,Fwd Segment Size Avg,3368,2,1.0
+DoS Slowhttptest - Attempted,Bwd Segment Size Avg,3368,10,1.0
+DoS Slowhttptest - Attempted,Fwd Bytes/Bulk Avg,3368,1,1.0
+DoS Slowhttptest - Attempted,Fwd Packet/Bulk Avg,3368,1,1.0
+DoS Slowhttptest - Attempted,Fwd Bulk Rate Avg,3368,1,1.0
+DoS Slowhttptest - Attempted,Bwd Bytes/Bulk Avg,3368,1,1.0
+DoS Slowhttptest - Attempted,Bwd Packet/Bulk Avg,3368,1,1.0
+DoS Slowhttptest - Attempted,Bwd Bulk Rate Avg,3368,1,1.0
+DoS Slowhttptest - Attempted,Subflow Fwd Packets,3368,2,1.0
+DoS Slowhttptest - Attempted,Subflow Fwd Bytes,3368,2,1.0
+DoS Slowhttptest - Attempted,Subflow Bwd Packets,3368,2,1.0
+DoS Slowhttptest - Attempted,Subflow Bwd Bytes,3368,11,0.9997030878859857
+DoS Slowhttptest - Attempted,FWD Init Win Bytes,3368,3,1.0
+DoS Slowhttptest - Attempted,Bwd Init Win Bytes,3368,4,1.0
+DoS Slowhttptest - Attempted,Fwd Act Data Pkts,3368,2,1.0
+DoS Slowhttptest - Attempted,Fwd Seg Size Min,3368,4,1.0
+DoS Slowhttptest - Attempted,Active Std,3368,4,1.0
+DoS Slowhttptest - Attempted,ICMP Code,3368,1,1.0
+DoS Slowhttptest - Attempted,ICMP Type,3368,1,1.0
+DoS Slowhttptest - Attempted,Attempted Category,3368,3,1.0
+DoS Slowloris,Dst Port,3859,1,1.0
+DoS Slowloris,Protocol,3859,1,1.0
+DoS Slowloris,Total Fwd Packet,3859,16,0.9891163513863696
+DoS Slowloris,Total Bwd packets,3859,4,1.0
+DoS Slowloris,Total Length of Fwd Packet,3859,31,0.9800466442083441
+DoS Slowloris,Total Length of Bwd Packet,3859,2,1.0
+DoS Slowloris,Fwd Packet Length Max,3859,4,1.0
+DoS Slowloris,Fwd Packet Length Min,3859,2,1.0
+DoS Slowloris,Fwd Packet Length Mean,3859,64,0.9525783881834672
+DoS Slowloris,Fwd Packet Length Std,3859,64,0.9525783881834672
+DoS Slowloris,Bwd Packet Length Max,3859,2,1.0
+DoS Slowloris,Bwd Packet Length Min,3859,1,1.0
+DoS Slowloris,Bwd Packet Length Mean,3859,4,1.0
+DoS Slowloris,Bwd Packet Length Std,3859,4,1.0
+DoS Slowloris,Fwd PSH Flags,3859,12,0.9987043275459964
+DoS Slowloris,Bwd PSH Flags,3859,2,1.0
+DoS Slowloris,Fwd URG Flags,3859,1,1.0
+DoS Slowloris,Bwd URG Flags,3859,1,1.0
+DoS Slowloris,Fwd RST Flags,3859,2,1.0
+DoS Slowloris,Bwd RST Flags,3859,2,1.0
+DoS Slowloris,Fwd Header Length,3859,42,0.973568281938326
+DoS Slowloris,Bwd Header Length,3859,9,1.0
+DoS Slowloris,Packet Length Min,3859,1,1.0
+DoS Slowloris,Packet Length Max,3859,5,1.0
+DoS Slowloris,Packet Length Mean,3859,69,0.9486913708214564
+DoS Slowloris,Packet Length Std,3859,70,0.941435605079036
+DoS Slowloris,Packet Length Variance,3859,71,0.941435605079036
+DoS Slowloris,FIN Flag Count,3859,4,1.0
+DoS Slowloris,SYN Flag Count,3859,5,1.0
+DoS Slowloris,RST Flag Count,3859,2,1.0
+DoS Slowloris,PSH Flag Count,3859,12,0.9984451930551956
+DoS Slowloris,ACK Flag Count,3859,15,0.9955947136563876
+DoS Slowloris,URG Flag Count,3859,1,1.0
+DoS Slowloris,CWR Flag Count,3859,1,1.0
+DoS Slowloris,ECE Flag Count,3859,1,1.0
+DoS Slowloris,Down/Up Ratio,3859,24,0.9816014511531485
+DoS Slowloris,Average Packet Size,3859,67,0.9486913708214564
+DoS Slowloris,Fwd Segment Size Avg,3859,60,0.9525783881834672
+DoS Slowloris,Bwd Segment Size Avg,3859,4,1.0
+DoS Slowloris,Fwd Bytes/Bulk Avg,3859,6,1.0
+DoS Slowloris,Fwd Packet/Bulk Avg,3859,3,1.0
+DoS Slowloris,Fwd Bulk Rate Avg,3859,15,0.9987043275459964
+DoS Slowloris,Bwd Bytes/Bulk Avg,3859,1,1.0
+DoS Slowloris,Bwd Packet/Bulk Avg,3859,1,1.0
+DoS Slowloris,Bwd Bulk Rate Avg,3859,1,1.0
+DoS Slowloris,Subflow Fwd Packets,3859,1,1.0
+DoS Slowloris,Subflow Fwd Bytes,3859,56,0.9489505053122571
+DoS Slowloris,Subflow Bwd Packets,3859,1,1.0
+DoS Slowloris,Subflow Bwd Bytes,3859,13,0.9992225965275978
+DoS Slowloris,FWD Init Win Bytes,3859,3,1.0
+DoS Slowloris,Bwd Init Win Bytes,3859,3,1.0
+DoS Slowloris,Fwd Act Data Pkts,3859,13,0.997149520601192
+DoS Slowloris,Fwd Seg Size Min,3859,3,1.0
+DoS Slowloris,ICMP Code,3859,1,1.0
+DoS Slowloris,ICMP Type,3859,1,1.0
+DoS Slowloris,Attempted Category,3859,1,1.0
+DoS Slowloris - Attempted,Dst Port,1847,1,1.0
+DoS Slowloris - Attempted,Protocol,1847,1,1.0
+DoS Slowloris - Attempted,Total Fwd Packet,1847,10,1.0
+DoS Slowloris - Attempted,Total Bwd packets,1847,7,1.0
+DoS Slowloris - Attempted,Total Length of Fwd Packet,1847,7,1.0
+DoS Slowloris - Attempted,Total Length of Bwd Packet,1847,6,1.0
+DoS Slowloris - Attempted,Fwd Packet Length Max,1847,6,1.0
+DoS Slowloris - Attempted,Fwd Packet Length Min,1847,1,1.0
+DoS Slowloris - Attempted,Fwd Packet Length Mean,1847,7,1.0
+DoS Slowloris - Attempted,Fwd Packet Length Std,1847,7,1.0
+DoS Slowloris - Attempted,Bwd Packet Length Max,1847,6,1.0
+DoS Slowloris - Attempted,Bwd Packet Length Min,1847,1,1.0
+DoS Slowloris - Attempted,Bwd Packet Length Mean,1847,8,1.0
+DoS Slowloris - Attempted,Bwd Packet Length Std,1847,8,1.0
+DoS Slowloris - Attempted,Bwd IAT Total,1847,157,0.9204114780725501
+DoS Slowloris - Attempted,Bwd IAT Mean,1847,157,0.9204114780725501
+DoS Slowloris - Attempted,Bwd IAT Std,1847,144,0.9274499187872225
+DoS Slowloris - Attempted,Bwd IAT Max,1847,154,0.9220357336220899
+DoS Slowloris - Attempted,Bwd IAT Min,1847,21,0.9940443963183541
+DoS Slowloris - Attempted,Fwd PSH Flags,1847,4,1.0
+DoS Slowloris - Attempted,Bwd PSH Flags,1847,5,1.0
+DoS Slowloris - Attempted,Fwd URG Flags,1847,1,1.0
+DoS Slowloris - Attempted,Bwd URG Flags,1847,1,1.0
+DoS Slowloris - Attempted,Fwd RST Flags,1847,2,1.0
+DoS Slowloris - Attempted,Bwd RST Flags,1847,1,1.0
+DoS Slowloris - Attempted,Fwd Header Length,1847,14,0.9978343259339469
+DoS Slowloris - Attempted,Bwd Header Length,1847,10,1.0
+DoS Slowloris - Attempted,Packet Length Min,1847,1,1.0
+DoS Slowloris - Attempted,Packet Length Max,1847,6,1.0
+DoS Slowloris - Attempted,Packet Length Mean,1847,9,1.0
+DoS Slowloris - Attempted,Packet Length Std,1847,9,1.0
+DoS Slowloris - Attempted,Packet Length Variance,1847,9,1.0
+DoS Slowloris - Attempted,FIN Flag Count,1847,6,1.0
+DoS Slowloris - Attempted,SYN Flag Count,1847,6,1.0
+DoS Slowloris - Attempted,RST Flag Count,1847,2,1.0
+DoS Slowloris - Attempted,PSH Flag Count,1847,7,1.0
+DoS Slowloris - Attempted,ACK Flag Count,1847,11,0.9994585814834868
+DoS Slowloris - Attempted,URG Flag Count,1847,1,1.0
+DoS Slowloris - Attempted,CWR Flag Count,1847,1,1.0
+DoS Slowloris - Attempted,ECE Flag Count,1847,1,1.0
+DoS Slowloris - Attempted,Down/Up Ratio,1847,10,1.0
+DoS Slowloris - Attempted,Average Packet Size,1847,9,1.0
+DoS Slowloris - Attempted,Fwd Segment Size Avg,1847,7,1.0
+DoS Slowloris - Attempted,Bwd Segment Size Avg,1847,8,1.0
+DoS Slowloris - Attempted,Fwd Bytes/Bulk Avg,1847,3,1.0
+DoS Slowloris - Attempted,Fwd Packet/Bulk Avg,1847,2,1.0
+DoS Slowloris - Attempted,Fwd Bulk Rate Avg,1847,4,1.0
+DoS Slowloris - Attempted,Bwd Bytes/Bulk Avg,1847,2,1.0
+DoS Slowloris - Attempted,Bwd Packet/Bulk Avg,1847,2,1.0
+DoS Slowloris - Attempted,Bwd Bulk Rate Avg,1847,2,1.0
+DoS Slowloris - Attempted,Subflow Fwd Packets,1847,2,1.0
+DoS Slowloris - Attempted,Subflow Fwd Bytes,1847,8,1.0
+DoS Slowloris - Attempted,Subflow Bwd Packets,1847,2,1.0
+DoS Slowloris - Attempted,Subflow Bwd Bytes,1847,9,1.0
+DoS Slowloris - Attempted,FWD Init Win Bytes,1847,3,1.0
+DoS Slowloris - Attempted,Bwd Init Win Bytes,1847,7,1.0
+DoS Slowloris - Attempted,Fwd Act Data Pkts,1847,4,1.0
+DoS Slowloris - Attempted,Fwd Seg Size Min,1847,4,1.0
+DoS Slowloris - Attempted,Active Mean,1847,7,1.0
+DoS Slowloris - Attempted,Active Std,1847,4,1.0
+DoS Slowloris - Attempted,Active Max,1847,7,1.0
+DoS Slowloris - Attempted,Active Min,1847,7,1.0
+DoS Slowloris - Attempted,Idle Mean,1847,8,1.0
+DoS Slowloris - Attempted,Idle Std,1847,6,1.0
+DoS Slowloris - Attempted,Idle Max,1847,8,1.0
+DoS Slowloris - Attempted,Idle Min,1847,8,1.0
+DoS Slowloris - Attempted,ICMP Code,1847,1,1.0
+DoS Slowloris - Attempted,ICMP Type,1847,1,1.0
+DoS Slowloris - Attempted,Attempted Category,1847,4,1.0
+FTP-Patator,Dst Port,3972,1,1.0
+FTP-Patator,Protocol,3972,1,1.0
+FTP-Patator,Total Fwd Packet,3972,6,1.0
+FTP-Patator,Total Bwd packets,3972,6,1.0
+FTP-Patator,Total Length of Bwd Packet,3972,3,1.0
+FTP-Patator,Fwd Packet Length Max,3972,30,0.9088620342396777
+FTP-Patator,Fwd Packet Length Min,3972,1,1.0
+FTP-Patator,Bwd Packet Length Max,3972,1,1.0
+FTP-Patator,Bwd Packet Length Min,3972,1,1.0
+FTP-Patator,Bwd Packet Length Mean,3972,6,1.0
+FTP-Patator,Bwd Packet Length Std,3972,6,1.0
+FTP-Patator,Flow IAT Min,3972,38,0.9859013091641491
+FTP-Patator,Bwd IAT Min,3972,43,0.9846424974823766
+FTP-Patator,Fwd PSH Flags,3972,4,1.0
+FTP-Patator,Bwd PSH Flags,3972,3,1.0
+FTP-Patator,Fwd URG Flags,3972,1,1.0
+FTP-Patator,Bwd URG Flags,3972,1,1.0
+FTP-Patator,Fwd RST Flags,3972,1,1.0
+FTP-Patator,Bwd RST Flags,3972,3,1.0
+FTP-Patator,Fwd Header Length,3972,6,1.0
+FTP-Patator,Bwd Header Length,3972,6,1.0
+FTP-Patator,Packet Length Min,3972,1,1.0
+FTP-Patator,Packet Length Max,3972,12,0.999496475327291
+FTP-Patator,FIN Flag Count,3972,3,1.0
+FTP-Patator,SYN Flag Count,3972,1,1.0
+FTP-Patator,RST Flag Count,3972,3,1.0
+FTP-Patator,PSH Flag Count,3972,4,1.0
+FTP-Patator,ACK Flag Count,3972,5,1.0
+FTP-Patator,URG Flag Count,3972,1,1.0
+FTP-Patator,CWR Flag Count,3972,1,1.0
+FTP-Patator,ECE Flag Count,3972,1,1.0
+FTP-Patator,Down/Up Ratio,3972,5,1.0
+FTP-Patator,Bwd Segment Size Avg,3972,6,1.0
+FTP-Patator,Fwd Bytes/Bulk Avg,3972,1,1.0
+FTP-Patator,Fwd Packet/Bulk Avg,3972,1,1.0
+FTP-Patator,Fwd Bulk Rate Avg,3972,1,1.0
+FTP-Patator,Bwd Bytes/Bulk Avg,3972,1,1.0
+FTP-Patator,Bwd Packet/Bulk Avg,3972,1,1.0
+FTP-Patator,Bwd Bulk Rate Avg,3972,1,1.0
+FTP-Patator,Subflow Fwd Packets,3972,1,1.0
+FTP-Patator,Subflow Fwd Bytes,3972,4,1.0
+FTP-Patator,Subflow Bwd Packets,3972,1,1.0
+FTP-Patator,Subflow Bwd Bytes,3972,3,1.0
+FTP-Patator,FWD Init Win Bytes,3972,1,1.0
+FTP-Patator,Bwd Init Win Bytes,3972,2,1.0
+FTP-Patator,Fwd Act Data Pkts,3972,4,1.0
+FTP-Patator,Fwd Seg Size Min,3972,1,1.0
+FTP-Patator,Active Mean,3972,1,1.0
+FTP-Patator,Active Std,3972,1,1.0
+FTP-Patator,Active Max,3972,1,1.0
+FTP-Patator,Active Min,3972,1,1.0
+FTP-Patator,Idle Mean,3972,1,1.0
+FTP-Patator,Idle Std,3972,1,1.0
+FTP-Patator,Idle Max,3972,1,1.0
+FTP-Patator,Idle Min,3972,1,1.0
+FTP-Patator,ICMP Code,3972,1,1.0
+FTP-Patator,ICMP Type,3972,1,1.0
+FTP-Patator,Attempted Category,3972,1,1.0
+FTP-Patator - Attempted,Src Port,12,11,0.9166666666666666
+FTP-Patator - Attempted,Dst Port,12,1,1.0
+FTP-Patator - Attempted,Protocol,12,1,1.0
+FTP-Patator - Attempted,Total Fwd Packet,12,2,1.0
+FTP-Patator - Attempted,Total Bwd packets,12,2,1.0
+FTP-Patator - Attempted,Total Length of Fwd Packet,12,2,1.0
+FTP-Patator - Attempted,Total Length of Bwd Packet,12,2,1.0
+FTP-Patator - Attempted,Fwd Packet Length Max,12,2,1.0
+FTP-Patator - Attempted,Fwd Packet Length Min,12,1,1.0
+FTP-Patator - Attempted,Fwd Packet Length Mean,12,2,1.0
+FTP-Patator - Attempted,Fwd Packet Length Std,12,2,1.0
+FTP-Patator - Attempted,Bwd Packet Length Max,12,2,1.0
+FTP-Patator - Attempted,Bwd Packet Length Min,12,1,1.0
+FTP-Patator - Attempted,Bwd Packet Length Mean,12,2,1.0
+FTP-Patator - Attempted,Bwd Packet Length Std,12,2,1.0
+FTP-Patator - Attempted,Flow IAT Max,12,10,1.0
+FTP-Patator - Attempted,Flow IAT Min,12,7,1.0
+FTP-Patator - Attempted,Fwd IAT Total,12,10,1.0
+FTP-Patator - Attempted,Fwd IAT Mean,12,10,1.0
+FTP-Patator - Attempted,Fwd IAT Std,12,2,1.0
+FTP-Patator - Attempted,Fwd IAT Max,12,10,1.0
+FTP-Patator - Attempted,Fwd IAT Min,12,10,1.0
+FTP-Patator - Attempted,Bwd IAT Total,12,7,1.0
+FTP-Patator - Attempted,Bwd IAT Mean,12,7,1.0
+FTP-Patator - Attempted,Bwd IAT Std,12,2,1.0
+FTP-Patator - Attempted,Bwd IAT Max,12,7,1.0
+FTP-Patator - Attempted,Bwd IAT Min,12,7,1.0
+FTP-Patator - Attempted,Fwd PSH Flags,12,2,1.0
+FTP-Patator - Attempted,Bwd PSH Flags,12,2,1.0
+FTP-Patator - Attempted,Fwd URG Flags,12,1,1.0
+FTP-Patator - Attempted,Bwd URG Flags,12,1,1.0
+FTP-Patator - Attempted,Fwd RST Flags,12,1,1.0
+FTP-Patator - Attempted,Bwd RST Flags,12,1,1.0
+FTP-Patator - Attempted,Fwd Header Length,12,2,1.0
+FTP-Patator - Attempted,Bwd Header Length,12,2,1.0
+FTP-Patator - Attempted,Packet Length Min,12,1,1.0
+FTP-Patator - Attempted,Packet Length Max,12,2,1.0
+FTP-Patator - Attempted,Packet Length Mean,12,2,1.0
+FTP-Patator - Attempted,Packet Length Std,12,2,1.0
+FTP-Patator - Attempted,Packet Length Variance,12,2,1.0
+FTP-Patator - Attempted,FIN Flag Count,12,2,1.0
+FTP-Patator - Attempted,SYN Flag Count,12,2,1.0
+FTP-Patator - Attempted,RST Flag Count,12,1,1.0
+FTP-Patator - Attempted,PSH Flag Count,12,2,1.0
+FTP-Patator - Attempted,ACK Flag Count,12,2,1.0
+FTP-Patator - Attempted,URG Flag Count,12,1,1.0
+FTP-Patator - Attempted,CWR Flag Count,12,1,1.0
+FTP-Patator - Attempted,ECE Flag Count,12,1,1.0
+FTP-Patator - Attempted,Down/Up Ratio,12,2,1.0
+FTP-Patator - Attempted,Average Packet Size,12,2,1.0
+FTP-Patator - Attempted,Fwd Segment Size Avg,12,2,1.0
+FTP-Patator - Attempted,Bwd Segment Size Avg,12,2,1.0
+FTP-Patator - Attempted,Fwd Bytes/Bulk Avg,12,1,1.0
+FTP-Patator - Attempted,Fwd Packet/Bulk Avg,12,1,1.0
+FTP-Patator - Attempted,Fwd Bulk Rate Avg,12,1,1.0
+FTP-Patator - Attempted,Bwd Bytes/Bulk Avg,12,1,1.0
+FTP-Patator - Attempted,Bwd Packet/Bulk Avg,12,1,1.0
+FTP-Patator - Attempted,Bwd Bulk Rate Avg,12,1,1.0
+FTP-Patator - Attempted,Subflow Fwd Packets,12,1,1.0
+FTP-Patator - Attempted,Subflow Fwd Bytes,12,2,1.0
+FTP-Patator - Attempted,Subflow Bwd Packets,12,1,1.0
+FTP-Patator - Attempted,Subflow Bwd Bytes,12,2,1.0
+FTP-Patator - Attempted,FWD Init Win Bytes,12,2,1.0
+FTP-Patator - Attempted,Bwd Init Win Bytes,12,1,1.0
+FTP-Patator - Attempted,Fwd Act Data Pkts,12,2,1.0
+FTP-Patator - Attempted,Fwd Seg Size Min,12,2,1.0
+FTP-Patator - Attempted,Active Mean,12,1,1.0
+FTP-Patator - Attempted,Active Std,12,1,1.0
+FTP-Patator - Attempted,Active Max,12,1,1.0
+FTP-Patator - Attempted,Active Min,12,1,1.0
+FTP-Patator - Attempted,Idle Mean,12,1,1.0
+FTP-Patator - Attempted,Idle Std,12,1,1.0
+FTP-Patator - Attempted,Idle Max,12,1,1.0
+FTP-Patator - Attempted,Idle Min,12,1,1.0
+FTP-Patator - Attempted,ICMP Code,12,1,1.0
+FTP-Patator - Attempted,ICMP Type,12,1,1.0
+FTP-Patator - Attempted,Attempted Category,12,2,1.0
+Heartbleed,Src Port,11,1,1.0
+Heartbleed,Dst Port,11,1,1.0
+Heartbleed,Protocol,11,1,1.0
+Heartbleed,Flow Duration,11,11,0.9090909090909091
+Heartbleed,Total Fwd Packet,11,10,1.0
+Heartbleed,Total Bwd packets,11,11,0.9090909090909091
+Heartbleed,Total Length of Fwd Packet,11,4,1.0
+Heartbleed,Total Length of Bwd Packet,11,6,1.0
+Heartbleed,Fwd Packet Length Max,11,3,1.0
+Heartbleed,Fwd Packet Length Min,11,1,1.0
+Heartbleed,Fwd Packet Length Mean,11,11,0.9090909090909091
+Heartbleed,Fwd Packet Length Std,11,10,1.0
+Heartbleed,Bwd Packet Length Max,11,4,1.0
+Heartbleed,Bwd Packet Length Min,11,1,1.0
+Heartbleed,Bwd Packet Length Mean,11,11,0.9090909090909091
+Heartbleed,Bwd Packet Length Std,11,11,0.9090909090909091
+Heartbleed,Flow Bytes/s,11,11,0.9090909090909091
+Heartbleed,Flow Packets/s,11,11,0.9090909090909091
+Heartbleed,Flow IAT Mean,11,11,0.9090909090909091
+Heartbleed,Flow IAT Std,11,11,0.9090909090909091
+Heartbleed,Flow IAT Max,11,10,1.0
+Heartbleed,Flow IAT Min,11,1,1.0
+Heartbleed,Fwd IAT Total,11,11,0.9090909090909091
+Heartbleed,Fwd IAT Mean,11,11,0.9090909090909091
+Heartbleed,Fwd IAT Std,11,11,0.9090909090909091
+Heartbleed,Fwd IAT Max,11,11,0.9090909090909091
+Heartbleed,Fwd IAT Min,11,1,1.0
+Heartbleed,Bwd IAT Total,11,11,0.9090909090909091
+Heartbleed,Bwd IAT Mean,11,11,0.9090909090909091
+Heartbleed,Bwd IAT Std,11,11,0.9090909090909091
+Heartbleed,Bwd IAT Max,11,10,1.0
+Heartbleed,Bwd IAT Min,11,2,1.0
+Heartbleed,Fwd PSH Flags,11,4,1.0
+Heartbleed,Bwd PSH Flags,11,9,1.0
+Heartbleed,Fwd URG Flags,11,1,1.0
+Heartbleed,Bwd URG Flags,11,1,1.0
+Heartbleed,Fwd RST Flags,11,2,1.0
+Heartbleed,Bwd RST Flags,11,1,1.0
+Heartbleed,Fwd Header Length,11,10,1.0
+Heartbleed,Bwd Header Length,11,11,0.9090909090909091
+Heartbleed,Fwd Packets/s,11,11,0.9090909090909091
+Heartbleed,Bwd Packets/s,11,11,0.9090909090909091
+Heartbleed,Packet Length Min,11,1,1.0
+Heartbleed,Packet Length Max,11,4,1.0
+Heartbleed,Packet Length Mean,11,11,0.9090909090909091
+Heartbleed,Packet Length Std,11,11,0.9090909090909091
+Heartbleed,Packet Length Variance,11,11,0.9090909090909091
+Heartbleed,FIN Flag Count,11,2,1.0
+Heartbleed,SYN Flag Count,11,2,1.0
+Heartbleed,RST Flag Count,11,2,1.0
+Heartbleed,PSH Flag Count,11,10,1.0
+Heartbleed,ACK Flag Count,11,11,0.9090909090909091
+Heartbleed,URG Flag Count,11,1,1.0
+Heartbleed,CWR Flag Count,11,1,1.0
+Heartbleed,ECE Flag Count,11,1,1.0
+Heartbleed,Down/Up Ratio,11,11,0.9090909090909091
+Heartbleed,Average Packet Size,11,11,0.9090909090909091
+Heartbleed,Fwd Segment Size Avg,11,10,1.0
+Heartbleed,Bwd Segment Size Avg,11,11,0.9090909090909091
+Heartbleed,Fwd Bytes/Bulk Avg,11,2,1.0
+Heartbleed,Fwd Packet/Bulk Avg,11,2,1.0
+Heartbleed,Fwd Bulk Rate Avg,11,2,1.0
+Heartbleed,Bwd Bytes/Bulk Avg,11,4,1.0
+Heartbleed,Bwd Packet/Bulk Avg,11,3,1.0
+Heartbleed,Bwd Bulk Rate Avg,11,11,0.9090909090909091
+Heartbleed,Subflow Fwd Packets,11,1,1.0
+Heartbleed,Subflow Fwd Bytes,11,2,1.0
+Heartbleed,Subflow Bwd Packets,11,1,1.0
+Heartbleed,Subflow Bwd Bytes,11,9,1.0
+Heartbleed,FWD Init Win Bytes,11,2,1.0
+Heartbleed,Bwd Init Win Bytes,11,2,1.0
+Heartbleed,Fwd Act Data Pkts,11,4,1.0
+Heartbleed,Fwd Seg Size Min,11,2,1.0
+Heartbleed,Active Mean,11,2,1.0
+Heartbleed,Active Std,11,1,1.0
+Heartbleed,Active Max,11,2,1.0
+Heartbleed,Active Min,11,2,1.0
+Heartbleed,Idle Mean,11,2,1.0
+Heartbleed,Idle Std,11,1,1.0
+Heartbleed,Idle Max,11,2,1.0
+Heartbleed,Idle Min,11,2,1.0
+Heartbleed,ICMP Code,11,1,1.0
+Heartbleed,ICMP Type,11,1,1.0
+Heartbleed,Total TCP Flow Time,11,11,0.9090909090909091
+Heartbleed,Attempted Category,11,1,1.0
+Infiltration,Src Port,36,6,1.0
+Infiltration,Dst Port,36,1,1.0
+Infiltration,Protocol,36,1,1.0
+Infiltration,Total Length of Bwd Packet,36,10,1.0
+Infiltration,Fwd Packet Length Min,36,3,1.0
+Infiltration,Bwd Packet Length Max,36,5,1.0
+Infiltration,Bwd Packet Length Min,36,1,1.0
+Infiltration,Bwd Packet Length Mean,36,10,1.0
+Infiltration,Bwd Packet Length Std,36,10,1.0
+Infiltration,Bwd PSH Flags,36,9,1.0
+Infiltration,Fwd URG Flags,36,1,1.0
+Infiltration,Bwd URG Flags,36,1,1.0
+Infiltration,Fwd RST Flags,36,2,1.0
+Infiltration,Bwd RST Flags,36,2,1.0
+Infiltration,Packet Length Min,36,1,1.0
+Infiltration,FIN Flag Count,36,3,1.0
+Infiltration,SYN Flag Count,36,2,1.0
+Infiltration,RST Flag Count,36,2,1.0
+Infiltration,URG Flag Count,36,1,1.0
+Infiltration,CWR Flag Count,36,1,1.0
+Infiltration,ECE Flag Count,36,1,1.0
+Infiltration,Bwd Segment Size Avg,36,10,1.0
+Infiltration,Bwd Bytes/Bulk Avg,36,3,1.0
+Infiltration,Bwd Packet/Bulk Avg,36,3,1.0
+Infiltration,Bwd Bulk Rate Avg,36,3,1.0
+Infiltration,Subflow Fwd Packets,36,2,1.0
+Infiltration,Subflow Bwd Packets,36,1,1.0
+Infiltration,Subflow Bwd Bytes,36,8,1.0
+Infiltration,FWD Init Win Bytes,36,4,1.0
+Infiltration,Fwd Seg Size Min,36,3,1.0
+Infiltration,ICMP Code,36,1,1.0
+Infiltration,ICMP Type,36,1,1.0
+Infiltration,Attempted Category,36,1,1.0
+Infiltration - Attempted,Dst Port,45,1,1.0
+Infiltration - Attempted,Protocol,45,1,1.0
+Infiltration - Attempted,Total Fwd Packet,45,5,1.0
+Infiltration - Attempted,Total Bwd packets,45,4,1.0
+Infiltration - Attempted,Total Length of Fwd Packet,45,1,1.0
+Infiltration - Attempted,Total Length of Bwd Packet,45,3,1.0
+Infiltration - Attempted,Fwd Packet Length Max,45,1,1.0
+Infiltration - Attempted,Fwd Packet Length Min,45,1,1.0
+Infiltration - Attempted,Fwd Packet Length Mean,45,1,1.0
+Infiltration - Attempted,Fwd Packet Length Std,45,1,1.0
+Infiltration - Attempted,Bwd Packet Length Max,45,2,1.0
+Infiltration - Attempted,Bwd Packet Length Min,45,1,1.0
+Infiltration - Attempted,Bwd Packet Length Mean,45,3,1.0
+Infiltration - Attempted,Bwd Packet Length Std,45,3,1.0
+Infiltration - Attempted,Flow Bytes/s,45,5,1.0
+Infiltration - Attempted,Flow IAT Std,45,5,1.0
+Infiltration - Attempted,Fwd IAT Total,45,6,1.0
+Infiltration - Attempted,Fwd IAT Mean,45,6,1.0
+Infiltration - Attempted,Fwd IAT Std,45,5,1.0
+Infiltration - Attempted,Fwd IAT Max,45,6,1.0
+Infiltration - Attempted,Fwd IAT Min,45,6,1.0
+Infiltration - Attempted,Bwd IAT Total,45,5,1.0
+Infiltration - Attempted,Bwd IAT Mean,45,5,1.0
+Infiltration - Attempted,Bwd IAT Std,45,5,1.0
+Infiltration - Attempted,Bwd IAT Max,45,5,1.0
+Infiltration - Attempted,Bwd IAT Min,45,5,1.0
+Infiltration - Attempted,Fwd PSH Flags,45,1,1.0
+Infiltration - Attempted,Bwd PSH Flags,45,3,1.0
+Infiltration - Attempted,Fwd URG Flags,45,1,1.0
+Infiltration - Attempted,Bwd URG Flags,45,1,1.0
+Infiltration - Attempted,Fwd RST Flags,45,2,1.0
+Infiltration - Attempted,Bwd RST Flags,45,2,1.0
+Infiltration - Attempted,Fwd Header Length,45,8,1.0
+Infiltration - Attempted,Bwd Header Length,45,4,1.0
+Infiltration - Attempted,Packet Length Min,45,1,1.0
+Infiltration - Attempted,Packet Length Max,45,2,1.0
+Infiltration - Attempted,Packet Length Mean,45,4,1.0
+Infiltration - Attempted,Packet Length Std,45,4,1.0
+Infiltration - Attempted,Packet Length Variance,45,4,1.0
+Infiltration - Attempted,FIN Flag Count,45,3,1.0
+Infiltration - Attempted,SYN Flag Count,45,3,1.0
+Infiltration - Attempted,RST Flag Count,45,2,1.0
+Infiltration - Attempted,PSH Flag Count,45,3,1.0
+Infiltration - Attempted,ACK Flag Count,45,5,1.0
+Infiltration - Attempted,URG Flag Count,45,1,1.0
+Infiltration - Attempted,CWR Flag Count,45,1,1.0
+Infiltration - Attempted,ECE Flag Count,45,1,1.0
+Infiltration - Attempted,Down/Up Ratio,45,5,1.0
+Infiltration - Attempted,Average Packet Size,45,4,1.0
+Infiltration - Attempted,Fwd Segment Size Avg,45,1,1.0
+Infiltration - Attempted,Bwd Segment Size Avg,45,3,1.0
+Infiltration - Attempted,Fwd Bytes/Bulk Avg,45,1,1.0
+Infiltration - Attempted,Fwd Packet/Bulk Avg,45,1,1.0
+Infiltration - Attempted,Fwd Bulk Rate Avg,45,1,1.0
+Infiltration - Attempted,Bwd Bytes/Bulk Avg,45,1,1.0
+Infiltration - Attempted,Bwd Packet/Bulk Avg,45,1,1.0
+Infiltration - Attempted,Bwd Bulk Rate Avg,45,1,1.0
+Infiltration - Attempted,Subflow Fwd Packets,45,2,1.0
+Infiltration - Attempted,Subflow Fwd Bytes,45,1,1.0
+Infiltration - Attempted,Subflow Bwd Packets,45,1,1.0
+Infiltration - Attempted,Subflow Bwd Bytes,45,4,1.0
+Infiltration - Attempted,FWD Init Win Bytes,45,4,1.0
+Infiltration - Attempted,Bwd Init Win Bytes,45,4,1.0
+Infiltration - Attempted,Fwd Act Data Pkts,45,1,1.0
+Infiltration - Attempted,Fwd Seg Size Min,45,5,1.0
+Infiltration - Attempted,Active Mean,45,2,1.0
+Infiltration - Attempted,Active Std,45,2,1.0
+Infiltration - Attempted,Active Max,45,2,1.0
+Infiltration - Attempted,Active Min,45,2,1.0
+Infiltration - Attempted,Idle Mean,45,2,1.0
+Infiltration - Attempted,Idle Std,45,2,1.0
+Infiltration - Attempted,Idle Max,45,2,1.0
+Infiltration - Attempted,Idle Min,45,2,1.0
+Infiltration - Attempted,ICMP Code,45,1,1.0
+Infiltration - Attempted,ICMP Type,45,1,1.0
+Infiltration - Attempted,Attempted Category,45,2,1.0
+Infiltration - Portscan,Protocol,71767,3,1.0
+Infiltration - Portscan,Total Fwd Packet,71767,11,0.9998885281536082
+Infiltration - Portscan,Total Bwd packets,71767,15,0.9992893669792523
+Infiltration - Portscan,Total Length of Fwd Packet,71767,54,0.9938272465060544
+Infiltration - Portscan,Total Length of Bwd Packet,71767,45,0.9966140426658492
+Infiltration - Portscan,Fwd Packet Length Max,71767,45,0.9949698329315703
+Infiltration - Portscan,Fwd Packet Length Min,71767,5,1.0
+Infiltration - Portscan,Fwd Packet Length Mean,71767,64,0.9937018406788636
+Infiltration - Portscan,Fwd Packet Length Std,71767,60,0.9948165591427816
+Infiltration - Portscan,Bwd Packet Length Max,71767,33,0.997227137821004
+Infiltration - Portscan,Bwd Packet Length Min,71767,4,1.0
+Infiltration - Portscan,Bwd Packet Length Mean,71767,55,0.9965583067426533
+Infiltration - Portscan,Bwd Packet Length Std,71767,54,0.9970041941282205
+Infiltration - Portscan,Flow Bytes/s,71767,793,0.9888946173032174
+Infiltration - Portscan,Fwd IAT Total,71767,1012,0.9763401006033414
+Infiltration - Portscan,Fwd IAT Mean,71767,1025,0.9763401006033414
+Infiltration - Portscan,Fwd IAT Std,71767,993,0.9863028968746081
+Infiltration - Portscan,Fwd IAT Max,71767,994,0.9763401006033414
+Infiltration - Portscan,Fwd IAT Min,71767,71,0.990204411498321
+Infiltration - Portscan,Bwd IAT Total,71767,1153,0.9784023297615896
+Infiltration - Portscan,Bwd IAT Mean,71767,1168,0.9784023297615896
+Infiltration - Portscan,Bwd IAT Std,71767,1130,0.9843939415051486
+Infiltration - Portscan,Bwd IAT Max,71767,1078,0.9784023297615896
+Infiltration - Portscan,Bwd IAT Min,71767,55,0.9941198601028328
+Infiltration - Portscan,Fwd PSH Flags,71767,8,1.0
+Infiltration - Portscan,Bwd PSH Flags,71767,7,1.0
+Infiltration - Portscan,Fwd URG Flags,71767,5,1.0
+Infiltration - Portscan,Bwd URG Flags,71767,1,1.0
+Infiltration - Portscan,Fwd RST Flags,71767,2,1.0
+Infiltration - Portscan,Bwd RST Flags,71767,4,1.0
+Infiltration - Portscan,Fwd Header Length,71767,26,0.9958616077027046
+Infiltration - Portscan,Bwd Header Length,71767,30,0.9957919377987097
+Infiltration - Portscan,Packet Length Min,71767,5,1.0
+Infiltration - Portscan,Packet Length Max,71767,47,0.9934928309668789
+Infiltration - Portscan,Packet Length Mean,71767,111,0.9920436969637856
+Infiltration - Portscan,Packet Length Std,71767,102,0.9930608775621107
+Infiltration - Portscan,Packet Length Variance,71767,104,0.9930608775621107
+Infiltration - Portscan,FIN Flag Count,71767,5,1.0
+Infiltration - Portscan,SYN Flag Count,71767,9,1.0
+Infiltration - Portscan,RST Flag Count,71767,4,1.0
+Infiltration - Portscan,PSH Flag Count,71767,10,1.0
+Infiltration - Portscan,ACK Flag Count,71767,21,0.9979517048225508
+Infiltration - Portscan,URG Flag Count,71767,5,1.0
+Infiltration - Portscan,CWR Flag Count,71767,3,1.0
+Infiltration - Portscan,ECE Flag Count,71767,4,1.0
+Infiltration - Portscan,Down/Up Ratio,71767,21,0.9986066019201025
+Infiltration - Portscan,Average Packet Size,71767,100,0.9920436969637856
+Infiltration - Portscan,Fwd Segment Size Avg,71767,63,0.9937018406788636
+Infiltration - Portscan,Bwd Segment Size Avg,71767,55,0.9965583067426533
+Infiltration - Portscan,Fwd Bytes/Bulk Avg,71767,4,1.0
+Infiltration - Portscan,Fwd Packet/Bulk Avg,71767,3,1.0
+Infiltration - Portscan,Fwd Bulk Rate Avg,71767,19,0.9998745941728092
+Infiltration - Portscan,Bwd Bytes/Bulk Avg,71767,3,1.0
+Infiltration - Portscan,Bwd Packet/Bulk Avg,71767,4,1.0
+Infiltration - Portscan,Bwd Bulk Rate Avg,71767,17,0.9999024621344071
+Infiltration - Portscan,Subflow Fwd Packets,71767,2,1.0
+Infiltration - Portscan,Subflow Fwd Bytes,71767,32,0.9958616077027046
+Infiltration - Portscan,Subflow Bwd Packets,71767,1,1.0
+Infiltration - Portscan,Subflow Bwd Bytes,71767,43,0.9971992698594061
+Infiltration - Portscan,FWD Init Win Bytes,71767,14,0.9978541669569579
+Infiltration - Portscan,Bwd Init Win Bytes,71767,12,0.9999442640768041
+Infiltration - Portscan,Fwd Act Data Pkts,71767,10,1.0
+Infiltration - Portscan,Fwd Seg Size Min,71767,8,1.0
+Infiltration - Portscan,Active Mean,71767,525,0.9927264620229354
+Infiltration - Portscan,Active Std,71767,430,0.9941477280644307
+Infiltration - Portscan,Active Max,71767,516,0.9927264620229354
+Infiltration - Portscan,Active Min,71767,124,0.9980492426881435
+Infiltration - Portscan,Idle Mean,71767,464,0.9929354717349199
+Infiltration - Portscan,Idle Std,71767,383,0.9943567377764153
+Infiltration - Portscan,Idle Max,71767,445,0.9929354717349199
+Infiltration - Portscan,Idle Min,71767,459,0.9928239998885282
+Infiltration - Portscan,ICMP Code,71767,2,1.0
+Infiltration - Portscan,ICMP Type,71767,2,1.0
+Infiltration - Portscan,Attempted Category,71767,1,1.0
+Portscan,Protocol,159066,4,1.0
+Portscan,Total Fwd Packet,159066,9,1.0
+Portscan,Total Bwd packets,159066,8,1.0
+Portscan,Total Length of Fwd Packet,159066,5,1.0
+Portscan,Total Length of Bwd Packet,159066,7,1.0
+Portscan,Fwd Packet Length Max,159066,5,1.0
+Portscan,Fwd Packet Length Min,159066,2,1.0
+Portscan,Fwd Packet Length Mean,159066,7,1.0
+Portscan,Fwd Packet Length Std,159066,6,1.0
+Portscan,Bwd Packet Length Max,159066,10,1.0
+Portscan,Bwd Packet Length Min,159066,2,1.0
+Portscan,Bwd Packet Length Mean,159066,11,0.9999937133013969
+Portscan,Bwd Packet Length Std,159066,17,0.999937133013969
+Portscan,Flow Bytes/s,159066,204,0.9987803804709995
+Portscan,Flow IAT Std,159066,972,0.992896030578502
+Portscan,Fwd IAT Total,159066,729,0.9929400374687237
+Portscan,Fwd IAT Mean,159066,779,0.9929274640715174
+Portscan,Fwd IAT Std,159066,572,0.9959010725107816
+Portscan,Fwd IAT Max,159066,700,0.9929463241673268
+Portscan,Fwd IAT Min,159066,448,0.9951215218839978
+Portscan,Bwd IAT Total,159066,214,0.9987175134849685
+Portscan,Bwd IAT Mean,159066,214,0.9987175134849685
+Portscan,Bwd IAT Std,159066,206,0.9987678070737933
+Portscan,Bwd IAT Max,159066,214,0.9987175134849685
+Portscan,Bwd IAT Min,159066,147,0.9990884287025511
+Portscan,Fwd PSH Flags,159066,2,1.0
+Portscan,Bwd PSH Flags,159066,2,1.0
+Portscan,Fwd URG Flags,159066,1,1.0
+Portscan,Bwd URG Flags,159066,1,1.0
+Portscan,Fwd RST Flags,159066,2,1.0
+Portscan,Bwd RST Flags,159066,3,1.0
+Portscan,Fwd Header Length,159066,11,0.9999937133013969
+Portscan,Bwd Header Length,159066,11,0.9999937133013969
+Portscan,Packet Length Min,159066,2,1.0
+Portscan,Packet Length Max,159066,11,0.9999937133013969
+Portscan,Packet Length Mean,159066,12,0.9999874266027938
+Portscan,Packet Length Std,159066,20,0.9998931261237474
+Portscan,Packet Length Variance,159066,22,0.999874266027938
+Portscan,FIN Flag Count,159066,3,1.0
+Portscan,SYN Flag Count,159066,3,1.0
+Portscan,RST Flag Count,159066,3,1.0
+Portscan,PSH Flag Count,159066,3,1.0
+Portscan,ACK Flag Count,159066,13,0.9999685665069845
+Portscan,URG Flag Count,159066,1,1.0
+Portscan,CWR Flag Count,159066,1,1.0
+Portscan,ECE Flag Count,159066,1,1.0
+Portscan,Down/Up Ratio,159066,11,0.9999937133013969
+Portscan,Average Packet Size,159066,12,0.9999874266027938
+Portscan,Fwd Segment Size Avg,159066,7,1.0
+Portscan,Bwd Segment Size Avg,159066,11,0.9999937133013969
+Portscan,Fwd Bytes/Bulk Avg,159066,1,1.0
+Portscan,Fwd Packet/Bulk Avg,159066,1,1.0
+Portscan,Fwd Bulk Rate Avg,159066,1,1.0
+Portscan,Bwd Bytes/Bulk Avg,159066,3,1.0
+Portscan,Bwd Packet/Bulk Avg,159066,3,1.0
+Portscan,Bwd Bulk Rate Avg,159066,16,0.9999622798083814
+Portscan,Subflow Fwd Packets,159066,2,1.0
+Portscan,Subflow Fwd Bytes,159066,6,1.0
+Portscan,Subflow Bwd Packets,159066,1,1.0
+Portscan,Subflow Bwd Bytes,159066,10,1.0
+Portscan,FWD Init Win Bytes,159066,4,1.0
+Portscan,Bwd Init Win Bytes,159066,5,1.0
+Portscan,Fwd Act Data Pkts,159066,2,1.0
+Portscan,Fwd Seg Size Min,159066,6,1.0
+Portscan,Active Mean,159066,65,0.9996542315768298
+Portscan,Active Std,159066,18,0.9999497064111752
+Portscan,Active Max,159066,59,0.9996793783712421
+Portscan,Active Min,159066,63,0.9996668049740359
+Portscan,Idle Mean,159066,71,0.9996165113852111
+Portscan,Idle Std,159066,19,0.9999434197125722
+Portscan,Idle Max,159066,70,0.9996227980838143
+Portscan,Idle Min,159066,71,0.9996165113852111
+Portscan,ICMP Code,159066,2,1.0
+Portscan,ICMP Type,159066,2,1.0
+Portscan,Attempted Category,159066,1,1.0
+SSH-Patator,Dst Port,2961,1,1.0
+SSH-Patator,Protocol,2961,1,1.0
+SSH-Patator,Total Fwd Packet,2961,25,0.9861533265788585
+SSH-Patator,Total Bwd packets,2961,28,0.9868287740628167
+SSH-Patator,Total Length of Fwd Packet,2961,35,0.9854778790949004
+SSH-Patator,Total Length of Bwd Packet,2961,24,0.9915569064505235
+SSH-Patator,Fwd Packet Length Max,2961,5,1.0
+SSH-Patator,Fwd Packet Length Min,2961,1,1.0
+SSH-Patator,Fwd Packet Length Mean,2961,101,0.9371833839918946
+SSH-Patator,Fwd Packet Length Std,2961,102,0.9415737926376224
+SSH-Patator,Bwd Packet Length Max,2961,2,1.0
+SSH-Patator,Bwd Packet Length Min,2961,2,1.0
+SSH-Patator,Bwd Packet Length Mean,2961,57,0.9763593380614657
+SSH-Patator,Bwd Packet Length Std,2961,61,0.9739952718676123
+SSH-Patator,Flow IAT Min,2961,52,0.9240121580547113
+SSH-Patator,Bwd IAT Min,2961,60,0.9270516717325228
+SSH-Patator,Fwd PSH Flags,2961,14,0.9979736575481256
+SSH-Patator,Bwd PSH Flags,2961,14,0.9976359338061466
+SSH-Patator,Fwd URG Flags,2961,1,1.0
+SSH-Patator,Bwd URG Flags,2961,1,1.0
+SSH-Patator,Fwd RST Flags,2961,2,1.0
+SSH-Patator,Bwd RST Flags,2961,1,1.0
+SSH-Patator,Fwd Header Length,2961,43,0.971968929415738
+SSH-Patator,Bwd Header Length,2961,40,0.978047956771361
+SSH-Patator,Packet Length Min,2961,1,1.0
+SSH-Patator,Packet Length Max,2961,3,1.0
+SSH-Patator,Packet Length Std,2961,120,0.9287402904424181
+SSH-Patator,Packet Length Variance,2961,142,0.9074636946977372
+SSH-Patator,FIN Flag Count,2961,5,1.0
+SSH-Patator,SYN Flag Count,2961,4,1.0
+SSH-Patator,RST Flag Count,2961,2,1.0
+SSH-Patator,PSH Flag Count,2961,19,0.9925700776764607
+SSH-Patator,ACK Flag Count,2961,44,0.9746707193515705
+SSH-Patator,URG Flag Count,2961,1,1.0
+SSH-Patator,CWR Flag Count,2961,1,1.0
+SSH-Patator,ECE Flag Count,2961,1,1.0
+SSH-Patator,Down/Up Ratio,2961,68,0.9300911854103343
+SSH-Patator,Average Packet Size,2961,103,0.9436001350894968
+SSH-Patator,Fwd Segment Size Avg,2961,85,0.950354609929078
+SSH-Patator,Bwd Segment Size Avg,2961,50,0.9793988517392773
+SSH-Patator,Fwd Bytes/Bulk Avg,2961,8,1.0
+SSH-Patator,Fwd Packet/Bulk Avg,2961,2,1.0
+SSH-Patator,Fwd Bulk Rate Avg,2961,20,0.9966227625802094
+SSH-Patator,Bwd Bytes/Bulk Avg,2961,6,1.0
+SSH-Patator,Bwd Packet/Bulk Avg,2961,3,1.0
+SSH-Patator,Bwd Bulk Rate Avg,2961,20,0.9966227625802094
+SSH-Patator,Subflow Fwd Packets,2961,1,1.0
+SSH-Patator,Subflow Fwd Bytes,2961,26,0.9895305639986491
+SSH-Patator,Subflow Bwd Packets,2961,1,1.0
+SSH-Patator,Subflow Bwd Bytes,2961,40,0.9810874704491725
+SSH-Patator,FWD Init Win Bytes,2961,2,1.0
+SSH-Patator,Bwd Init Win Bytes,2961,6,1.0
+SSH-Patator,Fwd Act Data Pkts,2961,14,0.9979736575481256
+SSH-Patator,Fwd Seg Size Min,2961,2,1.0
+SSH-Patator,Active Mean,2961,3,1.0
+SSH-Patator,Active Std,2961,1,1.0
+SSH-Patator,Active Max,2961,3,1.0
+SSH-Patator,Active Min,2961,3,1.0
+SSH-Patator,Idle Mean,2961,3,1.0
+SSH-Patator,Idle Std,2961,1,1.0
+SSH-Patator,Idle Max,2961,3,1.0
+SSH-Patator,Idle Min,2961,3,1.0
+SSH-Patator,ICMP Code,2961,1,1.0
+SSH-Patator,ICMP Type,2961,1,1.0
+SSH-Patator,Attempted Category,2961,1,1.0
+SSH-Patator - Attempted,Dst Port,27,1,1.0
+SSH-Patator - Attempted,Protocol,27,1,1.0
+SSH-Patator - Attempted,Total Fwd Packet,27,4,1.0
+SSH-Patator - Attempted,Total Bwd packets,27,4,1.0
+SSH-Patator - Attempted,Total Length of Fwd Packet,27,3,1.0
+SSH-Patator - Attempted,Total Length of Bwd Packet,27,1,1.0
+SSH-Patator - Attempted,Fwd Packet Length Max,27,3,1.0
+SSH-Patator - Attempted,Fwd Packet Length Min,27,1,1.0
+SSH-Patator - Attempted,Fwd Packet Length Mean,27,5,1.0
+SSH-Patator - Attempted,Fwd Packet Length Std,27,5,1.0
+SSH-Patator - Attempted,Bwd Packet Length Max,27,1,1.0
+SSH-Patator - Attempted,Bwd Packet Length Min,27,1,1.0
+SSH-Patator - Attempted,Bwd Packet Length Mean,27,1,1.0
+SSH-Patator - Attempted,Bwd Packet Length Std,27,1,1.0
+SSH-Patator - Attempted,Fwd PSH Flags,27,2,1.0
+SSH-Patator - Attempted,Bwd PSH Flags,27,1,1.0
+SSH-Patator - Attempted,Fwd URG Flags,27,1,1.0
+SSH-Patator - Attempted,Bwd URG Flags,27,1,1.0
+SSH-Patator - Attempted,Fwd RST Flags,27,1,1.0
+SSH-Patator - Attempted,Bwd RST Flags,27,4,1.0
+SSH-Patator - Attempted,Fwd Header Length,27,4,1.0
+SSH-Patator - Attempted,Bwd Header Length,27,5,1.0
+SSH-Patator - Attempted,Packet Length Min,27,1,1.0
+SSH-Patator - Attempted,Packet Length Max,27,3,1.0
+SSH-Patator - Attempted,Packet Length Mean,27,7,1.0
+SSH-Patator - Attempted,Packet Length Std,27,7,1.0
+SSH-Patator - Attempted,Packet Length Variance,27,7,1.0
+SSH-Patator - Attempted,FIN Flag Count,27,3,1.0
+SSH-Patator - Attempted,SYN Flag Count,27,2,1.0
+SSH-Patator - Attempted,RST Flag Count,27,4,1.0
+SSH-Patator - Attempted,PSH Flag Count,27,2,1.0
+SSH-Patator - Attempted,ACK Flag Count,27,4,1.0
+SSH-Patator - Attempted,URG Flag Count,27,1,1.0
+SSH-Patator - Attempted,CWR Flag Count,27,1,1.0
+SSH-Patator - Attempted,ECE Flag Count,27,1,1.0
+SSH-Patator - Attempted,Down/Up Ratio,27,3,1.0
+SSH-Patator - Attempted,Average Packet Size,27,7,1.0
+SSH-Patator - Attempted,Fwd Segment Size Avg,27,5,1.0
+SSH-Patator - Attempted,Bwd Segment Size Avg,27,1,1.0
+SSH-Patator - Attempted,Fwd Bytes/Bulk Avg,27,1,1.0
+SSH-Patator - Attempted,Fwd Packet/Bulk Avg,27,1,1.0
+SSH-Patator - Attempted,Fwd Bulk Rate Avg,27,1,1.0
+SSH-Patator - Attempted,Bwd Bytes/Bulk Avg,27,1,1.0
+SSH-Patator - Attempted,Bwd Packet/Bulk Avg,27,1,1.0
+SSH-Patator - Attempted,Bwd Bulk Rate Avg,27,1,1.0
+SSH-Patator - Attempted,Subflow Fwd Packets,27,1,1.0
+SSH-Patator - Attempted,Subflow Fwd Bytes,27,5,1.0
+SSH-Patator - Attempted,Subflow Bwd Packets,27,1,1.0
+SSH-Patator - Attempted,Subflow Bwd Bytes,27,1,1.0
+SSH-Patator - Attempted,FWD Init Win Bytes,27,2,1.0
+SSH-Patator - Attempted,Bwd Init Win Bytes,27,3,1.0
+SSH-Patator - Attempted,Fwd Act Data Pkts,27,2,1.0
+SSH-Patator - Attempted,Fwd Seg Size Min,27,2,1.0
+SSH-Patator - Attempted,Active Mean,27,1,1.0
+SSH-Patator - Attempted,Active Std,27,1,1.0
+SSH-Patator - Attempted,Active Max,27,1,1.0
+SSH-Patator - Attempted,Active Min,27,1,1.0
+SSH-Patator - Attempted,Idle Mean,27,1,1.0
+SSH-Patator - Attempted,Idle Std,27,1,1.0
+SSH-Patator - Attempted,Idle Max,27,1,1.0
+SSH-Patator - Attempted,Idle Min,27,1,1.0
+SSH-Patator - Attempted,ICMP Code,27,1,1.0
+SSH-Patator - Attempted,ICMP Type,27,1,1.0
+SSH-Patator - Attempted,Attempted Category,27,1,1.0
+Web Attack - Brute Force,Dst Port,73,1,1.0
+Web Attack - Brute Force,Protocol,73,1,1.0
+Web Attack - Brute Force,Total Fwd Packet,73,5,1.0
+Web Attack - Brute Force,Total Bwd packets,73,6,1.0
+Web Attack - Brute Force,Total Length of Fwd Packet,73,6,1.0
+Web Attack - Brute Force,Fwd Packet Length Max,73,1,1.0
+Web Attack - Brute Force,Fwd Packet Length Min,73,1,1.0
+Web Attack - Brute Force,Fwd Packet Length Mean,73,7,1.0
+Web Attack - Brute Force,Fwd Packet Length Std,73,7,1.0
+Web Attack - Brute Force,Bwd Packet Length Max,73,6,1.0
+Web Attack - Brute Force,Bwd Packet Length Min,73,1,1.0
+Web Attack - Brute Force,Flow IAT Min,73,15,0.9315068493150684
+Web Attack - Brute Force,Bwd IAT Min,73,12,0.9726027397260274
+Web Attack - Brute Force,Fwd PSH Flags,73,4,1.0
+Web Attack - Brute Force,Bwd PSH Flags,73,4,1.0
+Web Attack - Brute Force,Fwd URG Flags,73,1,1.0
+Web Attack - Brute Force,Bwd URG Flags,73,1,1.0
+Web Attack - Brute Force,Fwd RST Flags,73,1,1.0
+Web Attack - Brute Force,Bwd RST Flags,73,1,1.0
+Web Attack - Brute Force,Fwd Header Length,73,5,1.0
+Web Attack - Brute Force,Bwd Header Length,73,6,1.0
+Web Attack - Brute Force,Packet Length Min,73,1,1.0
+Web Attack - Brute Force,Packet Length Max,73,6,1.0
+Web Attack - Brute Force,FIN Flag Count,73,1,1.0
+Web Attack - Brute Force,SYN Flag Count,73,1,1.0
+Web Attack - Brute Force,RST Flag Count,73,1,1.0
+Web Attack - Brute Force,PSH Flag Count,73,4,1.0
+Web Attack - Brute Force,ACK Flag Count,73,6,1.0
+Web Attack - Brute Force,URG Flag Count,73,1,1.0
+Web Attack - Brute Force,CWR Flag Count,73,1,1.0
+Web Attack - Brute Force,ECE Flag Count,73,1,1.0
+Web Attack - Brute Force,Down/Up Ratio,73,7,1.0
+Web Attack - Brute Force,Fwd Segment Size Avg,73,7,1.0
+Web Attack - Brute Force,Fwd Bytes/Bulk Avg,73,1,1.0
+Web Attack - Brute Force,Fwd Packet/Bulk Avg,73,1,1.0
+Web Attack - Brute Force,Fwd Bulk Rate Avg,73,1,1.0
+Web Attack - Brute Force,Bwd Bytes/Bulk Avg,73,1,1.0
+Web Attack - Brute Force,Bwd Packet/Bulk Avg,73,1,1.0
+Web Attack - Brute Force,Bwd Bulk Rate Avg,73,1,1.0
+Web Attack - Brute Force,Subflow Fwd Packets,73,1,1.0
+Web Attack - Brute Force,Subflow Fwd Bytes,73,5,1.0
+Web Attack - Brute Force,Subflow Bwd Packets,73,1,1.0
+Web Attack - Brute Force,Subflow Bwd Bytes,73,5,1.0
+Web Attack - Brute Force,FWD Init Win Bytes,73,1,1.0
+Web Attack - Brute Force,Bwd Init Win Bytes,73,6,1.0
+Web Attack - Brute Force,Fwd Act Data Pkts,73,4,1.0
+Web Attack - Brute Force,Fwd Seg Size Min,73,1,1.0
+Web Attack - Brute Force,Active Mean,73,1,1.0
+Web Attack - Brute Force,Active Std,73,1,1.0
+Web Attack - Brute Force,Active Max,73,1,1.0
+Web Attack - Brute Force,Active Min,73,1,1.0
+Web Attack - Brute Force,Idle Mean,73,1,1.0
+Web Attack - Brute Force,Idle Std,73,1,1.0
+Web Attack - Brute Force,Idle Max,73,1,1.0
+Web Attack - Brute Force,Idle Min,73,1,1.0
+Web Attack - Brute Force,ICMP Code,73,1,1.0
+Web Attack - Brute Force,ICMP Type,73,1,1.0
+Web Attack - Brute Force,Attempted Category,73,1,1.0
+Web Attack - Brute Force - Attempted,Dst Port,1292,1,1.0
+Web Attack - Brute Force - Attempted,Protocol,1292,1,1.0
+Web Attack - Brute Force - Attempted,Total Fwd Packet,1292,6,1.0
+Web Attack - Brute Force - Attempted,Total Bwd packets,1292,7,1.0
+Web Attack - Brute Force - Attempted,Total Length of Fwd Packet,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,Total Length of Bwd Packet,1292,10,1.0
+Web Attack - Brute Force - Attempted,Fwd Packet Length Max,1292,10,1.0
+Web Attack - Brute Force - Attempted,Fwd Packet Length Min,1292,1,1.0
+Web Attack - Brute Force - Attempted,Fwd Packet Length Mean,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,Fwd Packet Length Std,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,Bwd Packet Length Max,1292,10,1.0
+Web Attack - Brute Force - Attempted,Bwd Packet Length Min,1292,1,1.0
+Web Attack - Brute Force - Attempted,Bwd Packet Length Mean,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,Bwd Packet Length Std,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,Flow Bytes/s,1292,79,0.9465944272445821
+Web Attack - Brute Force - Attempted,Bwd IAT Std,1292,113,0.9202786377708978
+Web Attack - Brute Force - Attempted,Fwd PSH Flags,1292,6,1.0
+Web Attack - Brute Force - Attempted,Bwd PSH Flags,1292,6,1.0
+Web Attack - Brute Force - Attempted,Fwd URG Flags,1292,1,1.0
+Web Attack - Brute Force - Attempted,Bwd URG Flags,1292,1,1.0
+Web Attack - Brute Force - Attempted,Fwd RST Flags,1292,2,1.0
+Web Attack - Brute Force - Attempted,Bwd RST Flags,1292,1,1.0
+Web Attack - Brute Force - Attempted,Fwd Header Length,1292,6,1.0
+Web Attack - Brute Force - Attempted,Bwd Header Length,1292,7,1.0
+Web Attack - Brute Force - Attempted,Packet Length Min,1292,1,1.0
+Web Attack - Brute Force - Attempted,Packet Length Max,1292,10,1.0
+Web Attack - Brute Force - Attempted,Packet Length Mean,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,Packet Length Std,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,Packet Length Variance,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,FIN Flag Count,1292,1,1.0
+Web Attack - Brute Force - Attempted,SYN Flag Count,1292,1,1.0
+Web Attack - Brute Force - Attempted,RST Flag Count,1292,2,1.0
+Web Attack - Brute Force - Attempted,PSH Flag Count,1292,6,1.0
+Web Attack - Brute Force - Attempted,ACK Flag Count,1292,9,1.0
+Web Attack - Brute Force - Attempted,URG Flag Count,1292,1,1.0
+Web Attack - Brute Force - Attempted,CWR Flag Count,1292,1,1.0
+Web Attack - Brute Force - Attempted,ECE Flag Count,1292,1,1.0
+Web Attack - Brute Force - Attempted,Down/Up Ratio,1292,7,1.0
+Web Attack - Brute Force - Attempted,Average Packet Size,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,Fwd Segment Size Avg,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,Bwd Segment Size Avg,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,Fwd Bytes/Bulk Avg,1292,1,1.0
+Web Attack - Brute Force - Attempted,Fwd Packet/Bulk Avg,1292,1,1.0
+Web Attack - Brute Force - Attempted,Fwd Bulk Rate Avg,1292,1,1.0
+Web Attack - Brute Force - Attempted,Bwd Bytes/Bulk Avg,1292,2,1.0
+Web Attack - Brute Force - Attempted,Bwd Packet/Bulk Avg,1292,2,1.0
+Web Attack - Brute Force - Attempted,Bwd Bulk Rate Avg,1292,2,1.0
+Web Attack - Brute Force - Attempted,Subflow Fwd Packets,1292,1,1.0
+Web Attack - Brute Force - Attempted,Subflow Fwd Bytes,1292,10,1.0
+Web Attack - Brute Force - Attempted,Subflow Bwd Packets,1292,1,1.0
+Web Attack - Brute Force - Attempted,Subflow Bwd Bytes,1292,11,0.9992260061919505
+Web Attack - Brute Force - Attempted,FWD Init Win Bytes,1292,1,1.0
+Web Attack - Brute Force - Attempted,Bwd Init Win Bytes,1292,8,1.0
+Web Attack - Brute Force - Attempted,Fwd Act Data Pkts,1292,6,1.0
+Web Attack - Brute Force - Attempted,Fwd Seg Size Min,1292,2,1.0
+Web Attack - Brute Force - Attempted,Active Std,1292,1,1.0
+Web Attack - Brute Force - Attempted,Idle Std,1292,1,1.0
+Web Attack - Brute Force - Attempted,ICMP Code,1292,1,1.0
+Web Attack - Brute Force - Attempted,ICMP Type,1292,1,1.0
+Web Attack - Brute Force - Attempted,Attempted Category,1292,3,1.0
+Web Attack - SQL Injection,Dst Port,13,1,1.0
+Web Attack - SQL Injection,Protocol,13,1,1.0
+Web Attack - SQL Injection,Total Fwd Packet,13,4,1.0
+Web Attack - SQL Injection,Total Bwd packets,13,3,1.0
+Web Attack - SQL Injection,Total Length of Fwd Packet,13,8,1.0
+Web Attack - SQL Injection,Total Length of Bwd Packet,13,6,1.0
+Web Attack - SQL Injection,Fwd Packet Length Max,13,7,1.0
+Web Attack - SQL Injection,Fwd Packet Length Min,13,1,1.0
+Web Attack - SQL Injection,Fwd Packet Length Mean,13,11,0.9230769230769231
+Web Attack - SQL Injection,Fwd Packet Length Std,13,11,0.9230769230769231
+Web Attack - SQL Injection,Bwd Packet Length Max,13,7,1.0
+Web Attack - SQL Injection,Bwd Packet Length Min,13,1,1.0
+Web Attack - SQL Injection,Bwd Packet Length Mean,13,9,1.0
+Web Attack - SQL Injection,Bwd Packet Length Std,13,10,1.0
+Web Attack - SQL Injection,Flow IAT Min,13,6,1.0
+Web Attack - SQL Injection,Fwd IAT Min,13,5,1.0
+Web Attack - SQL Injection,Fwd PSH Flags,13,2,1.0
+Web Attack - SQL Injection,Bwd PSH Flags,13,2,1.0
+Web Attack - SQL Injection,Fwd URG Flags,13,1,1.0
+Web Attack - SQL Injection,Bwd URG Flags,13,1,1.0
+Web Attack - SQL Injection,Fwd RST Flags,13,1,1.0
+Web Attack - SQL Injection,Bwd RST Flags,13,1,1.0
+Web Attack - SQL Injection,Fwd Header Length,13,4,1.0
+Web Attack - SQL Injection,Bwd Header Length,13,3,1.0
+Web Attack - SQL Injection,Packet Length Min,13,1,1.0
+Web Attack - SQL Injection,Packet Length Max,13,7,1.0
+Web Attack - SQL Injection,Packet Length Mean,13,10,1.0
+Web Attack - SQL Injection,Packet Length Std,13,10,1.0
+Web Attack - SQL Injection,Packet Length Variance,13,10,1.0
+Web Attack - SQL Injection,FIN Flag Count,13,1,1.0
+Web Attack - SQL Injection,SYN Flag Count,13,1,1.0
+Web Attack - SQL Injection,RST Flag Count,13,1,1.0
+Web Attack - SQL Injection,PSH Flag Count,13,2,1.0
+Web Attack - SQL Injection,ACK Flag Count,13,4,1.0
+Web Attack - SQL Injection,URG Flag Count,13,1,1.0
+Web Attack - SQL Injection,CWR Flag Count,13,1,1.0
+Web Attack - SQL Injection,ECE Flag Count,13,1,1.0
+Web Attack - SQL Injection,Down/Up Ratio,13,5,1.0
+Web Attack - SQL Injection,Average Packet Size,13,10,1.0
+Web Attack - SQL Injection,Fwd Segment Size Avg,13,11,0.9230769230769231
+Web Attack - SQL Injection,Bwd Segment Size Avg,13,9,1.0
+Web Attack - SQL Injection,Fwd Bytes/Bulk Avg,13,1,1.0
+Web Attack - SQL Injection,Fwd Packet/Bulk Avg,13,1,1.0
+Web Attack - SQL Injection,Fwd Bulk Rate Avg,13,1,1.0
+Web Attack - SQL Injection,Bwd Bytes/Bulk Avg,13,1,1.0
+Web Attack - SQL Injection,Bwd Packet/Bulk Avg,13,1,1.0
+Web Attack - SQL Injection,Bwd Bulk Rate Avg,13,1,1.0
+Web Attack - SQL Injection,Subflow Fwd Packets,13,1,1.0
+Web Attack - SQL Injection,Subflow Fwd Bytes,13,9,1.0
+Web Attack - SQL Injection,Subflow Bwd Packets,13,1,1.0
+Web Attack - SQL Injection,Subflow Bwd Bytes,13,8,1.0
+Web Attack - SQL Injection,FWD Init Win Bytes,13,1,1.0
+Web Attack - SQL Injection,Bwd Init Win Bytes,13,3,1.0
+Web Attack - SQL Injection,Fwd Act Data Pkts,13,2,1.0
+Web Attack - SQL Injection,Fwd Seg Size Min,13,1,1.0
+Web Attack - SQL Injection,Active Std,13,1,1.0
+Web Attack - SQL Injection,Idle Std,13,1,1.0
+Web Attack - SQL Injection,ICMP Code,13,1,1.0
+Web Attack - SQL Injection,ICMP Type,13,1,1.0
+Web Attack - SQL Injection,Attempted Category,13,1,1.0
+Web Attack - SQL Injection - Attempted,Src Port,5,5,1.0
+Web Attack - SQL Injection - Attempted,Dst Port,5,1,1.0
+Web Attack - SQL Injection - Attempted,Protocol,5,1,1.0
+Web Attack - SQL Injection - Attempted,Flow Duration,5,5,1.0
+Web Attack - SQL Injection - Attempted,Total Fwd Packet,5,4,1.0
+Web Attack - SQL Injection - Attempted,Total Bwd packets,5,4,1.0
+Web Attack - SQL Injection - Attempted,Total Length of Fwd Packet,5,5,1.0
+Web Attack - SQL Injection - Attempted,Total Length of Bwd Packet,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd Packet Length Max,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd Packet Length Min,5,1,1.0
+Web Attack - SQL Injection - Attempted,Fwd Packet Length Mean,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd Packet Length Std,5,5,1.0
+Web Attack - SQL Injection - Attempted,Bwd Packet Length Max,5,5,1.0
+Web Attack - SQL Injection - Attempted,Bwd Packet Length Min,5,1,1.0
+Web Attack - SQL Injection - Attempted,Bwd Packet Length Mean,5,5,1.0
+Web Attack - SQL Injection - Attempted,Bwd Packet Length Std,5,5,1.0
+Web Attack - SQL Injection - Attempted,Flow Bytes/s,5,5,1.0
+Web Attack - SQL Injection - Attempted,Flow Packets/s,5,5,1.0
+Web Attack - SQL Injection - Attempted,Flow IAT Mean,5,5,1.0
+Web Attack - SQL Injection - Attempted,Flow IAT Std,5,5,1.0
+Web Attack - SQL Injection - Attempted,Flow IAT Max,5,5,1.0
+Web Attack - SQL Injection - Attempted,Flow IAT Min,5,4,1.0
+Web Attack - SQL Injection - Attempted,Fwd IAT Total,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd IAT Mean,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd IAT Std,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd IAT Max,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd IAT Min,5,4,1.0
+Web Attack - SQL Injection - Attempted,Bwd IAT Total,5,5,1.0
+Web Attack - SQL Injection - Attempted,Bwd IAT Mean,5,5,1.0
+Web Attack - SQL Injection - Attempted,Bwd IAT Std,5,5,1.0
+Web Attack - SQL Injection - Attempted,Bwd IAT Max,5,5,1.0
+Web Attack - SQL Injection - Attempted,Bwd IAT Min,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd PSH Flags,5,5,1.0
+Web Attack - SQL Injection - Attempted,Bwd PSH Flags,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd URG Flags,5,1,1.0
+Web Attack - SQL Injection - Attempted,Bwd URG Flags,5,1,1.0
+Web Attack - SQL Injection - Attempted,Fwd RST Flags,5,2,1.0
+Web Attack - SQL Injection - Attempted,Bwd RST Flags,5,1,1.0
+Web Attack - SQL Injection - Attempted,Fwd Header Length,5,4,1.0
+Web Attack - SQL Injection - Attempted,Bwd Header Length,5,4,1.0
+Web Attack - SQL Injection - Attempted,Fwd Packets/s,5,5,1.0
+Web Attack - SQL Injection - Attempted,Bwd Packets/s,5,5,1.0
+Web Attack - SQL Injection - Attempted,Packet Length Min,5,1,1.0
+Web Attack - SQL Injection - Attempted,Packet Length Max,5,5,1.0
+Web Attack - SQL Injection - Attempted,Packet Length Mean,5,5,1.0
+Web Attack - SQL Injection - Attempted,Packet Length Std,5,5,1.0
+Web Attack - SQL Injection - Attempted,Packet Length Variance,5,5,1.0
+Web Attack - SQL Injection - Attempted,FIN Flag Count,5,1,1.0
+Web Attack - SQL Injection - Attempted,SYN Flag Count,5,1,1.0
+Web Attack - SQL Injection - Attempted,RST Flag Count,5,2,1.0
+Web Attack - SQL Injection - Attempted,PSH Flag Count,5,5,1.0
+Web Attack - SQL Injection - Attempted,ACK Flag Count,5,4,1.0
+Web Attack - SQL Injection - Attempted,URG Flag Count,5,1,1.0
+Web Attack - SQL Injection - Attempted,CWR Flag Count,5,1,1.0
+Web Attack - SQL Injection - Attempted,ECE Flag Count,5,1,1.0
+Web Attack - SQL Injection - Attempted,Down/Up Ratio,5,3,1.0
+Web Attack - SQL Injection - Attempted,Average Packet Size,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd Segment Size Avg,5,5,1.0
+Web Attack - SQL Injection - Attempted,Bwd Segment Size Avg,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd Bytes/Bulk Avg,5,1,1.0
+Web Attack - SQL Injection - Attempted,Fwd Packet/Bulk Avg,5,1,1.0
+Web Attack - SQL Injection - Attempted,Fwd Bulk Rate Avg,5,1,1.0
+Web Attack - SQL Injection - Attempted,Bwd Bytes/Bulk Avg,5,1,1.0
+Web Attack - SQL Injection - Attempted,Bwd Packet/Bulk Avg,5,1,1.0
+Web Attack - SQL Injection - Attempted,Bwd Bulk Rate Avg,5,1,1.0
+Web Attack - SQL Injection - Attempted,Subflow Fwd Packets,5,1,1.0
+Web Attack - SQL Injection - Attempted,Subflow Fwd Bytes,5,5,1.0
+Web Attack - SQL Injection - Attempted,Subflow Bwd Packets,5,1,1.0
+Web Attack - SQL Injection - Attempted,Subflow Bwd Bytes,5,5,1.0
+Web Attack - SQL Injection - Attempted,FWD Init Win Bytes,5,1,1.0
+Web Attack - SQL Injection - Attempted,Bwd Init Win Bytes,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd Act Data Pkts,5,5,1.0
+Web Attack - SQL Injection - Attempted,Fwd Seg Size Min,5,2,1.0
+Web Attack - SQL Injection - Attempted,Active Mean,5,3,1.0
+Web Attack - SQL Injection - Attempted,Active Std,5,1,1.0
+Web Attack - SQL Injection - Attempted,Active Max,5,3,1.0
+Web Attack - SQL Injection - Attempted,Active Min,5,3,1.0
+Web Attack - SQL Injection - Attempted,Idle Mean,5,3,1.0
+Web Attack - SQL Injection - Attempted,Idle Std,5,1,1.0
+Web Attack - SQL Injection - Attempted,Idle Max,5,3,1.0
+Web Attack - SQL Injection - Attempted,Idle Min,5,3,1.0
+Web Attack - SQL Injection - Attempted,ICMP Code,5,1,1.0
+Web Attack - SQL Injection - Attempted,ICMP Type,5,1,1.0
+Web Attack - SQL Injection - Attempted,Total TCP Flow Time,5,5,1.0
+Web Attack - SQL Injection - Attempted,Attempted Category,5,2,1.0
+Web Attack - XSS,Dst Port,18,1,1.0
+Web Attack - XSS,Protocol,18,1,1.0
+Web Attack - XSS,Total Fwd Packet,18,6,1.0
+Web Attack - XSS,Total Bwd packets,18,6,1.0
+Web Attack - XSS,Total Length of Fwd Packet,18,5,1.0
+Web Attack - XSS,Fwd Packet Length Max,18,1,1.0
+Web Attack - XSS,Fwd Packet Length Min,18,1,1.0
+Web Attack - XSS,Fwd Packet Length Mean,18,10,1.0
+Web Attack - XSS,Fwd Packet Length Std,18,10,1.0
+Web Attack - XSS,Bwd Packet Length Max,18,3,1.0
+Web Attack - XSS,Bwd Packet Length Min,18,1,1.0
+Web Attack - XSS,Flow IAT Min,18,6,1.0
+Web Attack - XSS,Bwd IAT Min,18,6,1.0
+Web Attack - XSS,Fwd PSH Flags,18,2,1.0
+Web Attack - XSS,Bwd PSH Flags,18,2,1.0
+Web Attack - XSS,Fwd URG Flags,18,1,1.0
+Web Attack - XSS,Bwd URG Flags,18,1,1.0
+Web Attack - XSS,Fwd RST Flags,18,1,1.0
+Web Attack - XSS,Bwd RST Flags,18,1,1.0
+Web Attack - XSS,Fwd Header Length,18,6,1.0
+Web Attack - XSS,Bwd Header Length,18,6,1.0
+Web Attack - XSS,Packet Length Min,18,1,1.0
+Web Attack - XSS,Packet Length Max,18,3,1.0
+Web Attack - XSS,FIN Flag Count,18,1,1.0
+Web Attack - XSS,SYN Flag Count,18,1,1.0
+Web Attack - XSS,RST Flag Count,18,1,1.0
+Web Attack - XSS,PSH Flag Count,18,2,1.0
+Web Attack - XSS,ACK Flag Count,18,8,1.0
+Web Attack - XSS,URG Flag Count,18,1,1.0
+Web Attack - XSS,CWR Flag Count,18,1,1.0
+Web Attack - XSS,ECE Flag Count,18,1,1.0
+Web Attack - XSS,Down/Up Ratio,18,10,1.0
+Web Attack - XSS,Fwd Segment Size Avg,18,9,1.0
+Web Attack - XSS,Fwd Bytes/Bulk Avg,18,1,1.0
+Web Attack - XSS,Fwd Packet/Bulk Avg,18,1,1.0
+Web Attack - XSS,Fwd Bulk Rate Avg,18,1,1.0
+Web Attack - XSS,Bwd Bytes/Bulk Avg,18,1,1.0
+Web Attack - XSS,Bwd Packet/Bulk Avg,18,1,1.0
+Web Attack - XSS,Bwd Bulk Rate Avg,18,1,1.0
+Web Attack - XSS,Subflow Fwd Packets,18,1,1.0
+Web Attack - XSS,Subflow Fwd Bytes,18,7,1.0
+Web Attack - XSS,Subflow Bwd Packets,18,1,1.0
+Web Attack - XSS,Subflow Bwd Bytes,18,7,1.0
+Web Attack - XSS,FWD Init Win Bytes,18,1,1.0
+Web Attack - XSS,Bwd Init Win Bytes,18,4,1.0
+Web Attack - XSS,Fwd Act Data Pkts,18,2,1.0
+Web Attack - XSS,Fwd Seg Size Min,18,1,1.0
+Web Attack - XSS,Active Mean,18,1,1.0
+Web Attack - XSS,Active Std,18,1,1.0
+Web Attack - XSS,Active Max,18,1,1.0
+Web Attack - XSS,Active Min,18,1,1.0
+Web Attack - XSS,Idle Mean,18,1,1.0
+Web Attack - XSS,Idle Std,18,1,1.0
+Web Attack - XSS,Idle Max,18,1,1.0
+Web Attack - XSS,Idle Min,18,1,1.0
+Web Attack - XSS,ICMP Code,18,1,1.0
+Web Attack - XSS,ICMP Type,18,1,1.0
+Web Attack - XSS,Attempted Category,18,1,1.0
+Web Attack - XSS - Attempted,Dst Port,655,1,1.0
+Web Attack - XSS - Attempted,Protocol,655,1,1.0
+Web Attack - XSS - Attempted,Total Fwd Packet,655,5,1.0
+Web Attack - XSS - Attempted,Total Bwd packets,655,6,1.0
+Web Attack - XSS - Attempted,Total Length of Fwd Packet,655,5,1.0
+Web Attack - XSS - Attempted,Total Length of Bwd Packet,655,5,1.0
+Web Attack - XSS - Attempted,Fwd Packet Length Max,655,4,1.0
+Web Attack - XSS - Attempted,Fwd Packet Length Min,655,1,1.0
+Web Attack - XSS - Attempted,Fwd Packet Length Mean,655,5,1.0
+Web Attack - XSS - Attempted,Fwd Packet Length Std,655,5,1.0
+Web Attack - XSS - Attempted,Bwd Packet Length Max,655,5,1.0
+Web Attack - XSS - Attempted,Bwd Packet Length Min,655,1,1.0
+Web Attack - XSS - Attempted,Bwd Packet Length Mean,655,5,1.0
+Web Attack - XSS - Attempted,Bwd Packet Length Std,655,5,1.0
+Web Attack - XSS - Attempted,Flow Bytes/s,655,5,1.0
+Web Attack - XSS - Attempted,Bwd IAT Std,655,21,0.983206106870229
+Web Attack - XSS - Attempted,Fwd PSH Flags,655,5,1.0
+Web Attack - XSS - Attempted,Bwd PSH Flags,655,5,1.0
+Web Attack - XSS - Attempted,Fwd URG Flags,655,1,1.0
+Web Attack - XSS - Attempted,Bwd URG Flags,655,1,1.0
+Web Attack - XSS - Attempted,Fwd RST Flags,655,1,1.0
+Web Attack - XSS - Attempted,Bwd RST Flags,655,1,1.0
+Web Attack - XSS - Attempted,Fwd Header Length,655,5,1.0
+Web Attack - XSS - Attempted,Bwd Header Length,655,6,1.0
+Web Attack - XSS - Attempted,Packet Length Min,655,1,1.0
+Web Attack - XSS - Attempted,Packet Length Max,655,5,1.0
+Web Attack - XSS - Attempted,Packet Length Mean,655,5,1.0
+Web Attack - XSS - Attempted,Packet Length Std,655,5,1.0
+Web Attack - XSS - Attempted,Packet Length Variance,655,5,1.0
+Web Attack - XSS - Attempted,FIN Flag Count,655,1,1.0
+Web Attack - XSS - Attempted,SYN Flag Count,655,1,1.0
+Web Attack - XSS - Attempted,RST Flag Count,655,1,1.0
+Web Attack - XSS - Attempted,PSH Flag Count,655,5,1.0
+Web Attack - XSS - Attempted,ACK Flag Count,655,6,1.0
+Web Attack - XSS - Attempted,URG Flag Count,655,1,1.0
+Web Attack - XSS - Attempted,CWR Flag Count,655,1,1.0
+Web Attack - XSS - Attempted,ECE Flag Count,655,1,1.0
+Web Attack - XSS - Attempted,Down/Up Ratio,655,6,1.0
+Web Attack - XSS - Attempted,Average Packet Size,655,5,1.0
+Web Attack - XSS - Attempted,Fwd Segment Size Avg,655,5,1.0
+Web Attack - XSS - Attempted,Bwd Segment Size Avg,655,5,1.0
+Web Attack - XSS - Attempted,Fwd Bytes/Bulk Avg,655,1,1.0
+Web Attack - XSS - Attempted,Fwd Packet/Bulk Avg,655,1,1.0
+Web Attack - XSS - Attempted,Fwd Bulk Rate Avg,655,1,1.0
+Web Attack - XSS - Attempted,Bwd Bytes/Bulk Avg,655,1,1.0
+Web Attack - XSS - Attempted,Bwd Packet/Bulk Avg,655,1,1.0
+Web Attack - XSS - Attempted,Bwd Bulk Rate Avg,655,1,1.0
+Web Attack - XSS - Attempted,Subflow Fwd Packets,655,1,1.0
+Web Attack - XSS - Attempted,Subflow Fwd Bytes,655,5,1.0
+Web Attack - XSS - Attempted,Subflow Bwd Packets,655,1,1.0
+Web Attack - XSS - Attempted,Subflow Bwd Bytes,655,5,1.0
+Web Attack - XSS - Attempted,FWD Init Win Bytes,655,1,1.0
+Web Attack - XSS - Attempted,Bwd Init Win Bytes,655,5,1.0
+Web Attack - XSS - Attempted,Fwd Act Data Pkts,655,5,1.0
+Web Attack - XSS - Attempted,Fwd Seg Size Min,655,1,1.0
+Web Attack - XSS - Attempted,Active Std,655,1,1.0
+Web Attack - XSS - Attempted,Idle Std,655,1,1.0
+Web Attack - XSS - Attempted,ICMP Code,655,1,1.0
+Web Attack - XSS - Attempted,ICMP Type,655,1,1.0
+Web Attack - XSS - Attempted,Attempted Category,655,2,1.0

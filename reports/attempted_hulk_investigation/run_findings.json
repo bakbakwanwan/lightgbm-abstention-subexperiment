@@ -1,0 +1,14 @@
+{
+  "header_consistency": {
+    "consistent": true,
+    "mismatches": {}
+  },
+  "column_resolution": {
+    "resolved": {
+      "label": "Label",
+      "attempted_category": "Attempted Category",
+      "hulk_length_col": "Total Length of Bwd Packet"
+    },
+    "errors": {}
+  }
+}

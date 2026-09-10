@@ -1,0 +1,219 @@
+basis,scenario,Label,n_rows
+raw_predup,S0,BENIGN,1582566
+raw_predup,S0,Portscan,159066
+raw_predup,S0,DoS Hulk,158468
+raw_predup,S0,DDoS,95144
+raw_predup,S0,Infiltration - Portscan,71767
+raw_predup,S0,DoS GoldenEye,7567
+raw_predup,S0,Botnet - Attempted,4067
+raw_predup,S0,FTP-Patator,3972
+raw_predup,S0,DoS Slowloris,3859
+raw_predup,S0,DoS Slowhttptest - Attempted,3368
+raw_predup,S0,SSH-Patator,2961
+raw_predup,S0,DoS Slowloris - Attempted,1847
+raw_predup,S0,DoS Slowhttptest,1740
+raw_predup,S0,Web Attack - Brute Force - Attempted,1292
+raw_predup,S0,Botnet,736
+raw_predup,S0,Web Attack - XSS - Attempted,655
+raw_predup,S0,DoS Hulk - Attempted,581
+raw_predup,S0,DoS GoldenEye - Attempted,80
+raw_predup,S0,Web Attack - Brute Force,73
+raw_predup,S0,Infiltration - Attempted,45
+raw_predup,S0,Infiltration,36
+raw_predup,S0,SSH-Patator - Attempted,27
+raw_predup,S0,Web Attack - XSS,18
+raw_predup,S0,Web Attack - SQL Injection,13
+raw_predup,S0,FTP-Patator - Attempted,12
+raw_predup,S0,Heartbleed,11
+raw_predup,S0,Web Attack - SQL Injection - Attempted,5
+raw_predup,S1,BENIGN,1582566
+raw_predup,S1,Portscan,159066
+raw_predup,S1,DDoS,95144
+raw_predup,S1,Infiltration - Portscan,71767
+raw_predup,S1,DoS GoldenEye,7567
+raw_predup,S1,Botnet - Attempted,4067
+raw_predup,S1,FTP-Patator,3972
+raw_predup,S1,DoS Slowloris,3859
+raw_predup,S1,DoS Slowhttptest - Attempted,3368
+raw_predup,S1,SSH-Patator,2961
+raw_predup,S1,DoS Slowloris - Attempted,1847
+raw_predup,S1,DoS Slowhttptest,1740
+raw_predup,S1,Web Attack - Brute Force - Attempted,1292
+raw_predup,S1,Botnet,736
+raw_predup,S1,Web Attack - XSS - Attempted,655
+raw_predup,S1,DoS GoldenEye - Attempted,80
+raw_predup,S1,Web Attack - Brute Force,73
+raw_predup,S1,Infiltration - Attempted,45
+raw_predup,S1,Infiltration,36
+raw_predup,S1,SSH-Patator - Attempted,27
+raw_predup,S1,Web Attack - XSS,18
+raw_predup,S1,Web Attack - SQL Injection,13
+raw_predup,S1,FTP-Patator - Attempted,12
+raw_predup,S1,Heartbleed,11
+raw_predup,S1,Web Attack - SQL Injection - Attempted,5
+raw_predup,S3,BENIGN,1582566
+raw_predup,S3,Portscan,159066
+raw_predup,S3,DDoS,95144
+raw_predup,S3,Infiltration - Portscan,71767
+raw_predup,S3,DoS GoldenEye,7567
+raw_predup,S3,FTP-Patator,3972
+raw_predup,S3,DoS Slowloris,3859
+raw_predup,S3,SSH-Patator,2961
+raw_predup,S3,DoS Slowhttptest,1740
+raw_predup,S3,Botnet,736
+raw_predup,S3,Web Attack - Brute Force,73
+raw_predup,S3,Infiltration,36
+raw_predup,S3,Web Attack - XSS,18
+raw_predup,S3,Web Attack - SQL Injection,13
+raw_predup,S3,Heartbleed,11
+raw_predup,S4,BENIGN,1582566
+raw_predup,S4,Portscan,159066
+raw_predup,S4,DDoS,95144
+raw_predup,S4,Infiltration - Portscan,71767
+raw_predup,S4,DoS GoldenEye,7567
+raw_predup,S4,Botnet - Attempted,4067
+raw_predup,S4,FTP-Patator,3972
+raw_predup,S4,DoS Slowloris,3859
+raw_predup,S4,DoS Slowhttptest - Attempted,3368
+raw_predup,S4,SSH-Patator,2961
+raw_predup,S4,DoS Slowloris - Attempted,1847
+raw_predup,S4,DoS Slowhttptest,1740
+raw_predup,S4,Web Attack - Brute Force - Attempted,1292
+raw_predup,S4,Botnet,736
+raw_predup,S4,Web Attack - XSS - Attempted,655
+raw_predup,S4,DoS GoldenEye - Attempted,80
+raw_predup,S4,Web Attack - Brute Force,73
+raw_predup,S4,Infiltration - Attempted,45
+raw_predup,S4,Infiltration,36
+raw_predup,S4,SSH-Patator - Attempted,27
+raw_predup,S4,Web Attack - XSS,18
+raw_predup,S4,Web Attack - SQL Injection,13
+raw_predup,S4,FTP-Patator - Attempted,12
+raw_predup,S4,Heartbleed,11
+raw_predup,S4,Web Attack - SQL Injection - Attempted,5
+raw_predup,S2,BENIGN,1582566
+raw_predup,S2,Portscan,159066
+raw_predup,S2,DDoS,95144
+raw_predup,S2,Infiltration - Portscan,71767
+raw_predup,S2,DoS GoldenEye,7567
+raw_predup,S2,Botnet - Attempted,4067
+raw_predup,S2,FTP-Patator,3972
+raw_predup,S2,DoS Slowloris,3859
+raw_predup,S2,SSH-Patator,2961
+raw_predup,S2,DoS Slowhttptest - Attempted,2804
+raw_predup,S2,DoS Slowhttptest,1740
+raw_predup,S2,Botnet,736
+raw_predup,S2,Web Attack - Brute Force,73
+raw_predup,S2,Infiltration,36
+raw_predup,S2,Web Attack - XSS,18
+raw_predup,S2,Web Attack - SQL Injection,13
+raw_predup,S2,Heartbleed,11
+pipeline_postdedup,S0,BENIGN,1582566
+pipeline_postdedup,S0,Portscan,159066
+pipeline_postdedup,S0,DoS Hulk,158468
+pipeline_postdedup,S0,DDoS,95144
+pipeline_postdedup,S0,Infiltration - Portscan,71767
+pipeline_postdedup,S0,DoS GoldenEye,7567
+pipeline_postdedup,S0,Botnet - Attempted,4067
+pipeline_postdedup,S0,FTP-Patator,3972
+pipeline_postdedup,S0,DoS Slowloris,3859
+pipeline_postdedup,S0,DoS Slowhttptest - Attempted,3368
+pipeline_postdedup,S0,SSH-Patator,2961
+pipeline_postdedup,S0,DoS Slowloris - Attempted,1847
+pipeline_postdedup,S0,DoS Slowhttptest,1740
+pipeline_postdedup,S0,Web Attack - Brute Force - Attempted,1292
+pipeline_postdedup,S0,Botnet,736
+pipeline_postdedup,S0,Web Attack - XSS - Attempted,655
+pipeline_postdedup,S0,DoS Hulk - Attempted,581
+pipeline_postdedup,S0,DoS GoldenEye - Attempted,80
+pipeline_postdedup,S0,Web Attack - Brute Force,73
+pipeline_postdedup,S0,Infiltration - Attempted,45
+pipeline_postdedup,S0,Infiltration,36
+pipeline_postdedup,S0,SSH-Patator - Attempted,27
+pipeline_postdedup,S0,Web Attack - XSS,18
+pipeline_postdedup,S0,Web Attack - SQL Injection,13
+pipeline_postdedup,S0,FTP-Patator - Attempted,12
+pipeline_postdedup,S0,Heartbleed,11
+pipeline_postdedup,S0,Web Attack - SQL Injection - Attempted,5
+pipeline_postdedup,S1,BENIGN,1582566
+pipeline_postdedup,S1,Portscan,159066
+pipeline_postdedup,S1,DDoS,95144
+pipeline_postdedup,S1,Infiltration - Portscan,71767
+pipeline_postdedup,S1,DoS GoldenEye,7567
+pipeline_postdedup,S1,Botnet - Attempted,4067
+pipeline_postdedup,S1,FTP-Patator,3972
+pipeline_postdedup,S1,DoS Slowloris,3859
+pipeline_postdedup,S1,DoS Slowhttptest - Attempted,3368
+pipeline_postdedup,S1,SSH-Patator,2961
+pipeline_postdedup,S1,DoS Slowloris - Attempted,1847
+pipeline_postdedup,S1,DoS Slowhttptest,1740
+pipeline_postdedup,S1,Web Attack - Brute Force - Attempted,1292
+pipeline_postdedup,S1,Botnet,736
+pipeline_postdedup,S1,Web Attack - XSS - Attempted,655
+pipeline_postdedup,S1,DoS GoldenEye - Attempted,80
+pipeline_postdedup,S1,Web Attack - Brute Force,73
+pipeline_postdedup,S1,Infiltration - Attempted,45
+pipeline_postdedup,S1,Infiltration,36
+pipeline_postdedup,S1,SSH-Patator - Attempted,27
+pipeline_postdedup,S1,Web Attack - XSS,18
+pipeline_postdedup,S1,Web Attack - SQL Injection,13
+pipeline_postdedup,S1,FTP-Patator - Attempted,12
+pipeline_postdedup,S1,Heartbleed,11
+pipeline_postdedup,S1,Web Attack - SQL Injection - Attempted,5
+pipeline_postdedup,S3,BENIGN,1582566
+pipeline_postdedup,S3,Portscan,159066
+pipeline_postdedup,S3,DDoS,95144
+pipeline_postdedup,S3,Infiltration - Portscan,71767
+pipeline_postdedup,S3,DoS GoldenEye,7567
+pipeline_postdedup,S3,FTP-Patator,3972
+pipeline_postdedup,S3,DoS Slowloris,3859
+pipeline_postdedup,S3,SSH-Patator,2961
+pipeline_postdedup,S3,DoS Slowhttptest,1740
+pipeline_postdedup,S3,Botnet,736
+pipeline_postdedup,S3,Web Attack - Brute Force,73
+pipeline_postdedup,S3,Infiltration,36
+pipeline_postdedup,S3,Web Attack - XSS,18
+pipeline_postdedup,S3,Web Attack - SQL Injection,13
+pipeline_postdedup,S3,Heartbleed,11
+pipeline_postdedup,S4,BENIGN,1582566
+pipeline_postdedup,S4,Portscan,159066
+pipeline_postdedup,S4,DDoS,95144
+pipeline_postdedup,S4,Infiltration - Portscan,71767
+pipeline_postdedup,S4,DoS GoldenEye,7567
+pipeline_postdedup,S4,Botnet - Attempted,4067
+pipeline_postdedup,S4,FTP-Patator,3972
+pipeline_postdedup,S4,DoS Slowloris,3859
+pipeline_postdedup,S4,DoS Slowhttptest - Attempted,3368
+pipeline_postdedup,S4,SSH-Patator,2961
+pipeline_postdedup,S4,DoS Slowloris - Attempted,1847
+pipeline_postdedup,S4,DoS Slowhttptest,1740
+pipeline_postdedup,S4,Web Attack - Brute Force - Attempted,1292
+pipeline_postdedup,S4,Botnet,736
+pipeline_postdedup,S4,Web Attack - XSS - Attempted,655
+pipeline_postdedup,S4,DoS GoldenEye - Attempted,80
+pipeline_postdedup,S4,Web Attack - Brute Force,73
+pipeline_postdedup,S4,Infiltration - Attempted,45
+pipeline_postdedup,S4,Infiltration,36
+pipeline_postdedup,S4,SSH-Patator - Attempted,27
+pipeline_postdedup,S4,Web Attack - XSS,18
+pipeline_postdedup,S4,Web Attack - SQL Injection,13
+pipeline_postdedup,S4,FTP-Patator - Attempted,12
+pipeline_postdedup,S4,Heartbleed,11
+pipeline_postdedup,S4,Web Attack - SQL Injection - Attempted,5
+pipeline_postdedup,S2,BENIGN,1582566
+pipeline_postdedup,S2,Portscan,159066
+pipeline_postdedup,S2,DDoS,95144
+pipeline_postdedup,S2,Infiltration - Portscan,71767
+pipeline_postdedup,S2,DoS GoldenEye,7567
+pipeline_postdedup,S2,Botnet - Attempted,4067
+pipeline_postdedup,S2,FTP-Patator,3972
+pipeline_postdedup,S2,DoS Slowloris,3859
+pipeline_postdedup,S2,SSH-Patator,2961
+pipeline_postdedup,S2,DoS Slowhttptest - Attempted,2804
+pipeline_postdedup,S2,DoS Slowhttptest,1740
+pipeline_postdedup,S2,Botnet,736
+pipeline_postdedup,S2,Web Attack - Brute Force,73
+pipeline_postdedup,S2,Infiltration,36
+pipeline_postdedup,S2,Web Attack - XSS,18
+pipeline_postdedup,S2,Web Attack - SQL Injection,13
+pipeline_postdedup,S2,Heartbleed,11

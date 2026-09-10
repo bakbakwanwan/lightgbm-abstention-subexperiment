@@ -1,0 +1,113 @@
+{
+  "resolved": true,
+  "value_occurrences": {
+    "11595": {
+      "total_rows": 247008,
+      "hulk_rows": 156380,
+      "non_hulk_rows": 90628,
+      "benign_rows": 1,
+      "non_hulk_non_benign_labels": [
+        "DDoS",
+        "Portscan"
+      ]
+    },
+    "23190": {
+      "total_rows": 46,
+      "hulk_rows": 0,
+      "non_hulk_rows": 46,
+      "benign_rows": 0,
+      "non_hulk_non_benign_labels": [
+        "DDoS",
+        "Infiltration - Portscan"
+      ]
+    },
+    "11606": {
+      "total_rows": 1978,
+      "hulk_rows": 1974,
+      "non_hulk_rows": 4,
+      "benign_rows": 4,
+      "non_hulk_non_benign_labels": []
+    },
+    "23201": {
+      "total_rows": 3,
+      "hulk_rows": 0,
+      "non_hulk_rows": 3,
+      "benign_rows": 3,
+      "non_hulk_non_benign_labels": []
+    }
+  },
+  "not_in_shortcut": {
+    "n_hulk_total": 159049,
+    "n_hulk_in_shortcut_values": 158354,
+    "n_hulk_not_in_shortcut_values": 695
+  },
+  "distribution": {
+    "n_hulk_total": 159049,
+    "n_unique_values": 10,
+    "top_values": [
+      {
+        "value": 11595,
+        "n_rows": 156380,
+        "cum_ratio": null
+      },
+      {
+        "value": 11606,
+        "n_rows": 1974,
+        "cum_ratio": null
+      },
+      {
+        "value": 0,
+        "n_rows": 603,
+        "cum_ratio": null
+      },
+      {
+        "value": 13054,
+        "n_rows": 51,
+        "cum_ratio": null
+      },
+      {
+        "value": 15950,
+        "n_rows": 24,
+        "cum_ratio": null
+      },
+      {
+        "value": 13043,
+        "n_rows": 11,
+        "cum_ratio": null
+      },
+      {
+        "value": 14502,
+        "n_rows": 2,
+        "cum_ratio": null
+      },
+      {
+        "value": 1448,
+        "n_rows": 2,
+        "cum_ratio": null
+      },
+      {
+        "value": 5355,
+        "n_rows": 1,
+        "cum_ratio": null
+      },
+      {
+        "value": 3705,
+        "n_rows": 1,
+        "cum_ratio": null
+      }
+    ],
+    "top_n_cumulative_ratio": 1.0
+  },
+  "n_545438_candidates": {
+    "hulk_family_rows_raw": 159049,
+    "dos_hulk_exact_label_rows_raw": 158468,
+    "hulk_family_rows_pipeline_postdedup": 159049,
+    "hulk_family_rows_pipeline_final": 159049
+  },
+  "benign_contamination": {
+    "n_benign_rows_with_shortcut_values": 8,
+    "n_benign_total": 1582566,
+    "ratio": 5.055081431043002e-06
+  },
+  "benign_contamination_detected": false
+}

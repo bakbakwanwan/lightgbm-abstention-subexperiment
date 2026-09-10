@@ -1,0 +1,43 @@
+{
+  "file_sha256": {
+    "monday": "51fe5dc962626efb4ae70dce0303072fb780da0932822b651202ee9c2fbc1aff",
+    "tuesday": "e2a0a5b631dfc6b455cc9f9a88b944110637d70a7f74171473925f76f38b6b0c",
+    "wednesday": "bf46c5f3c792e8817381f724511229569606918eaf07ac986d7a2592b6341bc2",
+    "thursday": "78a4d11eaf473d099e30e71ddb01e0f38218e844c0a9cdd36602145d674af482",
+    "friday": "ebd499e6f23bd59f9cb81bec28178491b02b925fa5640a24215c9437d79482d0"
+  },
+  "repo_commit_hash": "95ffbeca446dc5e31a9c60ee01b9ea411fae1ae1",
+  "run_started_at": "2026-09-10T11:42:12.848329+00:00",
+  "resolved_columns": {
+    "label": "Label",
+    "attempted_category": "Attempted Category",
+    "hulk_length_col": "Total Length of Bwd Packet"
+  },
+  "notes": {
+    "old_doc_claims": {
+      "attempted_total_rows": 447362,
+      "hulk_total_flows": 545438,
+      "hulk_exceptions_to_shortcut": 8,
+      "hulk_shortcut_values": [
+        11595,
+        23190,
+        11606,
+        23201
+      ]
+    },
+    "findings": {
+      "header_consistency": {
+        "consistent": true,
+        "mismatches": {}
+      },
+      "column_resolution": {
+        "resolved": {
+          "label": "Label",
+          "attempted_category": "Attempted Category",
+          "hulk_length_col": "Total Length of Bwd Packet"
+        },
+        "errors": {}
+      }
+    }
+  }
+}
