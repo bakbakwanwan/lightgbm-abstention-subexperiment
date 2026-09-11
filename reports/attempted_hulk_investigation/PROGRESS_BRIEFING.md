@@ -72,34 +72,31 @@
   근본적인 문제(CLAUDE.md가 이미 알고 있는 "DDoS가 그룹 수 미달로 전량 test" 사실의 확장판).
   S3(가장 보수적 제외)에서는 **6개**로 더 줄어듦 — 6단계 LOAO 설계가 성립하려면 이 숫자가 핵심 근거.
 
-## ⚠️ 미해결 — 다음 세션이 반드시 먼저 확인할 것
+## (해소됨) 이전에 "미해결 버그"로 남겼던 것은 착오였음
 
-`scenario_below_min_group_count.json`의 **S2** 항목에 `DoS Hulk`(5그룹), `DoS Hulk - Attempted`(6그룹)가
-**S0과 완전히 동일한 수치로 다시 나타난다.** S2는 정의상 S1(Hulk 전량 제외)의 부분집합이어야 하므로
-Hulk 계열 행이 S2에 단 한 건도 남아있으면 안 되고, 따라서 이 목록에 아예 등장하지 않아야 정상이다
-(0행짜리 라벨은 groupby 결과에 나타나지 않음). 이 이상 현상은 디버깅 도중 사용자 요청으로 작업이
-중단되어 **원인을 확인하지 못했다.**
+이전 세션에서 `scenario_comparison.csv`의 `labels_dropped_to_zero` 열에 S2 항목으로
+"DoS Hulk;DoS Hulk - Attempted"가 나열된 것을 보고, 이것이 `scenario_below_min_group_count.json`의
+"below_min_group_count" 목록에도 잘못 섞여 들어간 버그라고 오인해 작업을 중단했었다.
 
-다음 세션에서 가장 먼저 할 일:
-1. `scenario_compare.build_scenario_masks`가 반환한 `S2` 마스크로 `raw_df[s2]`를 직접 필터링해
-   `Label`이 `DoS Hulk`/`DoS Hulk - Attempted`인 행이 실제로 0건인지 확인한다.
-   - 0건이면: `compute_below_min_group_count` 또는 `run_scenario_set`의 `exclusion_report` 키 매핑에서
-     기저(basis)나 시나리오 이름이 잘못 섞이는 버그(예: 이전 시나리오의 `excluded` 리스트를 덮어쓰지 못하고
-     누적하는 문제)를 의심하고 코드를 다시 본다.
-   - 0건이 아니면: `build_scenario_masks`의 S2 계산식(`s2 = s1 & (~attempted_mask | keep_attempted)`) 자체나
-     `hulk_family_labels`/`attempted_labels_list` 산출 로직을 재검토한다.
-2. 버그를 고친 뒤 `run_investigation.py --target-reason-codes 1 6`을 다시 실행해 `scenario_comparison.csv`,
-   `scenario_comparison_per_label.csv`, `scenario_below_min_group_count.json`을 재생성한다.
-3. 그 다음에야 위 표의 S2 관련 수치(총행수 1,936,400 등)를 신뢰할 수 있다 — **현재 커밋되는 S2 수치는
-   검증 전이므로 report.md를 쓸 때 이 사실을 명시하거나, 검증 후에 report.md를 작성한다.**
+다시 확인한 결과 **버그가 아니다.** 두 개는 서로 다른 지표다.
+- `labels_dropped_to_zero`: 마스크 적용 후 **행이 0건이 되어 완전히 사라진 라벨** 목록.
+  S1/S2/S3/S4에서 Hulk 계열은 애초에 전량 제외 대상이므로 여기 나오는 게 **정상**이다.
+- `below_min_group_count` (JSON의 `excluded` 리스트): 마스크 적용 후에도 **행이 남아있지만**
+  그룹 수가 `min_group_count_for_split`(10) 미만이라 전량 test로 배정된 라벨 목록.
 
-## 아직 안 한 일
+`scenario_below_min_group_count.json`의 `raw_predup:S2`/`pipeline_postdedup:S2` 항목을 직접 확인하면
+DoS Hulk 계열이 **포함되어 있지 않다**(둘 다 9개 라벨, Hulk 없음). `run_investigation.py`의 계산 로직도
+`.venv` python으로 별도 스크립트를 짜서 S2 마스크만 떼어내 재현 확인했고, S2 마스크 적용 후 Hulk 계열
+행이 정확히 0건임을 확인했다. **재실행 불필요, 기존 산출물 그대로 신뢰 가능.**
 
-1. `single_column_shortcut_scan.csv` 검토·요약 (Attempted Category 노이즈 제외하고 의미있는 것만 추림).
-2. **`report.md` 작성 자체를 아직 안 함** — 이게 지시서의 최종 산출물인데 위 S2 버그 때문에 보류 중.
-   지시서 7장 형식(판정요약→작업별 결과→구문서대조→확인불가항목→판단필요지점) 그대로 쓰면 됨,
-   재료는 이 브리핑과 `reports/attempted_hulk_investigation/*.json,*.csv`에 다 있음.
-3. `run_manifest.json`은 매 실행마다 덮어써짐 — 최종 실행 기준으로 다시 한번 확인 필요.
+## 완료 — report.md 작성 끝남
+
+`report.md` 작성 완료 (지시서 7장 형식 그대로). `single_column_shortcut_scan.csv`도 검토해
+`Dst Port`가 BENIGN을 제외한 22개 공격 라벨 전부에서 고유값 1개짜리 shortcut임을 확인하고
+report.md 2.6절에 반영함 — `docs/data-notes.md`가 지적한 leakage 우려의 실측 확인.
+
+이 지시서가 요구한 작업은 모두 완료됐다. 남은 것은 report.md 5절 "판단이 필요한 지점"
+5개 항목에 대한 사용자 확인뿐이다.
 
 ## 파일 목록 (`reports/attempted_hulk_investigation/`)
 
