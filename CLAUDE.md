@@ -17,6 +17,11 @@ LightGBM이 전량 트래픽을 처리하되, 확률 보정을 거친 신뢰도�
 
 ## 현재 단계
 
+이 저장소는 폐기된 파이프라인 설계를 포함한다. 사양·정책이 충돌할 경우
+docs/CURRENT_DECISIONS.md가 항상 우선한다. docs/, tasks/, experiments/,
+results/, src/cicids_prep/, configs/exp/cicids_prep.yaml의 정책 번호(1-1~1-12),
+단계 번호(1~10단계), 3분할 프로토콜, 그룹키 설계는 무효다.
+
 예비 실험(sub experiment) 단계다. 아직 **아무것도 확정되지 않았다.**
 
 - 유보 구간의 폭은 미정이다. `configs/base.yaml`의 `gating.lower/upper`가 `null`인 것은

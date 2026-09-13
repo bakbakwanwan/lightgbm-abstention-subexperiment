@@ -1,0 +1,225 @@
+{
+ "include": [
+  "Protocol",
+  "Flow Duration",
+  "Total Fwd Packet",
+  "Total Length of Fwd Packet",
+  "Total Length of Bwd Packet",
+  "Fwd Packet Length Max",
+  "Fwd Packet Length Min",
+  "Fwd Packet Length Mean",
+  "Fwd Packet Length Std",
+  "Bwd Packet Length Max",
+  "Bwd Packet Length Min",
+  "Bwd Packet Length Mean",
+  "Bwd Packet Length Std",
+  "Flow Bytes/s",
+  "Flow IAT Mean",
+  "Flow IAT Std",
+  "Flow IAT Max",
+  "Flow IAT Min",
+  "Fwd IAT Total",
+  "Fwd IAT Mean",
+  "Fwd IAT Std",
+  "Fwd IAT Max",
+  "Fwd IAT Min",
+  "Bwd IAT Total",
+  "Bwd IAT Mean",
+  "Bwd IAT Std",
+  "Bwd IAT Max",
+  "Bwd IAT Min",
+  "Fwd PSH Flags",
+  "Bwd PSH Flags",
+  "Fwd RST Flags",
+  "Bwd RST Flags",
+  "Fwd Packets/s",
+  "Bwd Packets/s",
+  "Packet Length Std",
+  "FIN Flag Count",
+  "SYN Flag Count",
+  "RST Flag Count",
+  "ACK Flag Count",
+  "Down/Up Ratio",
+  "Fwd Bytes/Bulk Avg",
+  "Fwd Packet/Bulk Avg",
+  "Fwd Bulk Rate Avg",
+  "Bwd Bytes/Bulk Avg",
+  "Bwd Packet/Bulk Avg",
+  "Bwd Bulk Rate Avg",
+  "FWD Init Win Bytes",
+  "Bwd Init Win Bytes",
+  "Fwd Act Data Pkts",
+  "Fwd Seg Size Min",
+  "Active Mean",
+  "Active Std",
+  "Active Max",
+  "Active Min",
+  "Idle Mean",
+  "Idle Std",
+  "Idle Max",
+  "Idle Min",
+  "Total TCP Flow Time"
+ ],
+ "exclude": {
+  "Label": {
+   "code": "LABEL",
+   "axis": "A",
+   "reason": "y 생성 원천"
+  },
+  "Attempted Category": {
+   "code": "LABEL",
+   "axis": "A",
+   "reason": "라벨 파생 — 데이터에는 보존"
+  },
+  "Flow ID": {
+   "code": "LEAK_ENV",
+   "axis": "B",
+   "reason": "5-tuple 결합 문자열"
+  },
+  "Src IP": {
+   "code": "LEAK_ENV",
+   "axis": "B",
+   "reason": "고정 IP, 공격자 1개→피해자 1개 구조"
+  },
+  "Dst IP": {
+   "code": "LEAK_ENV",
+   "axis": "B",
+   "reason": "고정 IP"
+  },
+  "Timestamp": {
+   "code": "LEAK_TIME",
+   "axis": "B",
+   "reason": "라벨링 로직 자체"
+  },
+  "Src Port": {
+   "code": "LEAK_ENV",
+   "axis": "B",
+   "reason": "우연한 포트 할당 (CNS2022 flow-identifying 목록)"
+  },
+  "Dst Port": {
+   "code": "LEAK_ENV",
+   "axis": "B",
+   "reason": "테스트베드 배치 — 80번 62%/8080번 97% 공격"
+  },
+  "id": {
+   "code": "LEAK_TIME",
+   "axis": "C",
+   "reason": "요일별 재시작 행번호 = 시각 대리 변수"
+  },
+  "Fwd Header Length": {
+   "code": "DEFECT_CALC",
+   "axis": "D",
+   "reason": "16비트 오버플로, 오염 최소 429행"
+  },
+  "Bwd Header Length": {
+   "code": "DEFECT_CALC",
+   "axis": "D",
+   "reason": "16비트 오버플로, 오염 최소 627행"
+  },
+  "Subflow Fwd Packets": {
+   "code": "DEFECT_CALC+REDUNDANT_EXACT",
+   "axis": "D",
+   "reason": "= (Total Bwd packets==0), 예외 0건"
+  },
+  "Subflow Bwd Packets": {
+   "code": "DEFECT_CALC+REDUNDANT_EXACT",
+   "axis": "D",
+   "reason": "= (Total Fwd Packet==0), 예외 0건"
+  },
+  "Subflow Fwd Bytes": {
+   "code": "DEFECT_CALC+REDUNDANT_NEAR",
+   "axis": "D",
+   "reason": "총합 아닌 평균 근사, Fwd Packet Length Mean과 0.9747"
+  },
+  "Subflow Bwd Bytes": {
+   "code": "DEFECT_CALC+REDUNDANT_NEAR",
+   "axis": "D",
+   "reason": "총합 아닌 평균 근사, 0.9808"
+  },
+  "URG Flag Count": {
+   "code": "REDUNDANT_EXACT",
+   "axis": "E",
+   "reason": "= Fwd URG Flags + Bwd URG Flags, 100%"
+  },
+  "Bwd URG Flags": {
+   "code": "NO_IMPACT",
+   "axis": "E",
+   "reason": "비영 1행"
+  },
+  "Fwd URG Flags": {
+   "code": "NO_IMPACT",
+   "axis": "E",
+   "reason": "비영 93행"
+  },
+  "CWR Flag Count": {
+   "code": "NO_IMPACT",
+   "axis": "E",
+   "reason": "비영 764행"
+  },
+  "ECE Flag Count": {
+   "code": "NO_IMPACT",
+   "axis": "E",
+   "reason": "비영 686행"
+  },
+  "ICMP Type": {
+   "code": "NO_IMPACT+REDUNDANT_EXACT",
+   "axis": "F",
+   "reason": "비영 603행 = Protocol==1 집합"
+  },
+  "ICMP Code": {
+   "code": "NO_IMPACT+REDUNDANT_EXACT",
+   "axis": "F",
+   "reason": "비영 603행 = Protocol==1 집합"
+  },
+  "Fwd Segment Size Avg": {
+   "code": "REDUNDANT_EXACT",
+   "axis": "H",
+   "reason": "= Fwd Packet Length Mean, 최대차 3.4e-12"
+  },
+  "Packet Length Min": {
+   "code": "REDUNDANT_EXACT",
+   "axis": "H",
+   "reason": "= min(Fwd,Bwd) 99.9998% · P-DIR"
+  },
+  "Total Bwd packets": {
+   "code": "REDUNDANT_EXACT",
+   "axis": "H",
+   "reason": "Down/Up Ratio = Bwd÷Fwd 100% (3변량)"
+  },
+  "Packet Length Max": {
+   "code": "REDUNDANT_EXACT",
+   "axis": "H",
+   "reason": "= max(Fwd,Bwd) 100.0000% · P-DIR"
+  },
+  "Packet Length Variance": {
+   "code": "REDUNDANT_EXACT",
+   "axis": "H",
+   "reason": "= Packet Length Std², 상대오차 1.2e-15"
+  },
+  "Packet Length Mean": {
+   "code": "REDUNDANT_EXACT",
+   "axis": "H",
+   "reason": "= 방향별 가중평균 100.0000% · P-DIR"
+  },
+  "Average Packet Size": {
+   "code": "REDUNDANT_EXACT",
+   "axis": "H",
+   "reason": "= Packet Length Mean, 최대차 6.9e-11"
+  },
+  "Bwd Segment Size Avg": {
+   "code": "REDUNDANT_EXACT",
+   "axis": "H",
+   "reason": "= Bwd Packet Length Mean, 최대차 9.8e-11"
+  },
+  "PSH Flag Count": {
+   "code": "REDUNDANT_EXACT",
+   "axis": "H",
+   "reason": "= Fwd PSH Flags + Bwd PSH Flags, 불일치 0행 · P-DIR"
+  },
+  "Flow Packets/s": {
+   "code": "REDUNDANT_EXACT",
+   "axis": "H",
+   "reason": "= Fwd Packets/s + Bwd Packets/s, 100.0000% · P-DIR"
+  }
+ }
+}
