@@ -1,0 +1,16 @@
+Label,rows,unique_feature_groups,duplicate_feature_groups,conflict_feature_groups,largest_group_label_rows,largest_group_label_row_ratio,group_split_possible_both_sides
+BENIGN,1582566,1423822,59733,15,1340,0.0008467261396997029,True
+Botnet,736,736,0,0,1,0.001358695652173913,True
+DDoS,95144,95144,0,0,1,1.0510384259648532e-05,True
+DoS GoldenEye,7567,7567,0,0,1,0.0001321527686005022,True
+DoS Slowhttptest,1740,1740,0,0,1,0.0005747126436781609,True
+DoS Slowloris,3859,3859,0,0,1,0.0002591344908007256,True
+FTP-Patator,3972,3972,0,0,1,0.00025176233635448137,True
+Heartbleed,11,11,0,0,1,0.09090909090909091,True
+Infiltration,36,36,0,0,1,0.027777777777777776,True
+Infiltration - Portscan,71767,6127,2362,5,8160,0.11370128331963159,True
+Portscan,159066,1683,373,14,6648,0.04179397231337935,True
+SSH-Patator,2961,2961,0,0,1,0.00033772374197906115,True
+Web Attack - Brute Force,73,73,0,0,1,0.0136986301369863,True
+Web Attack - SQL Injection,13,13,0,0,1,0.07692307692307693,True
+Web Attack - XSS,18,18,0,0,1,0.05555555555555555,True

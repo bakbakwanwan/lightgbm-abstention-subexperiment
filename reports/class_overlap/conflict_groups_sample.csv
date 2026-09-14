@@ -1,0 +1,255 @@
+group_id,group_size,sampled_rows,sample_truncated,day,id,Label,binary_label,Protocol,Flow Duration,Total Fwd Packet,Total Length of Fwd Packet,Total Length of Bwd Packet,Flow Bytes/s,SYN Flag Count,RST Flag Count,ACK Flag Count
+g_b5e2a3799fa8882e_0,958,20,True,wednesday,468411,BENIGN,0,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,70021,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,70292,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,78880,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,142410,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,144182,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,144257,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,144444,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,144525,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,145074,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,145546,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,145625,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,148894,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,149656,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,149664,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,149966,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,150462,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,152039,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,152158,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_b5e2a3799fa8882e_0,958,20,True,friday,153129,Portscan,1,TCP,57.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,thursday,136706,BENIGN,0,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,thursday,232352,Infiltration - Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,69794,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,142447,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,142563,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,143121,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,144287,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,144451,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,145531,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,145756,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,145833,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,147085,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,148198,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,151389,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,151914,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,152167,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,152327,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,152591,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,153050,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_24202d3608ca0fe2_0,720,20,True,friday,153957,Portscan,1,TCP,72.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,276735,BENIGN,0,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,112624,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,friday,69942,Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,139502,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,171374,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,187291,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,195964,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,205560,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,215211,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,231168,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,239645,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,249228,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,254761,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,287331,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,343433,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,thursday,350581,Infiltration - Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,friday,144637,Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,friday,148114,Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,friday,148623,Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_f642afab1235837d_0,310,20,True,friday,148713,Portscan,1,TCP,84.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,thursday,160350,BENIGN,0,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,thursday,144199,Infiltration - Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,144409,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,thursday,193659,Infiltration - Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,thursday,194319,Infiltration - Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,thursday,201911,Infiltration - Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,thursday,285224,Infiltration - Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,thursday,346748,Infiltration - Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,145205,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,149047,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,153482,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,154082,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,155106,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,155678,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,155944,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,156586,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,158153,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,159385,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,159510,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3a572e226e91ae88_0,301,20,True,friday,159583,Portscan,1,TCP,85.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,thursday,352999,BENIGN,0,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,thursday,126284,Infiltration - Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,143411,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,thursday,126558,Infiltration - Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,thursday,127537,Infiltration - Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,145647,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,147777,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,153154,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,157343,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,158273,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,158816,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,161414,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,168812,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,171193,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,176786,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,177247,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,189507,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,190200,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,190765,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_fa24360e552f2ae1_0,201,20,True,friday,193248,Portscan,1,TCP,94.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,thursday,190336,BENIGN,0,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,142661,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,153643,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,153696,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,154420,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,159310,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,160942,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,165485,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,169645,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,173470,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,188765,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,195249,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,197741,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,197809,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,213439,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,224496,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,243054,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,245062,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,245918,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_aad957df22483a11_0,73,20,True,friday,251285,Portscan,1,TCP,102.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_d74ff5aba292192e_0,27,20,True,friday,547255,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,67223,Infiltration - Portscan,1,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,68926,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,69644,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,69760,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,70166,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,74109,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,75220,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,75797,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,75804,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,75806,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,78064,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,79569,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,79570,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,79724,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,80063,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,80068,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,83226,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,83723,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_d74ff5aba292192e_0,27,20,True,thursday,84476,BENIGN,0,ICMP,3.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+g_5a29bdba5c830d26_0,21,20,True,thursday,312603,BENIGN,0,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,188841,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,193596,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,224814,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,265398,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,276224,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,279476,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,319022,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,327265,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,373918,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,384557,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,404615,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,427296,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,440504,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,448143,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,489461,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,492196,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,498903,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,518993,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_5a29bdba5c830d26_0,21,20,True,friday,525892,Portscan,1,TCP,121.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,thursday,135864,BENIGN,0,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,163390,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,164816,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,209691,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,255943,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,324798,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,367412,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,374034,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,385908,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,416618,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,429740,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,459751,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,468356,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,477890,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,478649,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,482427,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,483691,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,496707,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,513983,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_3aa69b0f953e8032_0,20,20,False,friday,521432,Portscan,1,TCP,116.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,thursday,136205,BENIGN,0,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,170796,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,207754,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,214211,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,253013,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,275407,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,279611,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,296303,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,301356,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,310064,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,310663,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,314356,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,362405,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,376952,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,377175,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,476104,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,477455,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,505361,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_64f3691db51ad5f4_0,19,19,False,friday,512415,Portscan,1,TCP,115.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,thursday,228119,BENIGN,0,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,142508,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,147230,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,154740,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,160964,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,178606,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,192901,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,213429,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,247336,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,258072,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,315887,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,434244,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,468227,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,479392,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,490626,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,491750,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,512554,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,520636,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_2c7a8780779b1805_0,19,19,False,friday,528253,Portscan,1,TCP,118.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,thursday,289182,BENIGN,0,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,175277,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,228069,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,248435,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,248600,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,270108,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,278225,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,291648,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,305459,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,408622,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,441123,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,538506,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_cad07e2d8caaa8a3_0,13,13,False,friday,542144,Portscan,1,TCP,117.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_c869c6f02412fa95_0,8,8,False,thursday,262338,BENIGN,0,TCP,155.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_c869c6f02412fa95_0,8,8,False,friday,300842,Portscan,1,TCP,155.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_c869c6f02412fa95_0,8,8,False,thursday,359418,BENIGN,0,TCP,155.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_c869c6f02412fa95_0,8,8,False,friday,330317,Portscan,1,TCP,155.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_c869c6f02412fa95_0,8,8,False,friday,362111,Portscan,1,TCP,155.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_c869c6f02412fa95_0,8,8,False,friday,442653,Portscan,1,TCP,155.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_c869c6f02412fa95_0,8,8,False,friday,445506,Portscan,1,TCP,155.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_c869c6f02412fa95_0,8,8,False,friday,460383,Portscan,1,TCP,155.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_31a03c03d31a9a2a_0,8,8,False,thursday,147597,BENIGN,0,TCP,143.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_31a03c03d31a9a2a_0,8,8,False,friday,213014,Portscan,1,TCP,143.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_31a03c03d31a9a2a_0,8,8,False,friday,231604,Portscan,1,TCP,143.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_31a03c03d31a9a2a_0,8,8,False,friday,255313,Portscan,1,TCP,143.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_31a03c03d31a9a2a_0,8,8,False,friday,307236,Portscan,1,TCP,143.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_31a03c03d31a9a2a_0,8,8,False,friday,326956,Portscan,1,TCP,143.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_31a03c03d31a9a2a_0,8,8,False,friday,415892,Portscan,1,TCP,143.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_31a03c03d31a9a2a_0,8,8,False,friday,520232,Portscan,1,TCP,143.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_584b22139640b5db_0,7,7,False,thursday,306044,BENIGN,0,TCP,132.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_584b22139640b5db_0,7,7,False,friday,185498,Portscan,1,TCP,132.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_584b22139640b5db_0,7,7,False,friday,317294,Portscan,1,TCP,132.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_584b22139640b5db_0,7,7,False,friday,405794,Portscan,1,TCP,132.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_584b22139640b5db_0,7,7,False,friday,474084,Portscan,1,TCP,132.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_584b22139640b5db_0,7,7,False,friday,537296,Portscan,1,TCP,132.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0
+g_584b22139640b5db_0,7,7,False,friday,539660,Portscan,1,TCP,132.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0

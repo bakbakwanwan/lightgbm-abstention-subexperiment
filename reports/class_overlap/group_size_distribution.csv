@@ -1,0 +1,13 @@
+scope,group_size_bin,group_count
+target_excluding_observation_groups,2,35207
+target_excluding_observation_groups,3,10792
+target_excluding_observation_groups,4,5117
+target_excluding_observation_groups,5-10,8099
+target_excluding_observation_groups,11-100,2882
+target_excluding_observation_groups,>100,255
+full_including_observation_groups,2,35379
+full_including_observation_groups,3,10933
+full_including_observation_groups,4,5260
+full_including_observation_groups,5-10,8398
+full_including_observation_groups,11-100,2907
+full_including_observation_groups,>100,255

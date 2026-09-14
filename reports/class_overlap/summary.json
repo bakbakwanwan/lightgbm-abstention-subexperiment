@@ -1,0 +1,83 @@
+{
+  "comparison_key_feature_count": 59,
+  "protocol_representation": "categorical: TCP/UDP/ICMP/UNKNOWN",
+  "population_counts": {
+    "total_rows": 2099976,
+    "attempted_rows": 11979,
+    "invalid_class_rows": 158468,
+    "observation_group_overlap_rows": 0,
+    "target_rows": 1929529,
+    "target_benign_rows": 1582566,
+    "target_attack_rows": 346963
+  },
+  "candidate_hash_rows_staged": 447903,
+  "verified_hash_collision_subgroups": 0,
+  "target": {
+    "scope": "target_excluding_observation_groups",
+    "population_rows": 1929529,
+    "duplicate_groups": 62352,
+    "duplicate_rows": 444235,
+    "duplicate_row_ratio": 0.2302297607343554,
+    "label_match_groups": 62337,
+    "label_match_rows": 441530,
+    "label_conflict_groups": 15,
+    "label_conflict_rows": 2705,
+    "label_conflict_row_ratio": 0.00140189652500688,
+    "conflict_file_scope": {
+      "within_file_groups": 0,
+      "within_file_rows": 0,
+      "cross_file_groups": 15,
+      "cross_file_rows": 2705,
+      "row_distribution_by_day": {
+        "friday": 2640,
+        "thursday": 63,
+        "wednesday": 2
+      },
+      "group_distribution_by_day_combination": {
+        "friday+thursday": 13,
+        "friday+thursday+wednesday": 1,
+        "friday+wednesday": 1
+      }
+    },
+    "infinite_flow_bytes": {
+      "duplicate_groups": 1,
+      "duplicate_rows": 5,
+      "conflict_groups": 0,
+      "conflict_rows": 0
+    }
+  },
+  "full_reference": {
+    "scope": "full_including_observation_groups",
+    "population_rows": 2099976,
+    "duplicate_groups": 63132,
+    "duplicate_rows": 447903,
+    "duplicate_row_ratio": 0.21328958045234803,
+    "label_match_groups": 63117,
+    "label_match_rows": 445198,
+    "label_conflict_groups": 15,
+    "label_conflict_rows": 2705,
+    "label_conflict_row_ratio": 0.0012881099593519164,
+    "conflict_file_scope": {
+      "within_file_groups": 0,
+      "within_file_rows": 0,
+      "cross_file_groups": 15,
+      "cross_file_rows": 2705,
+      "row_distribution_by_day": {
+        "friday": 2640,
+        "thursday": 63,
+        "wednesday": 2
+      },
+      "group_distribution_by_day_combination": {
+        "friday+thursday": 13,
+        "friday+thursday+wednesday": 1,
+        "friday+wednesday": 1
+      }
+    },
+    "infinite_flow_bytes": {
+      "duplicate_groups": 1,
+      "duplicate_rows": 5,
+      "conflict_groups": 0,
+      "conflict_rows": 0
+    }
+  }
+}

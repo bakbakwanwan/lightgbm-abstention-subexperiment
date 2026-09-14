@@ -1,0 +1,35 @@
+group_id,split,Label,rows
+g_2c7a8780779b1805_0,test,BENIGN,1
+g_2c7a8780779b1805_0,test,Portscan,18
+g_31a03c03d31a9a2a_0,test,BENIGN,1
+g_31a03c03d31a9a2a_0,test,Portscan,7
+g_3a572e226e91ae88_0,test,BENIGN,1
+g_3a572e226e91ae88_0,test,Infiltration - Portscan,6
+g_3a572e226e91ae88_0,test,Portscan,294
+g_584b22139640b5db_0,test,BENIGN,1
+g_584b22139640b5db_0,test,Portscan,6
+g_c869c6f02412fa95_0,test,BENIGN,2
+g_c869c6f02412fa95_0,test,Portscan,6
+g_cad07e2d8caaa8a3_0,test,BENIGN,1
+g_cad07e2d8caaa8a3_0,test,Portscan,12
+g_f642afab1235837d_0,test,BENIGN,1
+g_f642afab1235837d_0,test,Infiltration - Portscan,14
+g_f642afab1235837d_0,test,Portscan,295
+g_fa24360e552f2ae1_0,test,BENIGN,1
+g_fa24360e552f2ae1_0,test,Infiltration - Portscan,3
+g_fa24360e552f2ae1_0,test,Portscan,197
+g_24202d3608ca0fe2_0,train,BENIGN,1
+g_24202d3608ca0fe2_0,train,Infiltration - Portscan,1
+g_24202d3608ca0fe2_0,train,Portscan,718
+g_3aa69b0f953e8032_0,train,BENIGN,1
+g_3aa69b0f953e8032_0,train,Portscan,19
+g_5a29bdba5c830d26_0,train,BENIGN,1
+g_5a29bdba5c830d26_0,train,Portscan,20
+g_64f3691db51ad5f4_0,train,BENIGN,1
+g_64f3691db51ad5f4_0,train,Portscan,18
+g_aad957df22483a11_0,train,BENIGN,1
+g_aad957df22483a11_0,train,Portscan,72
+g_b5e2a3799fa8882e_0,train,BENIGN,1
+g_b5e2a3799fa8882e_0,train,Portscan,957
+g_d74ff5aba292192e_0,train,BENIGN,22
+g_d74ff5aba292192e_0,train,Infiltration - Portscan,5

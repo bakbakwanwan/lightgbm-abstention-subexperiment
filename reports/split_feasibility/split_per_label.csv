@@ -1,0 +1,31 @@
+split_method,Label,total_rows,train_rows,test_rows,test_ratio,absolute_deviation_from_0_25
+exact_feature_group,BENIGN,1582566,1186924,395642,0.2500003159425894,3.1594258942391207e-07
+exact_feature_group,Botnet,736,552,184,0.25,0.0
+exact_feature_group,DDoS,95144,71358,23786,0.25,0.0
+exact_feature_group,DoS GoldenEye,7567,5675,1892,0.2500330381921501,3.303819215011439e-05
+exact_feature_group,DoS Slowhttptest,1740,1305,435,0.25,0.0
+exact_feature_group,DoS Slowloris,3859,2894,965,0.2500647836227002,6.47836227001819e-05
+exact_feature_group,FTP-Patator,3972,2979,993,0.25,0.0
+exact_feature_group,Heartbleed,11,8,3,0.2727272727272727,0.022727272727272707
+exact_feature_group,Infiltration,36,27,9,0.25,0.0
+exact_feature_group,Infiltration - Portscan,71767,53825,17942,0.25000348349519974,3.4834951997408936e-06
+exact_feature_group,Portscan,159066,119300,39766,0.24999685665069846,3.1433493015431413e-06
+exact_feature_group,SSH-Patator,2961,2221,740,0.24991556906450524,8.443093549476144e-05
+exact_feature_group,Web Attack - Brute Force,73,55,18,0.2465753424657534,0.003424657534246589
+exact_feature_group,Web Attack - SQL Injection,13,10,3,0.23076923076923078,0.019230769230769218
+exact_feature_group,Web Attack - XSS,18,14,4,0.2222222222222222,0.02777777777777779
+row_random_optimistic,BENIGN,1582566,1186924,395642,0.2500003159425894,3.1594258942391207e-07
+row_random_optimistic,Botnet,736,552,184,0.25,0.0
+row_random_optimistic,DDoS,95144,71358,23786,0.25,0.0
+row_random_optimistic,DoS GoldenEye,7567,5675,1892,0.2500330381921501,3.303819215011439e-05
+row_random_optimistic,DoS Slowhttptest,1740,1305,435,0.25,0.0
+row_random_optimistic,DoS Slowloris,3859,2894,965,0.2500647836227002,6.47836227001819e-05
+row_random_optimistic,FTP-Patator,3972,2979,993,0.25,0.0
+row_random_optimistic,Heartbleed,11,8,3,0.2727272727272727,0.022727272727272707
+row_random_optimistic,Infiltration,36,27,9,0.25,0.0
+row_random_optimistic,Infiltration - Portscan,71767,53825,17942,0.25000348349519974,3.4834951997408936e-06
+row_random_optimistic,Portscan,159066,119300,39766,0.24999685665069846,3.1433493015431413e-06
+row_random_optimistic,SSH-Patator,2961,2221,740,0.24991556906450524,8.443093549476144e-05
+row_random_optimistic,Web Attack - Brute Force,73,55,18,0.2465753424657534,0.003424657534246589
+row_random_optimistic,Web Attack - SQL Injection,13,10,3,0.23076923076923078,0.019230769230769218
+row_random_optimistic,Web Attack - XSS,18,14,4,0.2222222222222222,0.02777777777777779

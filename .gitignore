@@ -19,6 +19,9 @@ _sync/
 *.bin
 *.onnx
 
+# 재생성 가능한 D-004 행별 분할 배정 데이터
+/results/d004_splits/*/*.csv.gz
+
 # OS 잡파일
 Thumbs.db
 .DS_Store
