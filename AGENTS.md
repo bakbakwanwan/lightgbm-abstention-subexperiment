@@ -1,6 +1,9 @@
-# CLAUDE.md
+# AGENTS.md
 
-이 저장소에서 작업할 때 반드시 따르는 규약이다.
+이 저장소에서 작업하는 모든 AI 코딩 에이전트(Claude Code 외의 도구 포함)가
+반드시 따르는 규약이다. Claude Code 전용 세부 사항(도구 이름 등)을 제외하면
+[CLAUDE.md](CLAUDE.md)와 내용이 동일하다. 두 문서가 어긋나면 최근에 갱신된 쪽을
+따르고, 발견 즉시 다른 쪽도 맞춰 고친다.
 
 ---
 
@@ -29,11 +32,13 @@ LightGBM이 전량 트래픽을 처리하되, 신뢰도를 기준으로 정상·
 | 레이블 전수·파이프라인 감사·Attempted 코드북 | `docs/dataset_audit_2026-09-11.md` |
 | 원본 91컬럼 통계 | `docs/feature_inventory_2026-09-12.md` |
 | 용어·식별자 | `docs/glossary.md` |
-| Claude Code 행동 규약·폐기 목록 | 이 문서 |
+| 에이전트 행동 규약·폐기 목록 | 이 문서(및 `CLAUDE.md`) |
 
 **목록이나 수치를 다른 문서에 옮겨 적지 않는다.** 2026-09-13에 `Protocol`의 처분이
 요약본에서 "제외"로 뒤바뀐 사고가 있었고, 원인은 원본을 산문으로 압축한 것이었다.
 경위: `docs/doc_consistency_audit_2026-09-13.md`.
+
+전체 문서가 어디에 있는지는 저장소 최상단 [index.md](index.md)를 먼저 본다.
 
 ## 현재 단계
 
@@ -56,7 +61,8 @@ LightGBM이 전량 트래픽을 처리하되, 신뢰도를 기준으로 정상·
 
 ## 항상 적용되는 규약
 
-@docs/glossary.md
+작업 시작 전에 **`docs/glossary.md` 전체를 읽는다.** 이 저장소의 모든 식별자·용어의
+단일 정의처이며, 아래 네 가지 외에도 지켜야 할 세부 규칙이 그 문서에 있다.
 
 특히 자주 어겨지는 네 가지를 재강조한다. 상세와 근거는 `docs/CURRENT_DECISIONS.md`에 있다.
 
@@ -108,6 +114,7 @@ LightGBM이 전량 트래픽을 처리하되, 신뢰도를 기준으로 정상·
 | `configs/exp/cicids_prep.yaml` | `split_ratios 0.6/0.2/0.2`, `bucket_seconds 300` 무효 |
 | `src/cicids_prep/**`, `tests/cicids_prep/**`, `scripts/build_dataset.py` | 폐기된 파이프라인 구현·테스트·진입점 |
 | `results/cicids_prep/**` | 폐기된 실행 결과 |
+| `Makefile` | 전 타겟이 위 진입점을 가리켜 함께 이동 |
 
 **`reports/attempted_hulk_investigation/**`는 폐기가 아니다.** D-001·D-002의 근거 자료이며 유효하다.
 
@@ -118,7 +125,7 @@ LightGBM이 전량 트래픽을 처리하되, 신뢰도를 기준으로 정상·
 - **쓴다**: `src/`, `configs/`, `tests/`, `scripts/`, `results/`, `pyproject.toml`
 - **읽기만 한다**: `docs/`, `experiments/`, `tasks/`, `_superseded/`
 
-`docs/`, `experiments/`, `tasks/`는 Cowork와 사용자가 관리한다. 수정이 필요하다고
+`docs/`, `experiments/`, `tasks/`는 사용자(및 다른 세션·도구)가 관리한다. 수정이 필요하다고
 판단되면 직접 고치지 말고 무엇을 왜 고쳐야 하는지 보고한다.
 
 **예외:** 사용자가 `tasks/` 아래 지시서로 명시적으로 위임한 작업은 그 지시서의 범위 안에서 수행한다.
@@ -149,8 +156,9 @@ LightGBM이 전량 트래픽을 처리하되, 신뢰도를 기준으로 정상·
 5. `results/EXP-XXX/metrics.json`에 `git_commit`, `seed`, `dataset` 버전을 기록한다.
 6. 결과 해석은 `metrics.json`에 쓰지 않는다. 수치만 남기고 해석은 사용자에게 보고한다.
 
-**주의.** 구 `CLAUDE.md`는 `make exp ID=EXP-XXX`를 지시했으나 **Makefile에 `exp` 타겟이 없다.**
-`git-policy.md`가 언급한 `guard-clean` 타겟도 없다. 실행 진입점은 새 스펙과 함께 정의한다.
+**주의.** 옛 문서는 `make exp ID=EXP-XXX`를 지시했으나 **저장소에 `Makefile`이 없다**
+(폐기되어 `_superseded/`로 이동). `git-policy.md`가 언급한 `guard-clean` 타겟도 없다.
+실행 진입점은 새 스펙과 함께 정의한다.
 
 ---
 
