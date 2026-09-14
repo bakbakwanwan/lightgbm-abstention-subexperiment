@@ -63,15 +63,41 @@
 | 판정 유보 | `abstention` | 1차 모델이 판정을 내리지 않고 심층 검증으로 넘기는 동작 |
 | 유보 구간 | `abstention_band` | 유보가 발생하는 예측 확률 구간. `[lower, upper]`. 사전 고정하지 않고 test 확률 전량을 오프라인 스윕해 구한다 |
 | 유보 비율 | `abstention_rate` | 전체 플로우 대비 유보된 플로우의 비율 |
+| 목표 유보 비율 | `target_abstention_rate` | D-006에서 사전 지정한 유보 처리량 상한. 값: 0.01 / 0.02 / 0.05 / 0.10 |
+| 실제 유보 비율 | `actual_abstention_rate` | 완전한 confidence tie 그룹만 유보하여 실제로 달성한 비율. `target_abstention_rate`를 초과하지 않는다 |
+| Confidence 유보 임계값 | `confidence_threshold` | `confidence <= confidence_threshold`인 행을 유보하는 경계. 해당 budget에 비어 있으면 `null` |
+| Budget 미사용분 | `budget_shortfall` | `target_abstention_rate - actual_abstention_rate` |
 | 에스컬레이션 비율 | `escalation_ratio` | 전체 플로우 대비 심층 검증으로 넘어간 비율 |
 | 검증 예산 | `verification_budget` | 심층 검증에 할당 가능한 처리량(초당 플로우). 유보 구간 폭을 결정하는 상한 제약 |
 | 위험-커버리지 곡선 | `risk_coverage_curve` | 커버리지(비유보 비율) 대비 오류율 곡선 |
-| 위험-커버리지 곡선 하 면적 | `aurc` | 위 곡선의 적분값. 낮을수록 좋음. **이 서브실험의 주 지표.** 단조변환 불변이므로 보정 전에 계산된다 |
+| 위험-커버리지 곡선 하 면적 | `aurc` | 위 곡선의 적분값. 낮을수록 좋음. **이 서브실험의 주 지표.** 확정된 `confidence`의 순위와 동률을 보존하는 엄격한 단조변환에 불변이다 |
+| 커버리지 | `coverage` | 전체 평가 행 중 모델이 유보하지 않고 직접 판정한 비율 |
+| 선택적 위험 | `selective_risk` | 현재 coverage에서 유보하지 않은 행의 `is_error` 평균 |
+| 전체 커버리지 위험 | `full_coverage_risk` | 유보가 없을 때 전체 평가 행의 `is_error` 평균 |
+| 무작위 유보 AURC | `random_aurc` | confidence가 오류와 무관한 무작위 순위의 기대 AURC. D-006에서는 `full_coverage_risk`와 같음 |
+| Oracle AURC | `oracle_aurc` | 현재 오류 개수를 고정하고 정답을 먼저 수용하도록 완벽히 순위화했을 때 가능한 경험적 AURC 하한 |
+| AURC 상대 개선율 | `relative_aurc_improvement` | `(random_aurc - aurc) / random_aurc`. 0은 무작위 순위와 동일, 양수는 개선 |
+| 오류 농축도 | `error_enrichment` | `error_capture_rate / actual_abstention_rate`. 1은 무작위 유보의 기대 수준 |
+| 공격 확률 | `p_attack` | LightGBM이 출력한 공격 클래스 확률. 반올림·보정하지 않은 값을 저장한다 |
+| 이진 예측 라벨 | `predicted_label` | `p_attack >= 0.5`이면 1(공격), 아니면 0(정상) |
+| 예측 신뢰도 | `confidence` | `max(p_attack, 1 - p_attack)`. 범위 `[0.5, 1]`; 낮을수록 먼저 유보한다 |
+| 예측 오류 여부 | `is_error` | `predicted_label != binary_label`이면 1, 아니면 0 |
+| 이진 정답 라벨 | `binary_label` | `BENIGN=0`, D-001·D-002를 제외한 명확한 공격 14종=1 |
+| Test 표본 수 | `n_test` | 해당 평가 집합 또는 원래 `Label`의 외부 test 행 수 |
+| 수용·유보 행 수 | `n_accepted` / `n_abstained` | 해당 budget에서 직접 판정하거나 유보한 행 수 |
+| ROC 곡선 하 면적 | `auroc` | 외부 test 전체의 `p_attack`으로 한 번 계산하는 ROC-AUC |
+| 평균 정밀도 | `average_precision` | 외부 test 전체에서 `average_precision_score` 방식으로 계산하는 PR 요약. 사다리꼴 PR-AUC가 아님 |
+| 이진 로그손실 | `binary_logloss` | 외부 test 전체의 binary log loss. 학습 목적함수와 같은 정의의 진단 지표 |
+| 오류 포착률 | `error_capture_rate` | 전체 커버리지 오류 중 유보된 행에 포함된 오류의 비율 |
+| 선택적 FPR/FNR | `selective_fpr` / `selective_fnr` | 해당 budget에서 수용된 정상/공격 행만 분모로 계산한 FP/FN 비율 |
+| 잔여 FPR/FNR | `residual_fpr` / `residual_fnr` | 해당 budget의 수용 FP/FN을 유보 전 전체 정상/공격 행 수로 나눈 비율 |
+| 클래스별 커버리지 | `benign_coverage` / `attack_coverage` | 유보 전 해당 이진 클래스 행 중 수용된 비율 |
 | 관찰군 | `observation_group` | 학습·평가 지표 산출에서 제외하고 별도 관찰하는 행 집합. 값: `none` / `attempted` / `invalid_class` |
 | Attempted 관찰군 | `attempted` | `Label`이 `- Attempted`로 끝나는 11종 11,979행 (D-001) |
 | 무효 클래스 관찰군 | `invalid_class` | `Label == "DoS Hulk"` 158,468행 (D-002) |
 | 분포 외 스코어 | `ood_score` | 정상 트래픽 기준 이상 정도. 보조 게이트 후보. 미착수 |
 | 예측 기여 특징 | `feature_attribution` | SHAP 등이 산출한 예측 기여도. **인과적 이유가 아님** |
+| 하이퍼파라미터 후보 ID | `candidate_id` | D-006 제한 격자의 LightGBM 후보 식별자. 값: `C01`~`C08` |
 | 검색된 근거 문서 | `retrieved_evidence_documents` | RAG가 회수한 CTI/ATT&CK/CVE 문서 (2·3차 계층) |
 | 문서 지지율 | `groundedness` | 제시된 근거가 검색된 문서에 의해 지지되는 비율 (2·3차 계층) |
 
@@ -141,3 +167,13 @@
 - 2026-09-13 — 결정 ID를 `ADR-NNN` → `D-NNN`으로 통일(유령 참조 8곳 해소).
   무효화된 로드맵을 정의처에서 제거. 보정·LOAO·3분할 관련 용어를 B-1·C-1로 격리.
   A-3(같은 사실을 두 곳에 쓰지 않는다) 신설.
+- 2026-09-14 — D-006 제한 하이퍼파라미터 격자의 `candidate_id`(`C01`~`C08`) 등록.
+- 2026-09-14 — D-006의 `p_attack`, `predicted_label`, `confidence`, `is_error` 정의 및 AURC
+  단조변환 불변 조건을 정확히 등록.
+- 2026-09-14 — D-006 AURC 계산의 `coverage`, `selective_risk`, `full_coverage_risk`,
+  `random_aurc`, `oracle_aurc` 등록.
+- 2026-09-14 — D-006 유보 budget의 `target_abstention_rate`, `actual_abstention_rate`,
+  `confidence_threshold`, `budget_shortfall` 등록.
+- 2026-09-14 — D-006 전체 test·budget 보조 지표와 표본 수 식별자를 등록하고, PR 요약을
+  `average_precision`으로 명확히 정의.
+- 2026-09-14 — D-006 성공 판정의 `relative_aurc_improvement`, `error_enrichment` 등록.

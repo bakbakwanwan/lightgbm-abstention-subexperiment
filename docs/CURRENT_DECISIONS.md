@@ -53,8 +53,9 @@
 성능 측정이 아니라 존재 주장이다. 이 구분이 이하 모든 결정의 근거다.
 
 - 판정 지표는 **AURC**(risk-coverage 곡선 아래 면적).
-- AURC는 단조변환 불변이므로 **확률 보정 전에도 계산된다.**
-- 따라서 **이 실험은 보정(calibration)을 수행하지 않는다. ECE/Brier는 범위 밖이다.**
+- AURC는 확정된 confidence의 순위와 동률을 보존하는 엄격한 단조변환에 불변이다.
+- 이 실험은 confidence 순위 평가에 한정하므로 **보정(calibration)을 수행하지 않는다.
+  ECE/Brier는 범위 밖이다.**
   이 결정은 `_superseded/` 아래의 `design-constraints.md`·`metrics-spec.md`·`glossary.md` 구판과
   정면으로 충돌한다. 그 문서들은 폐기되었다.
 
@@ -827,7 +828,9 @@ LightGBM은 문자열을 직접 받지 않으므로 pandas `category` dtype으�
 
 ## D-004. 분할 프로토콜
 
-**확정일:** 2026-09-13
+**최초 확정:** 2026-09-13
+
+**개정:** 2026-09-14 — 59-feature 완전일치 중복·class overlap 실측 반영
 **선행:** D-001, D-002, D-003
 
 ### 1. 질문
@@ -838,24 +841,34 @@ LightGBM은 문자열을 직접 받지 않으므로 pandas `category` dtype으�
 
 ```
 대상 1,929,529행
-  ├─ train 75% (약 1,447,147)
-  └─ test  25% (약   482,382)   ← 한 번만 평가
+  ├─ train 1,447,147행
+  └─ test    482,382행   ← 한 번만 평가
 ```
 
-1. **단순 계층 랜덤 2분할.** 그룹 분할·시간 분할·LOAO 없음.
-2. **계층화 기준 = 원래 공격 종류(`Label`)**, 이진 라벨이 아니다.
-   희소 클래스가 test에 아예 들어가지 않는 것을 막기 위함.
-3. **calibration set 없음, 교차검증 없음.** AURC가 단조변환 불변이라 보정 전에 계산되고,
-   유보 밴드는 test 예측 확률을 전량 저장해 **오프라인으로 스윕**하므로 사전 임계값이 불필요하다.
+1. **주 분석은 59-feature 완전일치 그룹 기반 2분할이다.**
+   `configs/features_whitelist.json`의 `include` 59개 값이 전부 같은 행은 하나의 배정 단위로 묶고,
+   그룹 전체를 train 또는 test 한쪽에만 둔다. `Protocol`은 D-003의 범주 매핑을 적용한다.
+   중복 행은 삭제하지 않는다.
+2. **계층화 기준은 원래 공격 종류(`Label`)다.** 이진 라벨이 아니다.
+   그룹을 쪼개지 않는 제약 안에서 라벨별 test 25%에 가장 가깝게 결정론적으로 배정한다.
+   seed는 **42**다.
+3. **정상·공격 class overlap 그룹도 쪼개지 않는다.** 삭제하거나 별도 관찰군으로 옮기지 않고
+   학습·평가 대상에 유지한다. 단, test에 배정된 class overlap 행의 오류율·예측 확률 분포·유보율은
+   전체 지표와 별도로 보고한다.
+4. **행 단위 `Label` 계층 랜덤 75:25 분할은 낙관적 민감도 분석으로만 실행한다.**
+   주 분석과 같은 모델·피처·하이퍼파라미터를 사용하고 분할만 바꾼다. 주 분석 결과를 대체하거나
+   독립 test 성능으로 해석하지 않는다.
+5. **calibration set 없음, 교차검증 없음.** 이 실험은 확정된 confidence의 순위와 동률에 따른
+   risk-coverage를 평가하고, 유보 밴드는 test 예측 확률을 전량 저장해 **오프라인으로 스윕**하므로
+   확률 보정을 수행하지 않는다.
    ECE/Brier는 이 실험 범위 밖이다.
-4. test 예측 확률을 **전량 파일로 저장**한다. 임계값을 사전에 고정하지 않는다.
-5. seed는 우선 **42** 하나. 반복 여부는 1회 결과를 보고 판단.
-6. 관찰군 2종(D-001 Attempted, D-002 DoS Hulk)은 train에 배정하지 않는다.
+6. test 예측 확률을 **전량 파일로 저장**한다. 임계값을 사전에 고정하지 않는다.
+7. 관찰군 2종(D-001 Attempted, D-002 DoS Hulk)은 train/test 어느 쪽에도 배정하지 않는다.
 
-**해석 규칙(실행 전 고정).** 랜덤 분할은 leakage 때문에 모델에 가장 유리한 조건이다.
-따라서 유보 구간이 **발견되면** 결론은 보수적이고 강하다.
-**발견되지 않으면** "존재하지 않는다"가 아니라 **"이 분할 조건에서는 관찰되지 않았다"**까지만
-결론 내리고, 더 엄격한 분할로 재검증한다.
+**해석 규칙(실행 전 고정).** 주 분석은 동일한 59-feature 값을 train에서 본 test 행이 없도록 한다.
+행 단위 랜덤 민감도 분석은 test의 동일-feature 누수로 인해 모델에 유리한 조건이다. 두 결과의 차이는
+중복 누수가 확신도·AURC·유보율에 미친 영향으로 해석한다. 어느 분할에서도 유보 구간이 발견되지 않으면
+"존재하지 않는다"가 아니라 **"해당 분할 조건에서는 관찰되지 않았다"**까지만 결론 낸다.
 
 ### 3. 근거
 
@@ -899,18 +912,36 @@ Engelen et al., WTMC 2021 원문에 "We used a train-test split of 75-25." 확�
 
 **이 진단은 그룹 기반 분할을 재검토할 때만 참조한다. 현재 채택안의 전제가 아니다.**
 
+#### 3-4. 59-feature 완전일치 중복·class overlap 실측
+
+출처: `reports/class_overlap/` 및 `reports/split_feasibility/` (2026-09-14).
+
+- 학습·평가 대상 1,929,529행 중 완전일치 중복은 **62,352그룹, 444,235행(23.02297607%)**이다.
+- 정상·공격 이진 라벨이 충돌하는 완전일치 그룹은 **15개, 2,705행(0.14018965%)**이다.
+- 행 단위 계층 랜덤 분할에서는 test 482,382행 중 **106,139행(22.00310128%)**의 59-feature 값이
+  train에도 존재한다. 이 중 106,126행은 동일한 원래 `Label`까지 train에 존재한다.
+- 완전일치 그룹 기반 분할은 정확히 train 1,447,147행 / test 482,382행을 만들면서
+  train/test 교차 그룹 **0개**, 양쪽에서 소멸한 라벨 **0개**를 달성한다.
+- 희소 클래스도 양쪽에 남는다: Heartbleed 8/3, Infiltration 27/9,
+  Web Attack - Brute Force 55/18, SQL Injection 10/3, XSS 14/4 (train/test).
+
+따라서 행 단위 랜덤 분할을 주 분석으로 유지하면 test 독립성이 크게 훼손된다. 반면 완전일치 그룹
+기반 분할은 D-005의 희소 클래스 보고 조건과 75:25 비율을 유지할 수 있어 주 분석으로 채택한다.
+
 ### 4. 결과적으로 따라오는 영향
 
 - 구 파이프라인의 `split`·`group_id`·`original_split`·`below_min_group_count` 필드는 전부 무효다.
 - calib split이 없으므로 보정 관련 코드 경로 전체가 이 실험에서 실행되지 않는다.
-- 랜덤 분할이므로 근사 중복 행이 train과 test에 걸쳐 들어간다. **이것이 해석 규칙(§2)의 전제다.**
+- 주 분석의 split 산출물은 데이터 SHA256, seed, 행 수, 라벨별 train/test 수와 함께 고정한다.
+- 주 분석 실행 전 검증은 완전일치 그룹 교차 0개, 관찰군 혼입 0개, 모든 원래 라벨의 양쪽 생존을
+  강제한다. 하나라도 실패하면 학습을 시작하지 않는다.
+- 행 단위 랜덤 분할은 민감도 분석 전용이며, 동일-feature 누수량을 결과에 병기한다.
+- class overlap 행은 전체 결과에 포함하되 별도 부분집합 지표를 함께 낸다.
 
 ### 5. 미결
 
-- **59-feature 기준 중복 행 및 class overlap 측정이 선행되어야 한다.**
-  지시서: `tasks/task_duplicate_class_overlap_measurement.md`. 아래 §다음 작업 참조.
-- 재검증용 엄격 분할의 형태 — 유보 구간이 관찰되지 않을 경우에만 필요. 미정.
 - seed 반복 여부 — 1회 결과를 보고 판단.
+- 완전일치 그룹보다 엄격한 재검증 분할은 주 분석에서 유보 구간이 관찰되지 않을 경우에만 논의한다.
 
 ---
 
@@ -955,17 +986,277 @@ Engelen et al., WTMC 2021 원문에 "We used a train-test split of 75-25." 확�
 
 ---
 
-## D-006. 학습·평가 프로토콜과 판정 기준 — **미착수**
+## D-006. 학습·평가 프로토콜과 판정 기준 — **확정 진행 중**
+
+**착수:** 2026-09-14
+**선행:** D-003, D-004, D-005
 
 실행 **전에** 성공/실패/판정불가 기준을 수치로 확정해야 한다. `experiments/TEMPLATE.md` §4 요구사항.
 결과를 본 뒤 기준을 정하면 사후 합리화가 된다.
 
-함께 정해야 할 것:
+### 1. 질문
 
-- LightGBM 하이퍼파라미터
-- 조기종료 지표 (구 로드맵은 PR-AUC + 로그손실 병행을 권고했으나 재검토 필요)
-- 유보 밴드 스윕의 격자 간격
-- AURC 외 보조 지표의 범위
+LightGBM을 어떤 손실로 학습하고, 어느 지표로 학습 길이를 선택하며, 완성된 모델이 유보 구간의
+존재를 보여 주는지는 어느 지표로 판정할 것인가.
+
+### 2. 현재까지 확정한 결정
+
+1. **학습 목적함수는 무가중 binary log loss다.** 기본 실험에서는 class weight,
+   `scale_pos_weight`, `is_unbalance`, 표본 가중치를 사용하지 않는다.
+2. **Early stopping은 외부 train 안에서 분리한 내부 validation의 binary log loss 하나만 사용한다.**
+   여러 지표를 기록하더라도 학습 중단에는 이 지표만 관여하도록 `first_metric_only=true`를 명시한다.
+   내부 분할 비율과 구성 규칙은 아직 미확정이다.
+3. **최종 주 지표는 외부 test의 AURC다.** 낮을수록 좋다. confidence 정의, 동률 처리,
+   risk-coverage 곡선 및 적분 규칙은 실행 전에 별도로 확정한다.
+4. **보조 지표 범위는** 사전 지정한 유보 budget별 selective risk, error capture, FPR, FNR,
+   AUROC, AUPRC로 한다. budget 지점과 각 지표의 정확한 계산 규칙은 아직 미확정이다.
+5. 가중 binary log loss와 focal loss는 기본 실험에 넣지 않는다. 기본 결과 이후 필요성이 확인되면
+   별도 후속 실험으로만 검토한다.
+6. **포함 피처 `Flow Bytes/s`의 ±Infinity는 NaN으로 변환한다.** 행은 삭제하지 않고,
+   별도 결측 indicator 피처도 추가하지 않는다. LightGBM은 `use_missing=true`,
+   `zero_as_missing=false`로 두어 NaN만 결측으로 취급한다. 변환 후 전체 모델 입력에서 ±Infinity가
+   0건인지 강제 검증하고, 변환된 행 수와 외부 split별 행 수를 실행 manifest에 기록한다.
+   +Infinity가 존재하지만 whitelist에서 제외된 `Flow Packets/s`는 모델 입력 전처리 대상이 아니다.
+7. **외부 train은 early stopping을 위해 내부 train/validation 75:25로 한 번만 분할한다.**
+   D-004와 동일하게 59-feature 완전일치 그룹을 배정 단위로 하고 원래 `Label` 기준으로 근사
+   계층화하며 seed 42를 사용한다. 동일 그룹의 내부 train/validation 교차는 0개여야 하고,
+   외부 train에 존재하는 모든 원래 `Label`이 양쪽에 생존해야 한다. 정확한 행 수는 그룹 제약을
+   적용한 분할 산출물에서 확정한다. 이는 calibration set이나 교차검증이 아니다.
+8. 내부 validation에서 선택한 `best_iteration`은 외부 test를 보기 전에 고정한다. 이후 내부
+   train과 validation을 합친 외부 train 전체로 같은 전처리·하이퍼파라미터와 고정된
+   `best_iteration`을 사용해 최종 모델을 재학습한다.
+9. **LightGBM 하이퍼파라미터는 실행 전에 고정한 최대 8개 후보의 제한된 격자에서 선택한다.**
+   모든 후보는 같은 내부 train/validation, 무가중 binary log loss, seed를 사용하고 각 후보별로
+   validation binary log loss 기반 early stopping을 수행한다. 후보 선택 기준은 최저 validation
+   binary log loss이며 외부 test의 AURC나 보조 지표는 선택에 사용하지 않는다. 후보 집합,
+   동률 처리 및 정확한 seed 설정은 다음 결정에서 고정한다. 광범위한 grid/random/Bayesian search와
+   실행 후 후보 추가는 하지 않는다.
+10. **제한 격자는 아래 8개로 고정한다.** 후보 식별자는 `candidate_id`이며 정의처는
+    `docs/glossary.md`다.
+
+    | `candidate_id` | `num_leaves` | `min_data_in_leaf` | `lambda_l2` |
+    |---|---:|---:|---:|
+    | `C01` | 31 | 20 | 0.0 |
+    | `C02` | 31 | 20 | 1.0 |
+    | `C03` | 31 | 200 | 0.0 |
+    | `C04` | 31 | 200 | 1.0 |
+    | `C05` | 63 | 20 | 0.0 |
+    | `C06` | 63 | 20 | 1.0 |
+    | `C07` | 63 | 200 | 0.0 |
+    | `C08` | 63 | 200 | 1.0 |
+
+11. 모든 후보의 공통값은 `boosting_type=gbdt`, `objective=binary`,
+    `metric=binary_logloss`, `learning_rate=0.05`, `max_depth=-1`, `feature_fraction=1.0`,
+    `bagging_fraction=1.0`, `bagging_freq=0`, `max_bin=255`, `lambda_l1=0.0`,
+    `use_missing=true`, `zero_as_missing=false`, `deterministic=true`, `force_col_wise=true`다.
+    class/sample weight는 사용하지 않으며 `Protocol`은 D-003에 따라 별도 범주 피처로 명시한다.
+12. 최저 validation binary log loss와의 절대 차이가 **1e-6 이하**인 후보는 실질적 동률로 처리한다.
+    동률이면 (1) 작은 `num_leaves`, (2) 큰 `min_data_in_leaf`, (3) 큰 `lambda_l2`,
+    (4) 작은 `best_iteration`, (5) 앞선 `candidate_id` 순으로 선택한다.
+13. 난수는 `seed=42`, `data_random_seed=42`, `feature_fraction_seed=42`,
+    `bagging_seed=42`로 명시한다. 실제 LightGBM·Python 버전, OS, CPU/GPU, `num_threads`,
+    전체 파라미터와 후보별 validation binary log loss·`best_iteration`, 최종 `candidate_id`,
+    동률 규칙 적용 여부를 실행 manifest에 기록한다. `num_threads`는 실행 환경에 맞추되 기록한다.
+14. **Early stopping은 `num_boost_round=3000`, `stopping_rounds=100`, `min_delta=1e-6`,
+    `first_metric_only=true`로 고정한다.** Early stopping에는 내부 validation의 binary log loss만
+    사용한다. 후보별 전체 validation loss history와 진단용 training loss history를 저장하되,
+    training loss는 중단 조건에 관여시키지 않는다.
+15. 후보의 validation loss가 NaN 또는 Infinity이면 해당 후보는 실패로 기록한다. 8개 후보가 모두
+    실패하면 실험은 판정 불가다. 최종 선택 후보가 3000 iteration 상한 전에 early stopping되지
+    않으면 상한 부족으로 보고 외부 test를 평가하지 않는다. 상한을 늘리는 경우 기존 결과를
+    덮어쓰지 않고 새 실험 ID와 사전 스펙으로 실행한다.
+16. **이진 판정 임계값은 0.5로 고정한다.** LightGBM의 공격 클래스 확률을 `p_attack`으로 저장하고,
+    `p_attack >= 0.5`이면 `predicted_label=1`(공격), 아니면 0(정상)으로 판정한다. 정확히 0.5인
+    동률은 공격으로 판정한다. validation 또는 외부 test에서 이 임계값을 최적화하지 않는다.
+17. **AURC와 유보 순위에 사용할 `confidence`는 `max(p_attack, 1-p_attack)`으로 고정한다.**
+    `is_error`는 `predicted_label != binary_label`로 정의한다. 모든 값을 반올림 없이 저장하고
+    낮은 confidence부터 유보한다. `p_attack`이나 `confidence`가 NaN·Infinity 또는 허용 범위 밖이면
+    기술적 판정 불가다. 확률 보정과 temperature scaling은 적용하지 않는다.
+18. **경험적 AURC는 prefix risk의 산술평균으로 계산한다.** 외부 test `n`행을 `confidence`
+    내림차순으로 정렬하고 상위 `k`개를 수용했을 때 `coverage=k/n`,
+    `selective_risk=(상위 k개의 is_error 합)/k`로 정의한다. `k=1..n`의 `selective_risk`를
+    산술평균한 값을 `aurc`로 둔다. 손실은 0/1 `is_error`이며 coverage 0의 risk를 임의로
+    정의하거나 사다리꼴·사전 격자 적분을 사용하지 않는다.
+19. **정확히 같은 float64 `confidence`의 내부 순서는 균등 무작위 순열의 기대값으로 처리한다.**
+    반올림이나 tolerance로 새로운 tie를 만들지 않는다. 기존 prefix가 `k0`행·`E0`오류이고,
+    tie 그룹이 `m`행·`q`오류이면 tie 안에서 `j=1..m`번째 prefix의 기대 risk를
+    `(E0 + j*q/m)/(k0+j)`로 계산한다. 실제 셔플, 행 ID, 정답·오류 우선 tie-break는 사용하지 않는다.
+20. AURC와 함께 `full_coverage_risk`, `random_aurc`, `oracle_aurc`를 반드시 보고한다.
+    `random_aurc=full_coverage_risk`로 분석적으로 계산한다. `oracle_aurc`는 현재 오류 개수를
+    고정한 채 모든 정답을 오류보다 먼저 수용하는 순위의 같은 prefix 공식으로 계산한다.
+    정규화 AURC 계열은 주 지표로 추가하지 않는다.
+21. **대표 `target_abstention_rate`는 0.01, 0.02, 0.05, 0.10으로 고정한다.** 유보율 0은
+    `full_coverage_risk`로 별도 보고한다. AURC는 네 지점이 아니라 모든 prefix로 계산하며,
+    운영 threshold 곡선은 모든 고유 confidence 경계를 저장한다. 결과를 본 뒤 대표 budget을
+    추가하거나 가장 좋아 보이는 한 지점만 선택하지 않는다.
+22. **각 budget은 초과할 수 없는 최대 검증 처리량이다.** 낮은 confidence의 완전한 tie 그룹부터
+    누적해 목표 이하에서 가능한 가장 큰 집합을 유보한다. tie 그룹을 행 ID·정답·무작위 순서로
+    일부만 자르지 않는다. `confidence_threshold=t`이면 양 끝을 포함하여 `confidence <= t`, 즉
+    `abstention_band=[1-t,t]`를 적용한다.
+23. 각 budget에 `target_abstention_rate`, `actual_abstention_rate`, 실제 유보 행 수, `coverage`,
+    `confidence_threshold`, `abstention_band`, `budget_shortfall`, 다음 완전 tie 그룹까지 포함했을 때의
+    유보율을 기록한다. 첫 tie 그룹부터 budget을 넘으면 실제 유보율은 0, threshold와 band는
+    `null`로 두고 confidence 해상도 부족 사유를 기록한다.
+24. Threshold 산출에는 해당 분석 test의 `confidence`와 사전 budget만 사용하고 label·`is_error`·
+    성능지표는 사용하지 않는다. 주 분석과 행 단위 랜덤 민감도 분석은 같은 네 budget을 사용하되
+    각 test confidence 분포에서 threshold를 따로 산출한다. Attempted·invalid-class 관찰군에는
+    주 분석에서 구한 band를 변경 없이 적용하며 관찰군으로 threshold를 다시 산출하지 않는다.
+25. **보조 지표는 M2 균형안으로 고정한다.** Coverage 100%의 외부 test 전체에서 `n_test`,
+    confusion matrix(`tn`,`fp`,`fn`,`tp`), `full_coverage_risk`, FPR, FNR, `auroc`,
+    `average_precision`, `binary_logloss`를 계산한다. 모호한 AUPRC 대신 scikit-learn의
+    `average_precision_score` 정의를 사용하고 사다리꼴 PR-AUC는 산출하지 않는다.
+26. 각 대표 budget에서 `selective_risk`, `error_capture_rate`, `selective_fpr`, `selective_fnr`,
+    `residual_fpr`, `residual_fnr`, `benign_coverage`, `attack_coverage`를 계산한다.
+    `selective_fpr=accepted_fp/accepted_benign`, `selective_fnr=accepted_fn/accepted_attack`이며,
+    잔여 FPR/FNR은 같은 분자를 유보 전 전체 정상/공격 행 수로 나눈다. `error_capture_rate`는
+    유보된 `is_error` 합을 coverage 100%의 전체 오류 수로 나눈다.
+27. 지표 분모가 0이면 0으로 대체하지 않고 `null`과 `zero_denominator` 사유, 분자·분모 count를
+    함께 기록한다. AUROC와 `average_precision`은 budget별 accepted subset에서 반복 계산하지 않는다.
+28. 원래 `Label`별 전체-coverage 표에는 `n_test`, 정답·오류 수, 오류율과 공격 Label의 이진 recall
+    또는 BENIGN specificity를 기록한다. Budget별 표에는 `n_test`, `n_accepted`, `n_abstained`,
+    실제 유보율, accepted 오류 수·오류율을 기록한다. D-005에 따라 희소 클래스 수치를 근거로
+    성능 주장을 하지 않는다.
+29. 외부 test의 class-overlap 부분집합에는 행·Label 수, `p_attack`·`confidence` 분포,
+    full-coverage 오류율, budget별 유보율·수용 행 수·`selective_risk`를 전체 test threshold 그대로
+    적용해 보고한다. Attempted·invalid-class 관찰군에는 정답 기반 성능지표를 계산하지 않고 행 수,
+    `p_attack`·`confidence`·`predicted_label` 분포와 주 분석 band 포함 수·비율만 기록한다.
+    Attempted는 `Attempted Category`별로도 같은 분포를 낸다.
+30. `p_attack`과 `confidence` 분포 요약은 min, p01, p05, p25, p50, p75, p95, p99, max로 고정한다.
+    전체 test, 정답/오류, BENIGN/공격, class overlap, 두 관찰군에 적용한다. 모든 행의 원래 확률은
+    별도 예측 파일에 보존한다. 행 단위 랜덤 민감도 분석에는 주 분석과 같은 계산식을 적용하되,
+    class overlap과 관찰군의 핵심 보고는 주 분석을 기준으로 한다.
+31. **이 서브실험에서는 bootstrap과 통계적 신뢰구간을 산출하지 않는다(U1).** 모델 재학습
+    bootstrap, 행·그룹 bootstrap, p-value를 모두 범위 밖으로 둔다. 고정된 데이터·split·seed의
+    점추정값과 정확한 분자·분모 count를 보고한다. 1/2/5/10% budget에서 효과가 일관되는지는
+    운영점 변화에 대한 강건성으로 해석하되 표본추출 변동이나 신뢰구간으로 해석하지 않는다.
+32. **최종 판정 기준은 S2 균형안으로 고정하며 주 분석만 사용한다.**
+    `relative_aurc_improvement=(random_aurc-aurc)/random_aurc`,
+    `error_enrichment=error_capture_rate/actual_abstention_rate`로 정의한다. 대표 budget이
+    `actual_abstention_rate>0`, `error_enrichment>1`, `selective_risk<full_coverage_risk`를 모두
+    만족하면 개선 지점으로 센다.
+33. **성공**은 기술적으로 유효하고 전체-coverage 오류가 1건 이상이며 아래를 모두 만족할 때다.
+    (1) `relative_aurc_improvement>=0.10`, (2) 5% 목표에서 `actual_abstention_rate>=0.04`,
+    `error_enrichment>=2.0`, `selective_risk<full_coverage_risk`, (3) 네 budget 중 개선 지점 3개 이상.
+34. **실패**는 기술적으로 유효하고 전체 오류가 존재하면서 다음 중 하나일 때다.
+    `relative_aurc_improvement<=0`, 또는 5% 목표에서 실제 유보가 0, `error_enrichment<=1`,
+    `selective_risk>=full_coverage_risk` 중 하나, 또는 개선 지점이 1개 이하. 결론은 “D-004 주 분할과
+    현재 모델·confidence 조건에서 실질적인 유보 구간이 관찰되지 않았다”로 제한한다.
+35. **과학적 판정 불가**는 기술적으로 유효하지만 성공과 실패 어느 쪽에도 들지 않는 약한 신호이거나
+    전체-coverage 오류가 0건인 경우다. 예에는 AURC 상대 개선 0~10% 사이, 5% 오류 농축 1~2 사이,
+    5% 실제 유보율 0~4% 사이, 개선 지점 정확히 2개가 포함된다.
+36. **기술적 판정 불가**는 데이터 SHA·행 수·피처·split 검증 실패, 관찰군 혼입, 전처리 후 Infinity,
+    학습 후보 전부 실패, 선택 후보의 iteration 상한 도달, 예측값 오류, 예측 ID 불일치, AURC 행 순서
+    불변성 실패, `aurc<oracle_aurc`와 같은 산술 불가능 결과 등 측정 프로토콜이 무효인 경우다.
+    행 단위 랜덤 민감도, 관찰군, class-overlap 부분집합 결과는 최종 판정을 바꾸지 않는다.
+
+### 3. 근거
+
+1. **사용자 확정(2026-09-14).** 학습 목적함수·early stopping·최종 평가 지표의 역할과 대안을
+   비교한 뒤 위 권장안을 기본 프로토콜로 채택했다.
+2. 이 서브실험의 질문은 분류 성능 경쟁이 아니라 confidence가 오류 가능성이 높은 flow를 선별하여
+   유보할 수 있는지 확인하는 것이다. 따라서 전체 risk-coverage 관계를 평가하는 AURC가 최종 질문과
+   직접 대응한다.
+3. Binary log loss는 이진 확률 출력을 학습하는 LightGBM의 표준 목적함수이며, validation log loss는
+   고정 분류 임계값 없이 전 표본의 확률 손실로 학습 길이를 선택할 수 있다.
+4. LightGBM 공식 문서는 early stopping이 validation 지표의 개선 정체로 `best_iteration`을 정하며,
+   여러 지표 중 첫 지표만 사용하려면 `first_metric_only=true`를 지정하도록 정의한다.
+   출처: <https://lightgbm.readthedocs.io/en/v4.6.0/pythonapi/lightgbm.early_stopping.html>,
+   <https://lightgbm.readthedocs.io/en/latest/Parameters.html>.
+5. 방식별 비교와 기각 사유는 `docs/ml_training_evaluation_method_comparison.md`에 있다. 이 설명 문서는
+   결정 정본이 아니며, 확정 상태는 이 D-006만 따른다.
+6. 원본 전수 조사에서 `Flow Bytes/s`의 +Infinity는 5행이고 기존 NaN과 -Infinity는 0행이다.
+   이 5행은 완전일치 1그룹이며 정상·공격 class overlap이 없다. 임의 상한이나 train 통계를
+   추가하지 않고 계산 불능 rate를 결측으로 명시하는 것이 가장 작은 변환이다.
+   출처: `docs/feature_inventory_2026-09-12.md` §2·§3-3,
+   `reports/class_overlap/report.md` §3.
+7. LightGBM은 기본적으로 NaN 결측 처리를 지원하며 `zero_as_missing=false`일 때 0은 결측으로
+   취급하지 않는다. 출처: <https://lightgbm.readthedocs.io/en/v4.5.0/Advanced-Topics.html>.
+8. **사용자 확정(2026-09-14).** 내부 validation의 안정성을 우선하여 80:20보다 큰 validation을
+   제공하는 75:25를 선택했다. 외부 train 1,447,147행 기준 목표 규모는 내부 train 약 108.5만,
+   validation 약 36.2만 행이며, 최종 재학습은 외부 train 전체를 사용하므로 validation 행이
+   영구적으로 학습에서 빠지지 않는다.
+9. 이 프로젝트는 내부 교차검증과 seed 반복을 하지 않으므로 한 번의 validation에서
+   `best_iteration`을 정해야 한다. 그룹을 보존한 75:25 분할은 이 단일 validation의 변동을
+   줄이면서도 최초 fit에 100만 행 이상을 남긴다.
+10. **사용자 확정(2026-09-14).** 부적절한 단일 설정으로 인한 음성 결론 위험을 줄이되 모델 성능
+    경쟁으로 범위를 확장하지 않도록 최대 8개 사전 격자를 채택했다. 제한된 후보를 내부 validation
+    log loss로만 선택하면 외부 test 독립성을 유지하면서 기준 모델의 명백한 과소·과대적합 위험을
+    완화할 수 있다.
+11. **사용자 확정(2026-09-14).** LightGBM 기본 구조에 가까운 기준점과 규제 대안을 함께 비교하기
+    위해 `num_leaves={31,63}`, `min_data_in_leaf={20,200}`, `lambda_l2={0,1}`의 완전 격자를
+    선택했다. 세 축만 변화시켜 후보 차이를 해석할 수 있고 8개 상한을 지킨다.
+12. `learning_rate=0.05`는 early stopping의 iteration 변화를 세밀하게 관찰하기 위한 공통값이며,
+    feature·row sampling을 끄고 결정론 설정과 seed를 명시하여 단일 seed 정책에서 후보 간 무작위
+    차이를 최소화한다. LightGBM 파라미터 정의 출처:
+    <https://lightgbm.readthedocs.io/en/latest/Parameters.html>.
+13. **사용자 확정(2026-09-14).** 약 36만 행의 내부 validation과 `learning_rate=0.05`에서 안정성과
+    8개 후보의 실행 비용을 균형 있게 유지하도록 3000/100/1e-6 조합을 채택했다. `min_delta`는
+    후보의 실질적 동률 허용치와 같은 크기로 두어 수치적 잡음을 개선으로 계속 추적하지 않는다.
+14. LightGBM 공식 문서는 validation 지표가 `min_delta` 이상 개선되지 않은 상태가
+    `stopping_rounds`만큼 이어지면 학습을 중단하고 최적 iteration을 `best_iteration`에 저장한다고
+    정의한다. 출처: <https://lightgbm.readthedocs.io/en/v4.6.0/pythonapi/lightgbm.early_stopping.html>.
+15. **사용자 확정(2026-09-14).** 무가중 binary log loss와 미정의 상태인 오탐·미탐 비용비에
+    불필요한 추가 선택을 만들지 않도록 판정 임계값 0.5를 채택했다. `max(p,1-p)`는 정상과 공격
+    양쪽의 확신을 대칭적으로 처리하며 확률 margin과 동일한 순위를 더 직접적으로 표현한다.
+16. AURC의 변환 불변성은 `p_attack`에 대한 임의의 단조변환이 아니라, 먼저 확정한
+    `confidence=max(p_attack,1-p_attack)`의 순위와 동률을 보존하는 엄격한 단조변환에만 적용된다.
+17. **사용자 확정(2026-09-14).** 모든 prefix risk의 평균은 coverage 0의 risk나 임의 격자 없이
+    경험적 risk-coverage를 정의한다. LightGBM의 반복 확률에서 행 순서가 AURC를 바꾸지 않도록
+    tie 내부 무작위 순열의 기댓값을 분석적으로 사용한다.
+18. Raw AURC는 base error와 함께 해석해야 하므로 유보 없음, 무작위 순위, 현재 오류 수에서의
+    이론적 최선이라는 세 기준선을 함께 둔다. AURC의 유한 표본 추정에 관한 근거:
+    Zhou et al., *A Novel Characterization of the Population Area Under the Risk Coverage Curve
+    (AURC) and Rates of Finite Sample Estimators*, ICML 2025,
+    <https://proceedings.mlr.press/v267/zhou25y.html>.
+19. **사용자 확정(2026-09-14).** 소수 flow만 심층 검증한다는 연구 범위를 유지하면서 초기·중간·상한
+    효과를 보기 위해 1/2/5/10%를 채택했다. Budget을 최대 처리량으로 해석하므로 동일 confidence를
+    임의로 분할해 정확한 비율을 맞추기보다 완전 tie 그룹을 유지하고 실제 유보율을 함께 보고한다.
+20. **사용자 확정(2026-09-14).** 유보 효과를 오류 선별과 처리량 양쪽에서 해석하되 budget마다
+    모든 순위 지표를 반복하는 과잉 보고를 피하도록 M2를 채택했다. 선택적 FPR/FNR만으로는 유보로
+    빠진 클래스 비율을 숨길 수 있으므로 전체 분모의 잔여 오류율과 클래스별 coverage를 병기한다.
+21. **사용자 확정(2026-09-14).** 본 작업은 빠른 착수와 존재 확인을 목적으로 하는 subexperiment이므로
+    구현·계산량을 늘리는 bootstrap보다 U1을 선택했다. 외부 test 482,382행의 고정 benchmark
+    점추정, 네 budget의 추세, D-004 주 분석과 낙관적 민감도 분석의 차이로 필요한 진단을 수행한다.
+22. **사용자 확정(2026-09-14).** 통계적 유의성 대신 무작위보다 10% 나은 전체 순위, 5% budget의
+    2배 오류 농축, 네 운영점 중 세 곳의 일관된 개선을 요구하는 S2를 채택했다. 작은 양의 차이를
+    성공으로 과장하지 않고 명확한 무효·실패와 경계 신호를 분리한다.
+
+### 4. 결과적으로 따라오는 영향
+
+- 외부 test는 학습, `best_iteration` 선택, 하이퍼파라미터 선택에 사용하지 않는다.
+- 내부 validation에서 `best_iteration`을 고른 뒤 외부 train 전체로 그 iteration 수만큼 재학습하고,
+  완성된 모델을 외부 test에서 한 번 평가하는 구조가 필요하다.
+- 기본 실험의 클래스 불균형 처리는 가중치가 아니라 원자료 분포 보존으로 고정된다.
+- Accuracy나 F1이 높더라도 AURC를 대신하여 성공을 선언할 수 없다.
+- Brier와 ECE는 D-004에 따라 계속 범위 밖이다.
+- `Flow Bytes/s`의 무한대 5행은 모집단과 D-004 split에서 유지되며, 재학습과 test에도 같은
+  결정론적 변환을 적용한다. 전처리로 인해 행 수가 달라지면 학습을 시작하지 않는다.
+- 내부 분할에서 완전일치 그룹 교차가 발생하거나 원래 `Label` 하나라도 한쪽에서 소멸하면
+  해당 분할은 무효이며 학습을 시작하지 않는다.
+- 내부 validation은 `best_iteration`과, 추후 허용할 경우 하이퍼파라미터 선택에만 사용할 수 있다.
+  외부 test 결과를 보고 `best_iteration`을 변경할 수 없다.
+- 주 분석에서 선택한 최종 하이퍼파라미터는 D-004의 행 단위 랜덤 민감도 분석에도 그대로 사용한다.
+  민감도 분석에 맞춰 재선택하지 않는다.
+- 8개 후보 전부의 설정과 내부 validation 결과를 보존한다. 선택된 후보만 남기거나 실행 후 격자를
+  변경할 수 없다.
+- 최종 후보가 iteration 상한에 도달하면 후보 선택이 완결되지 않은 것이므로 외부 test를 열지 않는다.
+  이는 모델 성능 실패가 아니라 학습 프로토콜의 기술적 판정 불가다.
+- Coverage 100%의 기본 분류 결과는 고정 임계값 0.5로 산출하고, 유보 분석은 같은 예측의
+  `confidence` 순서만 변화시킨다. 임계값 최적화가 결과에 섞이지 않는다.
+- AURC 구현은 입력 행 순서와 tie 내부 라벨 배열에 불변이어야 한다. 행 순서를 바꾼 검증에서 값이
+  달라지면 외부 test 해석을 중단한다.
+- 대표 budget threshold는 test label을 사용한 최적점이 아니며 배포 threshold로 주장하지 않는다.
+  실제 배포 threshold 결정은 이 서브실험 범위 밖이다.
+- 보조 지표 표에는 비율만 두지 않고 모든 핵심 분자·분모 count를 함께 저장한다. 관찰군에는
+  신뢰할 수 있는 `binary_label`이 없으므로 정답 기반 지표를 만들지 않는다.
+- 신뢰구간과 통계적 유의성을 주장하지 않는다. Budget별 추세는 operating-point 강건성이고,
+  행 단위 랜덤 split 비교는 중복 누수에 대한 구조적 민감도이지 표본추출 불확실성이 아니다.
+- 최종 성공·실패·판정불가 상태는 외부 test를 열기 전에 실험 스펙에 복제하지 않고 D-006을
+  참조하여 고정한다. 실행 후 기준 수치나 부등호를 변경하지 않는다.
+
+### 5. 남는 미결 사항 — 아래 순서로 하나씩 확정
+
+1. 확정 내용을 `experiments/EXP-XXX-*.md`와 실행 config로 고정
 
 ---
 
@@ -992,19 +1283,11 @@ monday 371,624 / tuesday 322,078 / wednesday 496,641 / thursday 362,076 / friday
 
 ## 다음 작업 (착수 전 필수)
 
-**59-feature 기준 중복 행 및 class overlap 측정.**
-지시서: `tasks/task_duplicate_class_overlap_measurement.md`
+**D-006 학습·평가 프로토콜과 성공/실패/판정불가 기준 확정.**
 
-이유: 59개 값이 동일한데 라벨이 갈리는 행은 어떤 모델도 구분할 수 없고,
-그 자체로 유보 구간처럼 보이는 영역을 만든다. 규모를 모르면 실험 결과를 해석할 수 없다.
-CNS2022 §V가 같은 현상을 보고했다.
-
-**주의 1.** 과거에 같은 항목을 `5-tuple + Timestamp` 일치 기준으로 판정해 0건이 나온 기록이 있으나,
-`Timestamp` 고유값이 2,077,011개(전체 2,099,976행)라 그 조건은 사실상 통과 불가능했다.
-**그 0건은 무효다.**
-
-**주의 2.** 현재 PC에는 `dataset_manifest.json`이 없고, 과거 기록에도 SHA256 **값**이 남아 있지 않다
-("일치"라는 판정만 있음). 측정 전에 manifest를 재생성하고 **해시 값을 문서 본문에 기록**한다.
+59-feature 중복 행 및 class overlap 측정과 D-004 split 고정은 완료됐다. 모델을 실행하기 전에
+LightGBM 하이퍼파라미터, 조기종료 지표, 유보 밴드 스윕 격자와 AURC 외 보조 지표의 범위를
+`experiments/TEMPLATE.md` §4 형식으로 확정해야 한다. 결과를 본 뒤 기준을 정하지 않는다.
 
 ---
 

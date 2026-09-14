@@ -14,7 +14,7 @@
 |---|---|
 | Claude Code로 작업할 때 지켜야 할 규약 전체 | [CLAUDE.md](CLAUDE.md) |
 | 지금 무엇이 확정되었고 왜 그런지 (결정 D-001~D-006) | [docs/CURRENT_DECISIONS.md](docs/CURRENT_DECISIONS.md) |
-| 지금 당장 해야 할 작업 | [tasks/task_duplicate_class_overlap_measurement.md](tasks/task_duplicate_class_overlap_measurement.md) |
+| 지금 당장 해야 할 작업 | [docs/CURRENT_DECISIONS.md](docs/CURRENT_DECISIONS.md)의 D-006·"다음 작업" |
 
 ---
 
@@ -29,6 +29,7 @@
 | [doc_consistency_audit_2026-09-13.md](docs/doc_consistency_audit_2026-09-13.md) | 2026-09-13 문서 대조 감사 — Protocol 오기 등 발견 경위 |
 | [environment.md](docs/environment.md) | 실행 환경(OS·의존성) — 미확정 상태 |
 | [git-policy.md](docs/git-policy.md) | git 운영 지시문 |
+| [ml_training_evaluation_method_comparison.md](docs/ml_training_evaluation_method_comparison.md) | D-006 학습 목적함수·early stopping·최종 평가 지표 선택지 비교 자료 |
 | `decisions/` | 비어 있음(`.gitkeep`만 존재) |
 
 ## configs/ — 실행 설정 (쓰기 가능)
@@ -42,7 +43,7 @@
 
 | 문서 | 내용 |
 |---|---|
-| [task_duplicate_class_overlap_measurement.md](tasks/task_duplicate_class_overlap_measurement.md) | 중복 행·class overlap 측정 지시서 — **현재 작업 대상** |
+| [task_duplicate_class_overlap_measurement.md](tasks/task_duplicate_class_overlap_measurement.md) | 중복 행·class overlap 측정 지시서 (완료, D-004 개정 근거) |
 | [instruction_attempted_hulk_investigation.md](tasks/instruction_attempted_hulk_investigation.md) | Attempted·DoS Hulk 조사 지시서 (완료, D-001·D-002의 근거) |
 
 ## experiments/ — 성공·실패 기준을 갖춘 확정 실험 스펙
@@ -57,12 +58,23 @@
 | 경로 | 내용 |
 |---|---|
 | [reports/attempted_hulk_investigation/](reports/attempted_hulk_investigation/) | D-001·D-002의 근거 자료. `_superseded/` 대상 아님 — 유효 |
+| [reports/class_overlap/](reports/class_overlap/) | 59-feature 중복 및 정상·공격 class overlap 실측 |
+| [reports/split_feasibility/](reports/split_feasibility/) | D-004 완전일치 그룹 분할 가능성 및 랜덤 분할 누수 측정 |
 
 ## scripts/ — 실행 코드 (쓰기 가능)
 
 | 경로 | 내용 |
 |---|---|
 | `scripts/investigation/attempted_hulk/` | 위 조사에 쓰인 코드 |
+| `scripts/investigation/class_overlap/` | 59-feature 중복 및 class overlap 측정 코드 |
+| `scripts/investigation/split_feasibility/` | D-004 그룹 분할 가능성 측정 코드 |
+| `scripts/build_d004_splits.py` | D-004 주 분석·민감도 분석 split 생성 및 검증 진입점 |
+
+## results/ — 고정 실행 산출물
+
+| 경로 | 내용 |
+|---|---|
+| `results/d004_splits/` | D-004 주 분석·민감도 분석의 요일별 split 배정과 manifest |
 
 ---
 
@@ -82,3 +94,4 @@
 ## 갱신 이력
 
 - 2026-09-14 — 최초 작성. 결정 문서 통합(§단일 정본화)과 `_superseded/` 격리 완료 이후 스냅샷.
+- 2026-09-14 — D-006 학습·평가 방식 비교 자료를 색인에 추가.
