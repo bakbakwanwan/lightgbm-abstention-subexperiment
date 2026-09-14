@@ -1,0 +1,63 @@
+experiment:
+  id: EXP-007
+  spec: experiments/EXP-007-lightgbm-abstention.md
+  output_dir: results/EXP-007
+
+inputs:
+  data_dir: data/CICIDS2017_CNS2022_reprocessed
+  source_zip: data/CICIDS2017_improved.zip
+  whitelist: configs/features_whitelist.json
+  split_dir: results/d004_splits
+  split_manifest: results/d004_splits/split_manifest.json
+  overlap_groups: reports/split_feasibility/conflict_group_assignment.csv
+  chunk_size: 100000
+
+analysis:
+  primary_method: group_seed42
+  sensitivity_method: row_random_seed42
+  internal_validation_fraction: 0.25
+  seed: 42
+  target_abstention_rates: [0.01, 0.02, 0.05, 0.10]
+  decision_threshold: 0.5
+
+training:
+  num_boost_round: 3000
+  stopping_rounds: 100
+  min_delta: 0.000001
+  candidate_tolerance: 0.000001
+  num_threads: 0
+  fixed_parameters:
+    boosting_type: gbdt
+    objective: binary
+    metric: binary_logloss
+    learning_rate: 0.05
+    max_depth: -1
+    feature_fraction: 1.0
+    bagging_fraction: 1.0
+    bagging_freq: 0
+    max_bin: 255
+    lambda_l1: 0.0
+    use_missing: true
+    zero_as_missing: false
+    deterministic: true
+    force_col_wise: true
+    seed: 42
+    data_random_seed: 42
+    feature_fraction_seed: 42
+    bagging_seed: 42
+  candidates:
+    - {candidate_id: C01, num_leaves: 31, min_data_in_leaf: 20, lambda_l2: 0.0}
+    - {candidate_id: C02, num_leaves: 31, min_data_in_leaf: 20, lambda_l2: 1.0}
+    - {candidate_id: C03, num_leaves: 31, min_data_in_leaf: 200, lambda_l2: 0.0}
+    - {candidate_id: C04, num_leaves: 31, min_data_in_leaf: 200, lambda_l2: 1.0}
+    - {candidate_id: C05, num_leaves: 63, min_data_in_leaf: 20, lambda_l2: 0.0}
+    - {candidate_id: C06, num_leaves: 63, min_data_in_leaf: 20, lambda_l2: 1.0}
+    - {candidate_id: C07, num_leaves: 63, min_data_in_leaf: 200, lambda_l2: 0.0}
+    - {candidate_id: C08, num_leaves: 63, min_data_in_leaf: 200, lambda_l2: 1.0}
+
+execution_guard:
+  require_clean_worktree: true
+  refuse_existing_output: true
+  run_tests_first: true
+  test_command: [python, -m, pytest]
+
