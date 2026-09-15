@@ -45,6 +45,8 @@
 |---|---|
 | [task_duplicate_class_overlap_measurement.md](tasks/task_duplicate_class_overlap_measurement.md) | 중복 행·class overlap 측정 지시서 (완료, D-004 개정 근거) |
 | [instruction_attempted_hulk_investigation.md](tasks/instruction_attempted_hulk_investigation.md) | Attempted·DoS Hulk 조사 지시서 (완료, D-001·D-002의 근거) |
+| [exp008_group_split_stability_proposal.md](tasks/exp008_group_split_stability_proposal.md) | EXP-008 분할 seed 민감도 분석의 실행 전 조건·판정 기준 제안 |
+| [external_labeled_dataset_feasibility.md](tasks/external_labeled_dataset_feasibility.md) | 독립 라벨 데이터 후보와 사용 전 감사 항목 조사 |
 
 ## experiments/ — 성공·실패 기준을 갖춘 확정 실험 스펙
 
@@ -95,3 +97,4 @@
 
 - 2026-09-14 — 최초 작성. 결정 문서 통합(§단일 정본화)과 `_superseded/` 격리 완료 이후 스냅샷.
 - 2026-09-14 — D-006 학습·평가 방식 비교 자료를 색인에 추가.
+- 2026-09-15 — EXP-008 실행 전 제안서와 독립 라벨 데이터 후보 조사를 tasks/ 색인에 추가.
