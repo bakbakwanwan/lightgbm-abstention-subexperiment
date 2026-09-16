@@ -943,6 +943,27 @@ LightGBM은 문자열을 직접 받지 않으므로 pandas `category` dtype으�
     처리량 실패로 세지 않는다. 원인을 수정한 뒤에는 생성된 기존 결과를 덮어쓰지 않고
     `EXP-008-r2`처럼 새 실험 ID와 결과 디렉터리에서 세 seed 전체를 재실행한다.
     (사용자 확정: 2026-09-16.)
+17. **EXP-008의 기술적 유효성 검사는 입력·분할·모델 고정·결과 산술을 모두 강제한다.**
+    입력에서는 EXP-007과 같은 CSV 5개·원본 ZIP·whitelist SHA256, 정본 모집단과
+    관찰군 행 수, whitelist의 59개 포함 피처와 원본 스키마 일치를 확인한다. 분할에서는
+    seed 43·44·45, 원래 `Label` 계층화와 목표 test 25%, 모든 대상 행의 단일 배정,
+    `(day, id, Label)` 정렬 일치, train/test 교차 완전일치 그룹 0개, 모든 원래
+    `Label`의 양쪽 생존, 관찰군의 train/test 미배정을 확인한다. seed별 실제 행 수는
+    기록하되 EXP-007 행 수를 강제하지 않는다.
+
+    모델에서는 EXP-007의 C06 전체 파라미터와 `best_iteration=230`, 모델 관련 난수 seed,
+    이진 판정 임계값 0.5를 그대로 사용했는지 확인한다. `Protocol`은 pandas `category`와
+    LightGBM `categorical_feature`로 명시하고 확률 보정은 적용하지 않는다. 정해진
+    `Flow Bytes/s` Infinity→NaN 처리 뒤 모델 입력에 Infinity가 없어야 한다.
+
+    결과에서는 각 seed의 모든 test 행에 예측이 정확히 하나씩 있고 누락·중복·관찰군
+    혼입이 없는지 확인한다. `p_attack`은 유한한 [0, 1]이고, `predicted_label`,
+    `confidence`, `is_error`는 정본 정의로 재계산한 값과 일치해야 한다. AURC는 세 번의
+    결정론적 행 셔플에도 같고 `oracle_aurc` 이상이어야 한다. EXP-007 `metrics.json`의
+    1%·5% `confidence_threshold` 원값을 변경 없이 적용하고 라벨을 경계 선택에 쓰지
+    않았는지 확인한다. 저장된 AURC·고정 경계 행 수·비율·보조 지표는 예측 원자료에서
+    재계산한 값과 일치해야 한다. 하나라도 실패하면 결정 16을 적용한다.
+    (사용자 확정: 2026-09-16.)
 
 **해석 규칙(실행 전 고정).** 주 분석은 동일한 59-feature 값을 train에서 본 test 행이 없도록 한다.
 행 단위 랜덤 민감도 분석은 test의 동일-feature 누수로 인해 모델에 유리한 조건이다. 두 결과의 차이는
