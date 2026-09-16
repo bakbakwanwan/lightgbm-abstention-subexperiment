@@ -1,0 +1,130 @@
+experiment:
+  id: EXP-008
+  spec: experiments/EXP-008-group-split-stability.md
+  spec_sha256: e288006366b3923e91a557d4f97446efd47d682ce35c0bbc4ee8325e5d8f8f2a
+  output_dir: results/EXP-008
+
+inputs:
+  data_dir: data/CICIDS2017_CNS2022_reprocessed
+  source_zip: data/CICIDS2017_improved.zip
+  whitelist: configs/features_whitelist.json
+  baseline_split_dir: results/d004_splits/group_seed42
+  baseline_split_manifest: results/d004_splits/split_manifest.json
+  overlap_groups: reports/split_feasibility/conflict_group_assignment.csv
+  exp007_manifest: results/EXP-007/manifest.json
+  exp007_metrics: results/EXP-007/metrics.json
+  exp007_candidate_history: results/EXP-007/candidate_history.json
+  exp007_predictions: results/EXP-007/predictions/group_seed42.parquet
+  chunk_size: 100000
+
+  expected_sha256:
+    dataset_files:
+      monday.csv: 51fe5dc962626efb4ae70dce0303072fb780da0932822b651202ee9c2fbc1aff
+      tuesday.csv: e2a0a5b631dfc6b455cc9f9a88b944110637d70a7f74171473925f76f38b6b0c
+      wednesday.csv: bf46c5f3c792e8817381f724511229569606918eaf07ac986d7a2592b6341bc2
+      thursday.csv: 78a4d11eaf473d099e30e71ddb01e0f38218e844c0a9cdd36602145d674af482
+      friday.csv: ebd499e6f23bd59f9cb81bec28178491b02b925fa5640a24215c9437d79482d0
+    source_zip: 97fdb91d339e2d8cf5627f981b831e5e7e400b981c58181c451a38fd03c48883
+    whitelist: 9d9551e339a938bc00ea0005d323fb8be755f2762ee3f7da59795aedeee2c6de
+    baseline_split_manifest: 6b9f32d08f5193b91f43a9425e5408e762da9f0cd9a9b739db1ebf4a26f7cb09
+    overlap_groups: 96e52bf8531688199ee173897a3dc785544a856d7d8b7fdebf75eb6786627ae6
+    exp007_manifest: e4ca1a7686b1e83324398b327291f8c8f9bcea51c6411699fccb03b533a7e3b6
+    exp007_metrics: 122093a73f4d4b71c0173d5e72c23405e2010e4db129534c5ca1d794a0da5fb9
+    exp007_candidate_history: ec40f3b185a4183d2b2fc7d5d92bd9931af4a985929fc2bb1440a35dd7e5ec30
+    exp007_predictions: e27f1a5edbd305605923685fe4f9203f9ed1f6c269b6f0169cf2d4d1634898dc
+
+  expected_population:
+    total_rows: 2099976
+    target_rows: 1929529
+    observation_group_rows:
+      attempted: 11979
+      invalid_class: 158468
+    feature_count: 59
+
+analysis:
+  split_method_prefix: group_seed
+  split_seeds: [43, 44, 45]
+  reference_split_seed: 42
+  test_fraction: 0.25
+  stratify_column: Label
+  decision_threshold: 0.5
+  offline_target_abstention_rates: [0.01, 0.02, 0.05, 0.10]
+  fixed_threshold_target_abstention_rates: [0.01, 0.05]
+  aurc_shuffle_seeds: [101, 202, 303]
+
+  reference_rank:
+    method: group_seed42
+    metric: aurc_random_ratio
+    numerator_field: aurc
+    denominator_field: random_aurc
+    source: results/EXP-007/metrics.json
+
+  rank_verdict:
+    minimum_errors_per_seed: 10
+    maximum_ratio_multiplier: 3.0
+    maintained_pass_count: 3
+    inconclusive_pass_count: 2
+    failed_max_pass_count: 1
+    unassessable_if_any_seed_below_minimum_errors: true
+
+  fixed_threshold_source:
+    method: group_seed42
+    budget_field: target_abstention_rate
+    threshold_field: confidence_threshold
+    source: results/EXP-007/metrics.json
+
+  throughput_verdict:
+    allowed_rate_multiplier_lower: 0.95
+    allowed_rate_multiplier_upper: 1.05
+    per_seed:
+      maintained_in_range_threshold_count: 2
+      inconclusive_in_range_threshold_count: 1
+      failed_in_range_threshold_count: 0
+    aggregate:
+      maintained_seed_count: 3
+      failed_minimum_seed_count: 2
+      otherwise: inconclusive
+
+  class_overlap:
+    include_in_primary: true
+    exclusion_metrics_diagnostic_only: true
+
+  technical_validity:
+    invalidate_all_if_any_seed_invalid: true
+    rerun_all_seeds_with_new_experiment_id: true
+
+training:
+  selection: fixed_from_exp007
+  selected_candidate_id: C06
+  num_boost_round: 230
+  early_stopping: false
+  calibration: none
+  num_threads: 0
+  fixed_parameters:
+    boosting_type: gbdt
+    objective: binary
+    metric: binary_logloss
+    learning_rate: 0.05
+    max_depth: -1
+    num_leaves: 63
+    min_data_in_leaf: 20
+    feature_fraction: 1.0
+    bagging_fraction: 1.0
+    bagging_freq: 0
+    max_bin: 255
+    lambda_l1: 0.0
+    lambda_l2: 1.0
+    use_missing: true
+    zero_as_missing: false
+    deterministic: true
+    force_col_wise: true
+    seed: 42
+    data_random_seed: 42
+    feature_fraction_seed: 42
+    bagging_seed: 42
+
+execution_guard:
+  require_clean_worktree: true
+  refuse_existing_output: true
+  run_tests_first: true
+  test_command: [python, -m, pytest]
