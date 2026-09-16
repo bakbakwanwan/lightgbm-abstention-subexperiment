@@ -51,6 +51,17 @@ def train_final(config: ExperimentConfig, train: pd.DataFrame, features: list[st
     return lgb.train(params, _dataset(train, features), num_boost_round=int(selected["best_iteration"]))
 
 
+def train_fixed(config: ExperimentConfig, train: pd.DataFrame, features: list[str]) -> lgb.Booster:
+    """Train the fixed EXP-008 C06 model without selection or early stopping."""
+    params = dict(config.raw["training"]["fixed_parameters"])
+    params["num_threads"] = int(config.raw["training"]["num_threads"])
+    return lgb.train(
+        params,
+        _dataset(train, features),
+        num_boost_round=int(config.raw["training"]["num_boost_round"]),
+    )
+
+
 def runtime_versions() -> dict[str, Any]:
     import sklearn
     return {"python": platform.python_version(), "os": platform.platform(), "logical_cpu_count": os.cpu_count(), "configured_num_threads": None, "lightgbm": lgb.__version__, "pandas": pd.__version__, "numpy": np.__version__, "scikit_learn": sklearn.__version__}

@@ -1,7 +1,12 @@
 import numpy as np
 import pandas as pd
 
-from abstention_experiment.evaluation import budget_metrics, expected_aurc, final_status
+from abstention_experiment.evaluation import (
+    budget_metrics,
+    expected_aurc,
+    final_status,
+    fixed_threshold_metrics,
+)
 
 
 def sample(confidence, errors):
@@ -30,3 +35,13 @@ def test_oracle_is_not_above_observed_aurc() -> None:
 def test_random_aurc_equals_full_coverage_risk() -> None:
     metrics, _ = expected_aurc(sample([0.9, 0.8, 0.7, 0.6], [0, 1, 0, 1]))
     assert metrics["random_aurc"] == metrics["full_coverage_risk"]
+
+
+def test_fixed_threshold_uses_external_boundary_and_reports_throughput_band() -> None:
+    frame = sample([0.51, 0.60, 0.90, 0.95], [1, 0, 0, 0])
+    result = fixed_threshold_metrics(frame, 0.50, 0.60, 0.95, 1.05)
+    assert result["n_abstained"] == 2
+    assert result["target_abstention_rows"] == 2
+    assert result["abstention_row_delta"] == 0
+    assert result["within_allowed_range"] is True
+    assert result["abstained_errors"] == 1

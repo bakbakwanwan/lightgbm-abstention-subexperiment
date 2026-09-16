@@ -50,29 +50,52 @@ def feature_hash(frame: pd.DataFrame, features: list[str]) -> np.ndarray:
 
 
 def validate_sources(config: ExperimentConfig) -> dict:
-    manifest = json.loads(config.path("inputs", "split_manifest").read_text(encoding="utf-8"))
     data_dir = config.path("inputs", "data_dir")
     actual = {f"{day}.csv": sha256_file(data_dir / f"{day}.csv") for day in DAYS}
+    if config.exp_id == "EXP-007":
+        manifest = json.loads(config.path("inputs", "split_manifest").read_text(encoding="utf-8"))
+        expected_dataset = manifest["dataset_file_sha256"]
+        expected_zip = manifest["source_zip_sha256"]
+        expected_whitelist = manifest["features_whitelist_sha256"]
+    else:
+        expected = config.raw["inputs"]["expected_sha256"]
+        expected_dataset = expected["dataset_files"]
+        expected_zip = expected["source_zip"]
+        expected_whitelist = expected["whitelist"]
     checks = {
-        "dataset_sha_match": actual == manifest["dataset_file_sha256"],
-        "source_zip_sha_match": sha256_file(config.path("inputs", "source_zip")) == manifest["source_zip_sha256"],
-        "whitelist_sha_match": sha256_file(config.path("inputs", "whitelist")) == manifest["features_whitelist_sha256"],
+        "dataset_sha_match": actual == expected_dataset,
+        "source_zip_sha_match": sha256_file(config.path("inputs", "source_zip")) == expected_zip,
+        "whitelist_sha_match": sha256_file(config.path("inputs", "whitelist")) == expected_whitelist,
     }
     if not all(checks.values()):
         raise RuntimeError(f"Input integrity validation failed: {checks}")
-    return {"checks": checks, "dataset_file_sha256": actual, "source_zip_sha256": manifest["source_zip_sha256"]}
+    return {
+        "checks": checks,
+        "dataset_file_sha256": actual,
+        "source_zip_sha256": expected_zip,
+        "features_whitelist_sha256": expected_whitelist,
+    }
 
 
-def load_analysis_frame(config: ExperimentConfig, method: str) -> tuple[pd.DataFrame, dict]:
+def load_analysis_frame(
+    config: ExperimentConfig,
+    method: str,
+    *,
+    split_dir: Path | None = None,
+    enforce_exp007_counts: bool | None = None,
+) -> tuple[pd.DataFrame, dict]:
     include, exclude = load_whitelist(config.path("inputs", "whitelist"))
     chunk_size = int(config.raw["inputs"]["chunk_size"])
     usecols = list(dict.fromkeys(["id", "Label", "Attempted Category"] + include))
     parts: list[pd.DataFrame] = []
     infinity_replaced = 0
     counts = {"total": 0, "target": 0, "attempted": 0, "invalid_class": 0, "train": 0, "test": 0}
+    resolved_split_dir = split_dir or config.path("inputs", "split_dir")
+    if enforce_exp007_counts is None:
+        enforce_exp007_counts = config.exp_id == "EXP-007"
     for day in DAYS:
         raw_reader = pd.read_csv(config.path("inputs", "data_dir") / f"{day}.csv", usecols=usecols, chunksize=chunk_size, low_memory=False)
-        split_reader = pd.read_csv(config.path("inputs", "split_dir") / method / f"{day}.csv.gz", dtype={"id": "int64", "Label": "string", "observation_group": "string", "split": "string"}, keep_default_na=False, chunksize=chunk_size)
+        split_reader = pd.read_csv(resolved_split_dir / method / f"{day}.csv.gz", dtype={"id": "int64", "Label": "string", "observation_group": "string", "split": "string"}, keep_default_na=False, chunksize=chunk_size)
         for raw, assignment in zip(raw_reader, split_reader, strict=True):
             if len(raw) != len(assignment) or not np.array_equal(raw["id"].to_numpy(), assignment["id"].to_numpy()) or not np.array_equal(raw["Label"].astype(str).to_numpy(), assignment["Label"].astype(str).to_numpy()):
                 raise RuntimeError(f"Prediction ID alignment failed for {day}")
@@ -102,8 +125,12 @@ def load_analysis_frame(config: ExperimentConfig, method: str) -> tuple[pd.DataF
     expected_counts = {"total": EXPECTED["total"], "target": EXPECTED["target"], "attempted": EXPECTED["attempted"], "invalid_class": EXPECTED["invalid_class"]}
     if any(counts[key] != value for key, value in expected_counts.items()):
         raise RuntimeError(f"Population validation failed: {counts}")
-    if counts["train"] != 1_447_147 or counts["test"] != 482_382 or infinity_replaced != 5:
+    if infinity_replaced != 5:
         raise RuntimeError(f"Split/preprocessing validation failed: counts={counts}, infinity={infinity_replaced}")
+    if enforce_exp007_counts and (counts["train"] != 1_447_147 or counts["test"] != 482_382):
+        raise RuntimeError(f"EXP-007 split row counts changed: {counts}")
+    if counts["train"] + counts["test"] != counts["target"]:
+        raise RuntimeError(f"Target rows are not assigned exactly once: {counts}")
     if set(include) | set(exclude) != set(pd.read_csv(config.path("inputs", "data_dir") / "monday.csv", nrows=0).columns):
         raise RuntimeError("Whitelist classification differs from the 91-column source header")
     return frame, {"method": method, "counts": counts, "flow_bytes_infinity_to_nan": infinity_replaced, "feature_count": len(include)}

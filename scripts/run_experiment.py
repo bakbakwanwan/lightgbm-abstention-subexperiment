@@ -102,6 +102,10 @@ def summarize_prediction_distributions(method: str, target: pd.DataFrame) -> pd.
 def main() -> int:
     cli = args(); config = load_config(cli.config.resolve(), REPO_ROOT)
     commit, integrity = preflight(config, cli.stage)
+    if config.exp_id == "EXP-008":
+        from abstention_experiment.exp008 import run_exp008
+
+        return run_exp008(config, cli.stage, commit, integrity)
     if cli.stage == "validate":
         print(json.dumps({"status": "valid", "git_commit": commit, **integrity["checks"]}, indent=2)); return 0
     output = config.output_dir; output.mkdir(parents=True)
