@@ -964,6 +964,22 @@ LightGBM은 문자열을 직접 받지 않으므로 pandas `category` dtype으�
     않았는지 확인한다. 저장된 AURC·고정 경계 행 수·비율·보조 지표는 예측 원자료에서
     재계산한 값과 일치해야 한다. 하나라도 실패하면 결정 16을 적용한다.
     (사용자 확정: 2026-09-16.)
+18. **EXP-008은 판정 재계산에 필요한 전체 결과를 보존하되 모델 파일과 시각화는 필수로 하지 않는다.**
+    `results/EXP-008/`에는 실행 commit·config·입력 SHA·seed·C06·230 iteration·EXP-007
+    고정 경계 출처를 담은 `manifest.json`, 결정 17의 검사별 결과를 담은
+    `validation_checks.json`, 해석 문구 없이 수치만 담은 `metrics.json`을 둔다.
+    seed별 분할 manifest와 요일별 압축 assignment, `group_seed43`·`group_seed44`·
+    `group_seed45`의 예측 parquet 원자료, 압축 AURC 곡선을 보존한다.
+
+    표 형식 요약으로는 새 test confidence를 사용한 `offline_budget_summary.csv`,
+    EXP-007 경계를 이식한 `fixed_threshold_summary.csv`, 충돌 그룹 배정과 포함·제외
+    진단, 결정 15의 `seed_overlap_summary.csv`, 원래 `Label`·관찰군·예측 분포 요약을
+    보존한다. 예측 원자료에는 최소한 `day`, `id`, `Label`, `observation_group`,
+    `split`, `binary_label`, `p_attack`, `predicted_label`, `confidence`, `is_error`가
+    있어야 한다. manifest는 모든 필수 산출물의 상대 경로와 SHA256을 기록한다.
+    모델 바이너리와 그림은 이번 민감도 분석의 판정 재계산에 필요하지 않으므로 필수
+    산출물에서 제외한다. 결과 해석은 이 파일들에 넣지 않고 실행 후 별도로 보고한다.
+    (사용자 확정: 2026-09-16.)
 
 **해석 규칙(실행 전 고정).** 주 분석은 동일한 59-feature 값을 train에서 본 test 행이 없도록 한다.
 행 단위 랜덤 민감도 분석은 test의 동일-feature 누수로 인해 모델에 유리한 조건이다. 두 결과의 차이는
