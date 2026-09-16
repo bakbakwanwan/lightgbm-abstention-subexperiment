@@ -1,16 +1,16 @@
 ---
 id: EXP-008
 title: LightGBM confidence group-split stability analysis
-status: draft-part1-review
+status: draft-part2-review
 depends_on: [EXP-007]
 created: 2026-09-16
 ---
 
-# EXP-008 완전일치 그룹 분할 seed 민감도 분석 — 스펙 초안 1부
+# EXP-008 완전일치 그룹 분할 seed 민감도 분석 — 1부 승인, 2부 검토
 
-> **실행 금지.** 이 문서는 2단계 검토 중 1부 초안이다. §4의 판정 구조는 작성됐지만
-> 실행 절차·산출물 스키마·중단 조건을 담을 2부가 아직 없다. 1·2부 승인 후
-> `experiments/EXP-008-*.md`로 옮기기 전에는 확정 실험 스펙이 아니다.
+> **실행 금지.** 1부의 실험 질문, 고정 입력, 평가 항목, 판정 기준은
+> 2026-09-16에 승인되었다. 아래 2부의 실행 절차와 산출물 계약은 아직 검토 중이다.
+> 2부 승인 후 `experiments/EXP-008-*.md`로 옮기기 전에는 확정 실험 스펙이 아니다.
 >
 > 결정과 수치의 정본은 `docs/CURRENT_DECISIONS.md` D-004 결정 8~18이다.
 > 이 초안과 정본이 충돌하면 D-004가 우선한다.
@@ -146,13 +146,183 @@ D-004 결정 12를 그대로 적용한다.
 
 class overlap 제외 결과, 보조 효용 지표, seed 중복 진단은 위 판정을 바꾸지 않는다.
 
-## 5. 2부에서 확정할 내용
+## 5. 실행 설계
 
-1부 승인 후 다음 내용을 같은 초안에 추가한다.
+### 5.1 설정 파일
 
-1. 실행 단계와 명령행 인터페이스
-2. clean-worktree·테스트·기존 결과 디렉터리 guard
-3. D-004 결정 17의 검사별 저장 형식
-4. D-004 결정 18의 필수 파일 경로와 스키마
-5. 실행 중단·재실행 규칙
-6. 결과 요약 공란과 실행 후 해석 절차
+`configs/exp/EXP-008.yaml`을 새로 만들고 기존 설정 구획을 유지한다. 실험 간 차이를
+별도 Python 파일로 만들지 않는다.
+
+| 구획 | EXP-008에서 담을 내용 | 고정 방법 |
+|---|---|---|
+| `experiment` | 실험 ID, 스펙 경로, 결과 경로 | 확정 스펙과 일치해야 한다. |
+| `inputs` | 데이터·whitelist·정본 ZIP·EXP-007 참조 산출물 경로와 SHA256 | 경로만으로 신뢰하지 않고 해시를 함께 검사한다. |
+| `analysis` | 평가할 group split seed, offline budget, 고정 경계 원천, 판정 기준 | D-004 항목 9~18을 설정으로 표현한다. |
+| `training` | EXP-007 선택 후보, 고정 iteration, seed별 난수 제어 | 후보 재탐색과 early stopping을 금지한다. |
+| `execution_guard` | clean worktree, test, 결과 디렉토리 비존재 조건 | 어느 하나라도 실패하면 학습 전에 중단한다. |
+
+고정 confidence 경계는 YAML에 숫자를 다시 옮겨 적지 않는다. EXP-007 참조 산출물에서
+읽고 그 파일의 SHA256과 경계 원천을 manifest에 기록한다. 이 방식으로 경계를 옮기는
+과정의 전사 오류를 막는다.
+
+### 5.2 실행 명령
+
+구현 완료 후 사용할 표준 진입점은 기존 `scripts/run_experiment.py`를 일반화해 사용한다.
+현재 코드는 아직 EXP-008을 지원하지 않는다. 폐기된 Makefile이나 EXP-008 전용 실행
+파일을 만들지 않는다.
+
+```powershell
+python -m uv run --locked python scripts/run_experiment.py --config configs/exp/EXP-008.yaml --stage validate
+```
+
+`validate`는 쓰기 없는 사전 점검이다. 설정 스키마, 입력 및 EXP-007 참조 산출물의
+존재와 SHA256, 고정 후보·iteration·경계의 출처, 데이터 대상 행 집합, seed별 split
+구성 가능성을 확인한다. split은 메모리에서 재현해 정렬·누락·그룹 교차 여부까지
+검사하지만 `results/EXP-008/`을 만들지 않는다. dirty worktree와 이미 존재하는 결과
+경로도 보고하되 파일을 변경하지 않는다.
+
+```powershell
+python -m uv run --locked python scripts/run_experiment.py --config configs/exp/EXP-008.yaml --stage all
+```
+
+`all`은 같은 사전 점검을 다시 수행하고 실행 guard를 통과한 경우에만 split 생성,
+고정 모델 학습, 예측, 지표 계산, 독립 재계산, 산출물 기록을 순서대로 수행한다.
+`validate` 성공 결과를 캐시나 우회 근거로 사용하지 않는다.
+
+### 5.3 구현 재사용 원칙
+
+1. 설정 로더는 EXP-007 전용 검사를 일반화하되 기존 EXP-007 설정의 의미를 바꾸지 않는다.
+2. split 생성 로직은 seed와 비교 방법을 인자로 받는 공용 함수로 만든다.
+3. EXP-008은 후보 선택 함수를 호출하지 않고 EXP-007에서 고정한 후보와 iteration만 사용한다.
+4. 순위 지표, tie 처리, budget 계산은 EXP-007의 평가 함수를 재사용한다.
+5. seed별 차이는 설정과 인자만으로 표현하며 `train_v2.py` 같은 복사본을 만들지 않는다.
+
+## 6. 실행 순서와 guard
+
+### 6.1 `all` 실행 순서
+
+| 순서 | 작업 | 통과 조건 | 실패 시 처리 |
+|---:|---|---|---|
+| 1 | config·스펙·참조 산출물 검증 | 경로, ID, SHA256, 고정 조건 일치 | 결과 경로 생성 전 중단 |
+| 2 | 저장소 guard | clean worktree, 결과 경로 없음 | 결과 경로 생성 전 중단 |
+| 3 | 테스트 | 아래 표준 명령 전체 통과 | 결과 경로 생성 전 중단 |
+| 4 | 입력 및 split 검증 | D-004 항목 17의 데이터·split 조건 통과 | 기술적 무효로 중단 |
+| 5 | seed별 학습·예측 | 고정 후보·iteration·난수·피처 계약 준수 | 기술적 무효로 중단 |
+| 6 | 지표 독립 재계산 | 공식, tie, shuffle, oracle, 경계 적용 검사 통과 | 기술적 무효로 중단 |
+| 7 | 산출물 완결성 검사 | 필수 파일과 행 수·키·SHA256 일치 | 기술적 무효로 중단 |
+| 8 | manifest 확정 | 모든 필수 산출물 경로와 해시 기록 | 완료로 간주하지 않음 |
+
+표준 테스트 명령은 다음과 같다.
+
+```powershell
+python -m uv run --locked python -m pytest
+```
+
+### 6.2 기술적 유효성 기록
+
+`validation_checks.json`은 D-004 항목 17의 검사를 영역별로 기록한다.
+
+| 영역 | 반드시 기록할 내용 |
+|---|---|
+| 입력 | 데이터·ZIP·whitelist·EXP-007 참조 산출물의 기대/실제 SHA256, 대상 행 수 |
+| split | seed, train/test 행 수, 정렬 일치, 59-feature 그룹 교차 수, 잔존 label, 관찰군 혼입 수 |
+| 학습 | 후보 ID, 고정 iteration, 실제 iteration, 난수 seed, 피처 수, `Protocol` 범주형 선언, calibration 미사용 |
+| 예측 | 행 키 유일성, 확률·confidence 유한성, 행 수와 split 일치 |
+| 평가 | AURC 3회 shuffle 차이, oracle 하한, 고정 경계 일치, 독립 재계산 차이 |
+| 산출물 | 필수 파일 존재, 스키마, 행 수, 참조 무결성, SHA256 |
+
+각 검사는 `passed`, 관측값, 기대값, 근거 파일을 함께 남긴다. 하나라도 실패하면 해당
+seed만 제외하지 않고 EXP-008 전체를 기술적 무효로 처리한다.
+
+## 7. 필수 산출물 계약
+
+### 7.1 디렉토리 구성
+
+```text
+results/EXP-008/
+  manifest.json
+  validation_checks.json
+  metrics.json
+  splits/
+    split_manifest.json
+    group_seed{seed}/
+      monday.csv.gz
+      tuesday.csv.gz
+      wednesday.csv.gz
+      thursday.csv.gz
+      friday.csv.gz
+  predictions/
+    group_seed{seed}.parquet
+  aurc_curve/
+    group_seed{seed}.csv.gz
+  offline_budget_summary.csv
+  fixed_threshold_summary.csv
+  class_overlap_assignment.csv
+  class_overlap_summary.csv
+  seed_overlap_summary.csv
+  label_summary.csv
+  observation_summary.csv
+  prediction_distribution_summary.csv
+```
+
+`{seed}`에는 EXP-008 평가 seed가 들어간다. 비교 기준인 EXP-007 seed의 원본 split·예측을
+복제하지 않고 참조 경로와 SHA256만 manifest에 남긴다.
+
+### 7.2 파일별 최소 내용
+
+| 파일 | 최소 내용 | 무결성 조건 |
+|---|---|---|
+| `manifest.json` | 실험 ID, git commit, 실행 시각, 해석 완료 config, Python·패키지 버전, 입력·참조·산출물 경로와 SHA256 | manifest 자신은 자기 해시 대상에서 제외한다. 마지막에 기록한다. |
+| `validation_checks.json` | 6.2의 검사별 상태·관측값·기대값·근거 | 모든 검사가 통과해야 완결 실행이다. |
+| `metrics.json` | seed별 분류 지표, `aurc`, `oracle_aurc`, `random_aurc`, 전체 오류 수, offline budget 수치, 고정 경계 수치 | 수치와 기계적 사실만 기록하며 해석·최종 판정 문장은 넣지 않는다. |
+| `splits/split_manifest.json` | seed별 split 파라미터, 요일별 행 수, 라벨 수, 배정 파일 SHA256 | 배정 파일과 집계값이 일치해야 한다. |
+| `splits/group_seed{seed}/*.csv.gz` | `day`, `id`, `Label`, `observation_group`, `split` | `(day,id)` 유일, 원본 정렬·라벨과 일치한다. |
+| `predictions/group_seed{seed}.parquet` | D-004 항목 18의 예측 필드 | test 배정과 1:1이며 확률·confidence가 유한해야 한다. |
+| `aurc_curve/group_seed{seed}.csv.gz` | tie-aware coverage별 누적 수용 행·오류와 risk | 원자료 재계산 AURC와 일치해야 한다. |
+| `offline_budget_summary.csv` | seed·budget별 목표/실제 유보율, 경계, tie 포함 다음 유보율, 유보·수용 오류, 오류 포착·농축, selective risk, 공격 coverage | predictions만으로 독립 재계산 가능해야 한다. |
+| `fixed_threshold_summary.csv` | seed·경계 출처·목표/허용/실제 유보율, 예산 초과·미사용 행, 유보·수용 오류와 필수 효용 지표 | EXP-007 경계를 변형 없이 적용해야 한다. |
+| `class_overlap_assignment.csv` | 충돌 그룹별 크기·라벨 구성과 seed별 train/test 배정 | 정본 충돌 그룹 집합과 일치해야 한다. |
+| `class_overlap_summary.csv` | 포함/제외 두 벌의 seed별 오류·AURC·유보 진단 | 주 판정은 포함 결과만 사용한다. |
+| `seed_overlap_summary.csv` | 모든 seed 쌍의 행·59-feature 그룹 Jaccard와 공통 오류 행 수 | D-004 항목 15의 전 조합을 한 번씩 기록한다. |
+| `label_summary.csv` | seed·split·label별 행 수 | split 배정과 합계가 일치해야 한다. |
+| `observation_summary.csv` | seed·split·관찰군 여부별 행 수 | test 관찰군은 0이어야 한다. |
+| `prediction_distribution_summary.csv` | seed별 확률·confidence 분포, 극단 confidence 비율, 고유값 수 | predictions 집계와 일치해야 한다. |
+
+표의 필드 중 현행 `docs/glossary.md`에 아직 없는 코드 식별자는 구현 전에 glossary에
+먼저 등록한다. 2부 승인은 산출 정보 계약을 확정하는 것이며, glossary 등록 없이 임의의
+필드명을 코드에 먼저 넣는 것을 허용하지 않는다.
+
+## 8. 중단·재실행 규칙
+
+1. `validate`는 결과 파일을 만들지 않으므로 실패 원인을 고친 뒤 같은 명령을 다시 실행할 수 있다.
+2. `all`이 결과 디렉토리를 만들기 전에 guard에서 멈춘 경우에도 같은 EXP-008 ID로 재시도할 수 있다.
+3. `all`이 `results/EXP-008/`을 만든 뒤 실패하면 부분 결과를 삭제·덮어쓰기하지 않는다. 실패
+   위치와 로그를 보존하고, 원인을 고친 뒤 세 seed 전체를 `EXP-008-r2`로 다시 실행한다.
+4. 한 seed만 재실행하거나 유효 seed만 모아 판정하지 않는다.
+5. 재실행 ID는 새 config와 새 결과 경로를 사용하며 이전 실행을 참조할 때 SHA256을 기록한다.
+6. 기술적 무효 실행에는 순위·처리량 판정을 부여하지 않는다.
+
+## 9. 결과 보고 계약
+
+실행 후 보고서는 원자료와 수치 산출물에서 별도로 작성하며 다음 질문에 답한다.
+
+1. 세 seed 각각의 순위 판정과 집계 판정은 무엇인가.
+2. 세 seed 각각의 고정 경계 처리량 판정과 집계 판정은 무엇인가.
+3. 두 판정이 모두 유지일 때 공동 유지 문구를 사용할 수 있는가.
+4. 최소 오류 수 조건과 class overlap 배정이 각 seed 결과에 어떤 영향을 주었는가.
+5. seed 간 test 행·그룹·오류 중복이 결과 유사성을 얼마나 설명하는가.
+6. 오류 포착률, 오류 농축도, selective risk, 공격 coverage의 비용·효익은 어떻게 변했는가.
+7. EXP-007의 confidence 포화와 소수 오류 패턴 문제는 반복되었는가.
+
+결론의 최대 범위는 같은 정본 데이터와 고정 프로토콜 안의 group split seed 민감도다.
+독립 데이터 일반화, 운영 배포 성능, 확률 calibration, 2차 계층의 실제 성능은 주장하지 않는다.
+
+## 10. 2부 승인 뒤 처리
+
+1. 이 초안을 승인본으로 정리한다.
+2. 필요한 새 코드 식별자를 `docs/glossary.md`에 먼저 등록한다.
+3. `experiments/EXP-008-*.md`에 확정 스펙을 작성한다.
+4. 스펙·결정 정본·glossary의 참조 일관성을 확인한다.
+5. 구현 작업을 별도 단계로 시작한다.
+
+확정 스펙과 구현은 같은 커밋에 섞지 않는다. 2부 승인 전에는 EXP-008을 실행하지 않는다.
