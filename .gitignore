@@ -25,6 +25,7 @@ _sync/
 # EXP 실행 산출물: 핵심 metrics.json과 설명 문서는 추적하고 나머지는 불변 로컬 결과로 보관
 /results/EXP-*/predictions/
 /results/EXP-*/aurc_curve/
+/results/EXP-*/splits/
 /results/EXP-*/*.csv
 /results/EXP-*/candidate_history.json
 /results/EXP-*/manifest.json
