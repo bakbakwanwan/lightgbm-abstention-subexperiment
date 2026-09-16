@@ -17,7 +17,7 @@
 | 체계 | 형식 | 가리키는 것 | 정의된 곳 |
 |---|---|---|---|
 | 결정 ID | `D-NNN` | 확정된 설계 결정 1건 | `docs/CURRENT_DECISIONS.md` |
-| 실험 ID | `EXP-NNN` | 저장소에서 실행되는 실험 1건 | `experiments/QUEUE.md` |
+| 실험 ID | `EXP-NNN` | 저장소에서 실행되는 실험 1건 | `experiments/EXP-XXX-*.md` |
 
 ### A-1. 폐기된 식별자 체계
 
@@ -77,6 +77,9 @@
 | 무작위 유보 AURC | `random_aurc` | confidence가 오류와 무관한 무작위 순위의 기대 AURC. D-006에서는 `full_coverage_risk`와 같음 |
 | Oracle AURC | `oracle_aurc` | 현재 오류 개수를 고정하고 정답을 먼저 수용하도록 완벽히 순위화했을 때 가능한 경험적 AURC 하한 |
 | AURC 상대 개선율 | `relative_aurc_improvement` | `(random_aurc - aurc) / random_aurc`. 0은 무작위 순위와 동일, 양수는 개선 |
+| 무작위 기준 정규화 AURC | `aurc_random_ratio` | `aurc / random_aurc`. 낮을수록 오류 순위가 좋다. `random_aurc == 0`이면 계산하지 않는다 |
+| 기준 정규화 AURC | `reference_aurc_random_ratio` | EXP-008이 비교 기준으로 읽은 EXP-007 `group_seed42`의 `aurc_random_ratio` 원값 |
+| 정규화 AURC 허용 상한 | `maximum_aurc_random_ratio` | EXP-008 seed별 순위 판정에 사용하는 `reference_aurc_random_ratio`의 사전 고정 배수 상한 |
 | 오류 농축도 | `error_enrichment` | `error_capture_rate / actual_abstention_rate`. 1은 무작위 유보의 기대 수준 |
 | 공격 확률 | `p_attack` | LightGBM이 출력한 공격 클래스 확률. 반올림·보정하지 않은 값을 저장한다 |
 | 이진 예측 라벨 | `predicted_label` | `p_attack >= 0.5`이면 1(공격), 아니면 0(정상) |
@@ -85,6 +88,13 @@
 | 이진 정답 라벨 | `binary_label` | `BENIGN=0`, D-001·D-002를 제외한 명확한 공격 14종=1 |
 | Test 표본 수 | `n_test` | 해당 평가 집합 또는 원래 `Label`의 외부 test 행 수 |
 | 수용·유보 행 수 | `n_accepted` / `n_abstained` | 해당 budget에서 직접 판정하거나 유보한 행 수 |
+| 전체·수용·유보 오류 수 | `total_errors` / `accepted_errors` / `abstained_errors` | 평가 집합 전체, 수용 행, 유보 행에 포함된 `is_error == 1` 행 수 |
+| 목표 유보 행 수 | `target_abstention_rows` | `floor(target_abstention_rate * n_test)`. 고정 경계의 처리량 차이를 행 수로 나타낼 때 기준으로 사용 |
+| 유보 행 차이 | `abstention_row_delta` | `n_abstained - target_abstention_rows`. 양수는 목표 초과, 음수는 미사용 |
+| 유보율 차이 | `abstention_rate_delta` | `actual_abstention_rate - target_abstention_rate`. 양수는 목표 초과, 음수는 미사용 |
+| 허용 유보율 하한·상한 | `allowed_abstention_rate_lower` / `allowed_abstention_rate_upper` | EXP-008 고정 경계 처리량 판정에 사전 고정한 실제 유보율 범위 |
+| 고정 경계 출처 | `confidence_threshold_source` | 고정 `confidence_threshold`를 읽은 참조 실험·분석·budget·산출물의 식별 정보 |
+| 다음 동률 포함 유보율 | `next_tie_inclusive_abstention_rate` | 현재 budget에서 제외된 다음 완전 confidence tie 그룹까지 포함할 때의 유보율. 다음 그룹이 없으면 `null` |
 | ROC 곡선 하 면적 | `auroc` | 외부 test 전체의 `p_attack`으로 한 번 계산하는 ROC-AUC |
 | 평균 정밀도 | `average_precision` | 외부 test 전체에서 `average_precision_score` 방식으로 계산하는 PR 요약. 사다리꼴 PR-AUC가 아님 |
 | 이진 로그손실 | `binary_logloss` | 외부 test 전체의 binary log loss. 학습 목적함수와 같은 정의의 진단 지표 |
@@ -98,6 +108,11 @@
 | 분포 외 스코어 | `ood_score` | 정상 트래픽 기준 이상 정도. 보조 게이트 후보. 미착수 |
 | 예측 기여 특징 | `feature_attribution` | SHAP 등이 산출한 예측 기여도. **인과적 이유가 아님** |
 | 하이퍼파라미터 후보 ID | `candidate_id` | D-006 제한 격자의 LightGBM 후보 식별자. 값: `C01`~`C08` |
+| 공통 test 행 수 | `common_test_rows` | 두 seed의 test에 모두 포함된 `(day, id)` 행 수 |
+| test 행 Jaccard | `row_jaccard` | 두 seed의 고유 `(day, id)` test 행 집합의 교집합 크기를 합집합 크기로 나눈 값 |
+| 공통 test 완전일치 그룹 수 | `common_test_feature_groups` | 두 seed의 test에 모두 포함된 `feature_group_id` 수 |
+| 완전일치 그룹 Jaccard | `feature_group_jaccard` | 두 seed의 test `feature_group_id` 집합의 교집합 크기를 합집합 크기로 나눈 값 |
+| 공통 오류 행 수 | `common_error_rows` | 두 seed 모두의 test에 있으면서 두 모델 모두 `is_error == 1`인 같은 `(day, id)` 행 수 |
 | 검색된 근거 문서 | `retrieved_evidence_documents` | RAG가 회수한 CTI/ATT&CK/CVE 문서 (2·3차 계층) |
 | 문서 지지율 | `groundedness` | 제시된 근거가 검색된 문서에 의해 지지되는 비율 (2·3차 계층) |
 
@@ -125,6 +140,7 @@
 |---|---|
 | `split` | 값: `train` / `test`. **`calib`는 없다** (D-004) |
 | `observation_group` | B절 참조. `none` / `attempted` / `invalid_class` |
+| `feature_group_id` | whitelist 59개 값이 완전히 같은 행의 그룹 식별자. 정본 요일 순서와 각 CSV의 `id` 순서로 처음 등장한 그룹부터 `fg_`와 0부터 시작하는 고정 폭 10자리 번호를 부여한다. 폐기된 `group_id`를 재사용하지 않는다 |
 
 ### C-1. 폐기된 필드명
 
@@ -177,3 +193,5 @@
 - 2026-09-14 — D-006 전체 test·budget 보조 지표와 표본 수 식별자를 등록하고, PR 요약을
   `average_precision`으로 명확히 정의.
 - 2026-09-14 — D-006 성공 판정의 `relative_aurc_improvement`, `error_enrichment` 등록.
+- 2026-09-16 — EXP-008의 정규화 AURC 비교, 고정 경계 처리량 차이, 완전일치 그룹 및
+  seed 간 test 중복 진단 식별자를 등록.

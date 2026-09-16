@@ -14,7 +14,7 @@
 |---|---|
 | Claude Code로 작업할 때 지켜야 할 규약 전체 | [CLAUDE.md](CLAUDE.md) |
 | 지금 무엇이 확정되었고 왜 그런지 (결정 D-001~D-006) | [docs/CURRENT_DECISIONS.md](docs/CURRENT_DECISIONS.md) |
-| 지금 당장 해야 할 작업 | [docs/CURRENT_DECISIONS.md](docs/CURRENT_DECISIONS.md)의 D-006·"다음 작업" |
+| 지금 당장 해야 할 작업 | [docs/CURRENT_DECISIONS.md](docs/CURRENT_DECISIONS.md)의 "다음 작업"과 EXP-008 확정 스펙 |
 
 ---
 
@@ -37,7 +37,7 @@
 | 문서 | 내용 |
 |---|---|
 | [features_whitelist.json](configs/features_whitelist.json) | 학습 입력 컬럼 정본. `include` 59 / `exclude` 32 |
-| `exp/` | 실험별 설정 파일을 두는 곳. 현재 비어 있음(구 `cicids_prep.yaml`은 `_superseded/`로 이동) |
+| `exp/` | 실험별 설정 파일을 두는 곳. 현재 `EXP-007.yaml`이 있으며 EXP-008 설정은 구현 단계에서 추가 |
 
 ## tasks/ — 확정 스펙 이전 단계의 작업 지시서
 
@@ -45,7 +45,7 @@
 |---|---|
 | [task_duplicate_class_overlap_measurement.md](tasks/task_duplicate_class_overlap_measurement.md) | 중복 행·class overlap 측정 지시서 (완료, D-004 개정 근거) |
 | [instruction_attempted_hulk_investigation.md](tasks/instruction_attempted_hulk_investigation.md) | Attempted·DoS Hulk 조사 지시서 (완료, D-001·D-002의 근거) |
-| [exp008_group_split_stability_proposal.md](tasks/exp008_group_split_stability_proposal.md) | EXP-008 분할 seed 민감도 분석의 실행 전 조건·판정 기준 제안 |
+| [exp008_group_split_stability_proposal.md](tasks/exp008_group_split_stability_proposal.md) | 승인 완료된 EXP-008 제안 이력. 확정 내용은 실험 스펙 참조 |
 | [external_labeled_dataset_feasibility.md](tasks/external_labeled_dataset_feasibility.md) | 독립 라벨 데이터 후보와 사용 전 감사 항목 조사 |
 
 ## experiments/ — 성공·실패 기준을 갖춘 확정 실험 스펙
@@ -53,6 +53,8 @@
 | 문서 | 내용 |
 |---|---|
 | [TEMPLATE.md](experiments/TEMPLATE.md) | 새 실험 스펙 작성 템플릿 |
+| [EXP-007-lightgbm-abstention.md](experiments/EXP-007-lightgbm-abstention.md) | confidence 기반 유보 구간 존재 검증 스펙 |
+| [EXP-008-group-split-stability.md](experiments/EXP-008-group-split-stability.md) | 완전일치 그룹 분할 seed 민감도 분석 확정 스펙 |
 | `QUEUE.md`, `EXP-001`~`EXP-006` | 없음 — 전부 `_superseded/`로 이동, 재작성 전 |
 
 ## reports/ — 완료된 조사의 산출물
@@ -77,6 +79,7 @@
 | 경로 | 내용 |
 |---|---|
 | `results/d004_splits/` | D-004 주 분석·민감도 분석의 요일별 split 배정과 manifest |
+| `results/EXP-007/` | EXP-007 실행 산출물 |
 
 ---
 
@@ -98,3 +101,4 @@
 - 2026-09-14 — 최초 작성. 결정 문서 통합(§단일 정본화)과 `_superseded/` 격리 완료 이후 스냅샷.
 - 2026-09-14 — D-006 학습·평가 방식 비교 자료를 색인에 추가.
 - 2026-09-15 — EXP-008 실행 전 제안서와 독립 라벨 데이터 후보 조사를 tasks/ 색인에 추가.
+- 2026-09-16 — EXP-008 확정 스펙을 추가하고 승인 완료된 task를 이력 포인터로 전환.
