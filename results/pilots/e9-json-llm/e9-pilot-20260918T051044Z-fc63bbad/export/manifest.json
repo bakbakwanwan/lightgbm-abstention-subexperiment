@@ -1,0 +1,69 @@
+{
+  "bundle_type": "layer2_abstained_flow_export",
+  "schema_version": "e9-input-v1",
+  "run_id": "e9-pilot-20260918T051044Z-fc63bbad",
+  "created_at": "2026-09-18T05:11:26.766416+00:00",
+  "git_commit": "c3c3b2487b6ed6394e044647325e8ef4cd7059f9",
+  "working_tree_dirty_at_creation": true,
+  "source": {
+    "experiment_id": "EXP-007",
+    "method": "group_seed42",
+    "target_abstention_rate": 0.01,
+    "confidence_threshold": 0.9993377811093735,
+    "n_test": 482382,
+    "n_abstained_before_sampling": 4816,
+    "sample_size": 100,
+    "selection_order": "sha256(day\\0id)"
+  },
+  "counts": {
+    "exported_rows": 100,
+    "feature_count": 59
+  },
+  "artifacts": {
+    "llm_inputs": {
+      "path": "transfer/llm_inputs.jsonl",
+      "sha256": "34242c78acb7f3cde79c9947f5e8cbcecd110679cb8356249af3cefdfbafeac8",
+      "rows": 100
+    },
+    "feature_schema": {
+      "path": "transfer/e9_input_feature_schema.json",
+      "version": "e9-input-v1",
+      "sha256": "4437451a9174d729045e2be7f0cc92272efdf6807badd3bc280e3f3ba4a75d25"
+    },
+    "prompt": {
+      "path": "transfer/e9_prompt_v1.json",
+      "version": "e9-v1",
+      "sha256": "bce97ac51b68e41ac2434f43fc0b974d2cfa5393e90267669689159a7ea62cdb"
+    }
+  },
+  "integrity": {
+    "predictions_sha256": "e27f1a5edbd305605923685fe4f9203f9ed1f6c269b6f0169cf2d4d1634898dc",
+    "metrics_sha256": "122093a73f4d4b71c0173d5e72c23405e2010e4db129534c5ca1d794a0da5fb9",
+    "feature_schema_sha256": "4437451a9174d729045e2be7f0cc92272efdf6807badd3bc280e3f3ba4a75d25",
+    "prompt_sha256": "bce97ac51b68e41ac2434f43fc0b974d2cfa5393e90267669689159a7ea62cdb",
+    "source_whitelist_sha256": "9d9551e339a938bc00ea0005d323fb8be755f2762ee3f7da59795aedeee2c6de",
+    "dataset_file_sha256": {
+      "monday.csv": "51fe5dc962626efb4ae70dce0303072fb780da0932822b651202ee9c2fbc1aff",
+      "tuesday.csv": "e2a0a5b631dfc6b455cc9f9a88b944110637d70a7f74171473925f76f38b6b0c",
+      "wednesday.csv": "bf46c5f3c792e8817381f724511229569606918eaf07ac986d7a2592b6341bc2",
+      "thursday.csv": "78a4d11eaf473d099e30e71ddb01e0f38218e844c0a9cdd36602145d674af482",
+      "friday.csv": "ebd499e6f23bd59f9cb81bec28178491b02b925fa5640a24215c9437d79482d0"
+    },
+    "selection_day_id_sha256": "ab04ecc017fb8bc97b83ce56b69a73f5f73b99a382c527050d0f17f24cfc4ab3",
+    "llm_inputs_sha256": "34242c78acb7f3cde79c9947f5e8cbcecd110679cb8356249af3cefdfbafeac8",
+    "evaluation_sidecar_sha256": "4c50bd5932588840ece74a2d8ea478468a4e2c2c932c7b125797a30e87b63dcd"
+  },
+  "transfer_contract": {
+    "copy_to_llm_environment": [
+      "transfer/llm_inputs.jsonl",
+      "transfer/e9_input_feature_schema.json",
+      "transfer/e9_prompt_v1.json",
+      "manifest.json"
+    ],
+    "keep_local": [
+      "local/evaluation_sidecar.jsonl"
+    ],
+    "prompt_payload_path": "payload.flow_features",
+    "response_join_key": "input_index"
+  }
+}

@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from hashlib import sha256
 import json
 from pathlib import Path
+import shutil
 import subprocess
 from typing import Any, Iterable
 
@@ -12,6 +13,7 @@ import numpy as np
 import pandas as pd
 
 from .data import DAYS, map_protocol, sha256_file
+from .layer2_common import read_json, require_valid_run_id
 
 
 @dataclass(frozen=True)
@@ -268,12 +270,15 @@ def export_abstained_flow_bundle(
     metrics_path: Path,
     data_dir: Path,
     feature_schema_path: Path,
+    prompt_path: Path,
+    run_id: str,
     method: str,
     target_rate: float,
     output_dir: Path,
     sample_size: int | None = None,
     chunk_size: int = 100_000,
 ) -> dict[str, Any]:
+    require_valid_run_id(run_id)
     if output_dir.exists():
         raise FileExistsError(f"Output directory already exists: {output_dir}")
     schema = load_input_feature_schema(feature_schema_path)
@@ -293,6 +298,14 @@ def export_abstained_flow_bundle(
     local_dir = output_dir / "local"
     transfer_dir.mkdir()
     local_dir.mkdir()
+
+    transferred_schema_path = transfer_dir / feature_schema_path.name
+    transferred_prompt_path = transfer_dir / prompt_path.name
+    shutil.copyfile(feature_schema_path, transferred_schema_path)
+    shutil.copyfile(prompt_path, transferred_prompt_path)
+    prompt_payload = read_json(transferred_prompt_path)
+    if prompt_payload.get("prompt_version") != "e9-v1":
+        raise ValueError("Prompt asset must use prompt_version e9-v1")
 
     inputs_path = transfer_dir / "llm_inputs.jsonl"
     input_count = _write_jsonl(
@@ -316,6 +329,7 @@ def export_abstained_flow_bundle(
     manifest = {
         "bundle_type": "layer2_abstained_flow_export",
         "schema_version": schema.schema_version,
+        "run_id": run_id,
         "created_at": datetime.now(timezone.utc).isoformat(),
         "git_commit": git_commit,
         "working_tree_dirty_at_creation": working_tree_dirty,
@@ -337,10 +351,28 @@ def export_abstained_flow_bundle(
             "selection_order": "sha256(day\\0id)" if sample_size is not None else "canonical_day_then_id",
         },
         "counts": {"exported_rows": input_count, "feature_count": len(schema.features)},
+        "artifacts": {
+            "llm_inputs": {
+                "path": "transfer/llm_inputs.jsonl",
+                "sha256": sha256_file(inputs_path),
+                "rows": input_count,
+            },
+            "feature_schema": {
+                "path": f"transfer/{transferred_schema_path.name}",
+                "version": schema.schema_version,
+                "sha256": sha256_file(transferred_schema_path),
+            },
+            "prompt": {
+                "path": f"transfer/{transferred_prompt_path.name}",
+                "version": prompt_payload["prompt_version"],
+                "sha256": sha256_file(transferred_prompt_path),
+            },
+        },
         "integrity": {
             "predictions_sha256": sha256_file(predictions_path),
             "metrics_sha256": sha256_file(metrics_path),
-            "feature_schema_sha256": sha256_file(feature_schema_path),
+            "feature_schema_sha256": sha256_file(transferred_schema_path),
+            "prompt_sha256": sha256_file(transferred_prompt_path),
             "source_whitelist_sha256": schema.source_whitelist_sha256,
             "dataset_file_sha256": actual_dataset_hashes,
             "selection_day_id_sha256": sha256(selection_ids).hexdigest(),
@@ -348,7 +380,12 @@ def export_abstained_flow_bundle(
             "evaluation_sidecar_sha256": sha256_file(sidecar_path),
         },
         "transfer_contract": {
-            "copy_to_llm_environment": ["transfer/llm_inputs.jsonl", "manifest.json"],
+            "copy_to_llm_environment": [
+                "transfer/llm_inputs.jsonl",
+                f"transfer/{transferred_schema_path.name}",
+                f"transfer/{transferred_prompt_path.name}",
+                "manifest.json",
+            ],
             "keep_local": ["local/evaluation_sidecar.jsonl"],
             "prompt_payload_path": "payload.flow_features",
             "response_join_key": "input_index",

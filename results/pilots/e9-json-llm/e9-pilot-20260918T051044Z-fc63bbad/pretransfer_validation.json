@@ -1,0 +1,105 @@
+{
+  "validation_schema_version": "e9-bundle-validation-v1",
+  "passed": true,
+  "validated_at": "2026-09-18T05:12:24.942359+00:00",
+  "manifest_sha256": "e680553beb63342e3ed1069a1e67888b77bb26f178a376c00ee2f72a4fef3711",
+  "checks": {
+    "manifest_parse": {
+      "passed": true,
+      "observed": "valid_json_object",
+      "expected": "valid_json_object",
+      "reason": null
+    },
+    "artifact_references": {
+      "passed": true,
+      "observed": "valid_relative_paths",
+      "expected": "valid_relative_paths",
+      "reason": null
+    },
+    "input_jsonl_sha256": {
+      "passed": true,
+      "observed": "34242c78acb7f3cde79c9947f5e8cbcecd110679cb8356249af3cefdfbafeac8",
+      "expected": "34242c78acb7f3cde79c9947f5e8cbcecd110679cb8356249af3cefdfbafeac8",
+      "reason": null
+    },
+    "feature_schema_sha256": {
+      "passed": true,
+      "observed": "4437451a9174d729045e2be7f0cc92272efdf6807badd3bc280e3f3ba4a75d25",
+      "expected": "4437451a9174d729045e2be7f0cc92272efdf6807badd3bc280e3f3ba4a75d25",
+      "reason": null
+    },
+    "prompt_sha256": {
+      "passed": true,
+      "observed": "bce97ac51b68e41ac2434f43fc0b974d2cfa5393e90267669689159a7ea62cdb",
+      "expected": "bce97ac51b68e41ac2434f43fc0b974d2cfa5393e90267669689159a7ea62cdb",
+      "reason": null
+    },
+    "feature_schema": {
+      "passed": true,
+      "observed": {
+        "version": "e9-input-v1",
+        "feature_count": 59
+      },
+      "expected": {
+        "version": "e9-input-v1",
+        "feature_count": 59
+      },
+      "reason": null
+    },
+    "prompt_asset": {
+      "passed": true,
+      "observed": "e9-v1",
+      "expected": "e9-v1",
+      "reason": null
+    },
+    "input_jsonl_parse": {
+      "passed": true,
+      "observed": 100,
+      "expected": 100,
+      "reason": null
+    },
+    "row_count": {
+      "passed": true,
+      "observed": 100,
+      "expected": 100,
+      "reason": null
+    },
+    "input_index": {
+      "passed": true,
+      "observed": {
+        "rows": 100,
+        "unique": 100
+      },
+      "expected": {
+        "start": 0,
+        "end": 99,
+        "unique": 100
+      },
+      "reason": null
+    },
+    "feature_rows": {
+      "passed": true,
+      "observed": {
+        "rows": 100,
+        "feature_count": 59
+      },
+      "expected": {
+        "rows": 100,
+        "feature_count": 59,
+        "ordered": true
+      },
+      "reason": null
+    },
+    "forbidden_fields": {
+      "passed": true,
+      "observed": [],
+      "expected": [],
+      "reason": null
+    }
+  },
+  "summary": {
+    "check_count": 12,
+    "passed_count": 12,
+    "failed_count": 0
+  }
+}
